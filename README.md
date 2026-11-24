@@ -9,10 +9,11 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Versi-0.9.0-D81B60.svg" alt="Versi" />
+  <img src="https://img.shields.io/badge/Versi-0.9.2-D81B60.svg" alt="Versi" />
   <img src="https://img.shields.io/badge/Engine-Firefox%20%2F%20Zen-BA1257.svg" alt="Engine" />
   <img src="https://img.shields.io/badge/Build-Ready%20to%20Run-success.svg" alt="Build" />
   <img src="https://img.shields.io/badge/Website-razberry.it--raz.com-FF4081.svg" alt="Website" />
+  <img src="https://img.shields.io/badge/CI%2FCD-Passing-brightgreen.svg" alt="CI/CD" />
 </p>
 
 ---

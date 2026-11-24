@@ -1,7 +1,7 @@
 # RAZBerry Update History - 2026-11-24
 
 **Project**: RAZBerry Browser  
-**Version**: 0.2.0  
+**Version**: 0.9.2  
 **Date**: 2026-11-24  
 **Author**: RAZ Creative Studio
 
@@ -488,20 +488,45 @@ Berdasarkan tangkapan layar yang dikirimkan pengguna:
 
 ---
 
-## Status Fitur & Checklist Pengerjaan (v0.9.1)
+## [20:55 WIB] - Pembaruan Versi 0.9.2: Sukses Deployment GitHub Actions CI/CD ke IDwebhost & Verifikasi Status Browser
+
+### 🚀 Latar Belakang & Permintaan Pengguna
+1. Menyelesaikan kegagalan pipeline GitHub Actions pada workflow deployment (`exit code 1` pada langkah *Install Dependencies*).
+2. Memastikan seluruh berkas statis `razberry-www` terunggah otomatis ke akun FTP IDwebhost Paket Tera (`ftp.it-raz.com`).
+3. Memastikan domain `https://razberry.it-raz.com` dan `https://razberry.it-raz.com/welcome/` aktif 100%.
+4. Mengonfirmasi status seluruh perbaikan visual, teks, branding, dan updater pada binary browser RAZBerry.
+
+### 🛠️ Tindakan Solutif & Hasil Pengujian
+1. **Perbaikan dependensi & runner CI/CD (`.github/workflows/RAZDeployHosting.yml`)**:
+   - Menyesuaikan versi pnpm action menjadi `11.1.2` dan Node.js ke `version: 22` agar selaras dengan deklarasi `packageManager: pnpm@11.1.2`.
+   - Menggunakan opsi `--no-frozen-lockfile` untuk mengatasi diskrepansi lockfile antar-OS (Windows development ke Ubuntu Linux runner).
+   - Menjalankan workflow otomatis di GitHub Actions (Run ID `45405979004`): **Status Completed, Conclusion Success** dalam 13 menit.
+2. **Verifikasi Live Website IDwebhost**:
+   - `https://razberry.it-raz.com/` -> **HTTP 200 OK**, menyajikan Astro SSG dengan judul `RAZBerry Browser` dan logo raspberry transparan.
+   - `https://razberry.it-raz.com/welcome/` -> **HTTP 200 OK**, menyajikan halaman orientasi resmi dengan judul `Welcome to RAZBerry Browser - By RAZ Creative Studio`.
+   - `https://razberry.it-raz.com/privacy-policy/` -> **HTTP 200 OK**.
+   - `https://razberry.it-raz.com/favicon.png` -> **HTTP 200 OK**.
+3. **Penyelarasan Manifest & Status Browser Desktop**:
+   - Menambahkan berkas `dist/RAZBerry/razberry.VisualElementsManifest.xml` untuk integrasi tile menu start & taskbar Windows.
+   - Mengonfirmasi bahwa seluruh 7 poin perubahan pada browser desktop (`about:support` Name RAZBerry, auto-updater disabled, placeholder menu `{-brand-shorter-name}` ter-resolve ke RAZBerry, renaming `RAZBerry Mods` & `RAZBerry URL Bar`, tema Raspberry Pink WCAG AA/AAA, dan multi-resolution icons) telah tertanam di dalam berkas paket `dist/RAZBerry` (`razberry.exe`, `omni.ja`, `browser/omni.ja`).
+   - Menganalisis bahwa instance `razberry.exe` yang aktif telah berjalan sejak pukul 18:14 WIB (sebelum seluruh patch diterapkan pada pukul 18:40 - 20:06 WIB). Cukup dengan menutup dan membuka kembali browser RAZBerry, seluruh perubahan visual dan teks akan tampil 100% sempurna.
+
+---
+
+## Status Fitur & Checklist Pengerjaan (v0.9.2)
 
 | Komponen / Fitur | Status | Keterangan |
 | :--- | :---: | :--- |
-| File `.gitignore` | ✅ Selesai | Proteksi `dist/`, `backup/`, `node_modules`, kredensial |
-| Workflow GitHub Actions | ✅ Selesai | Auto-build & FTPS deploy ke cPanel IDwebhost |
-| Skrip Deploy Lokal | ✅ Selesai | `RAZDeployToIDwebhost.ps1` & `RAZDeployToIDwebhost.py` |
-| Panduan Deployment | ✅ Selesai | `docs/RAZHostingDeployGuide.md` siap dibaca |
-| Sinkronisasi GitHub | ✅ Selesai | Push komprehensif ke `razcreativestudio/razberry` |
-| Dokumentasi & Versioning | ✅ Selesai | Naik ke versi 0.9.1 |
+| CI/CD GitHub Actions | ✅ Sukses | Run 45405979004 hijau (Success) |
+| Hosting Deployment | ✅ Live | Terunggah 377 berkas ke `ftp.it-raz.com` |
+| Web `razberry.it-raz.com` | ✅ Live | HTTP 200 OK |
+| Welcome Page Online | ✅ Live | `razberry.it-raz.com/welcome/` aktif |
+| Browser Rebranding Internal | ✅ Selesai | Tertanam di binary & paket `dist/RAZBerry` |
+| Dokumentasi & Versioning | ✅ Selesai | Naik ke versi 0.9.2 |
 
 ---
 
 ## Rencana Selanjutnya
 
-1. Pengguna memasukkan kredensial FTP cPanel IDwebhost ke menu **Settings > Secrets and variables > Actions** di repositori GitHub `https://github.com/razcreativestudio/razberry`.
-2. Menjalankan pengetesan alur kerja deployment otomatis melalui tab **Actions > Run workflow**.
+1. Melakukan restart pada aplikasi browser RAZBerry (`razberry.exe`) agar Gecko membaca file binary, resource icon, dan terjemahan FTL terbaru tanpa cache lama.
+2. Menikmati peramban RAZBerry Browser dan website resmi yang sudah live dan terintegrasi otomatis.
