@@ -27,6 +27,8 @@ razberry-www/.astro/
 *.swp
 *.zip
 *~
+__pycache__/
+*.pyc
 .DS_Store
 Thumbs.db
 ehthumbs.db

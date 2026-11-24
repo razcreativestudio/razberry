@@ -62,5 +62,5 @@ jobs:
           port: ${{ secrets.FTP_PORT || 21 }}
           protocol: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
           local-dir: ./razberry-www/dist/
-          server-dir: ${{ secrets.FTP_REMOTE_DIR || 'public_html/' }}
+          server-dir: ${{ secrets.FTP_REMOTE_DIR || '/' }}
           dangerous-clean-slate: false

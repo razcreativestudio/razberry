@@ -1,0 +1,8 @@
+{
+  "FTP_SERVER": "ftp.it-raz.com",
+  "FTP_USERNAME": "razberry@razberry.it-raz.com",
+  "FTP_PASSWORD": "GANTI_DENGAN_PASSWORD_FTP_ANDA",
+  "FTP_PORT": 21,
+  "FTP_REMOTE_DIR": "/",
+  "USE_TLS": true
+}

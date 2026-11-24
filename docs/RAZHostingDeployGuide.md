@@ -33,14 +33,14 @@ Website `razberry-www` kini dilengkapi dengan dua metode deployment yang fleksib
 3. Pada bilah menu samping kiri, klik **Secrets and variables** > pilih **Actions**.
 4. Klik tombol hijau **New repository secret** dan tambahkan data berikut satu per satu:
 
-| Nama Secret | Nilai / Keterangan | Contoh |
+| Nama Secret | Nilai Sesuai cPanel Anda | Keterangan |
 |---|---|---|
-| `FTP_SERVER` | Alamat Host FTP IDwebhost (bisa domain atau Shared IP Server di cPanel) | `ftp.it-raz.com` atau IP cPanel Anda |
-| `FTP_USERNAME` | Username FTP cPanel Anda | `razberry@it-raz.com` atau username cPanel |
-| `FTP_PASSWORD` | Password FTP cPanel Anda | *(password akun FTP Anda)* |
-| `FTP_REMOTE_DIR` | Folder tujuan di server hosting | `public_html/` atau `public_html/razberry/` |
-| `FTP_PORT` *(Opsional)* | Port FTP standar | `21` |
-| `FTP_PROTOCOL` *(Opsional)* | Protokol transfer aman | `ftps` (atau `ftp`) |
+| `FTP_SERVER` | `ftp.it-raz.com` | Alamat FTP server dari cPanel IDwebhost |
+| `FTP_USERNAME` | `razberry@razberry.it-raz.com` | Username akun FTP yang tertera di cPanel |
+| `FTP_PASSWORD` | *(Password akun FTP yang Anda buat)* | Masukkan password akun FTP tersebut |
+| `FTP_REMOTE_DIR` | `/` | Cukup isi `/` karena akun FTP ini sudah langsung mengarah ke `/home/itrazcom/razberry` |
+| `FTP_PORT` *(Opsional)* | `21` | Port default FTPS / FTP |
+| `FTP_PROTOCOL` *(Opsional)* | `ftps` | Protokol transfer TLS terenkripsi port 21 |
 
 ### Langkah 3: Eksekusi Otomatis & Monitoring
 - **Otomatis**: Setiap kali Anda melakukan perubahan kode di folder `razberry-www` lalu menjalankan `git push`, pipeline akan otomatis aktif.

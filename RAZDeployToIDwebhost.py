@@ -24,10 +24,10 @@ def ensure_example_config():
     """Membuat contoh file konfigurasi deploy_config.example.json jika belum ada."""
     sample = {
         "FTP_SERVER": "ftp.it-raz.com",
-        "FTP_USERNAME": "razberry@it-raz.com",
+        "FTP_USERNAME": "razberry@razberry.it-raz.com",
         "FTP_PASSWORD": "GANTI_DENGAN_PASSWORD_FTP_ANDA",
         "FTP_PORT": 21,
-        "FTP_REMOTE_DIR": "public_html/",
+        "FTP_REMOTE_DIR": "/",
         "USE_TLS": True
     }
     with open(EXAMPLE_CONFIG, "w", encoding="utf-8") as f:
