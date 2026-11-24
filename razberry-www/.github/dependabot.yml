@@ -1,0 +1,94 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "08:00"
+      timezone: Etc/UTC
+    cooldown:
+      default-days: 7
+    labels:
+      - dependencies
+      - dependabot
+    assignees:
+      - taroj1205
+    open-pull-requests-limit: 10
+    groups:
+      security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+      astro-and-react:
+        patterns:
+          - astro*
+          - "@astrojs*"
+          - react*
+          - "@types/react*"
+      tailwind:
+        patterns:
+          - tailwind*
+          - "@tailwindcss*"
+          - prettier-plugin-tailwindcss
+      fontawesome:
+        patterns:
+          - "@fortawesome*"
+      playwright:
+        patterns:
+          - "@playwright*"
+          - "@axe-core/playwright"
+      quality-checks:
+        patterns:
+          - "@commitlint*"
+          - "@cspell*"
+          - "@eslint*"
+          - "@testing-library*"
+          - "@typescript-eslint*"
+          - "@vitest*"
+          - cspell*
+          - eslint*
+          - jsdom*
+          - lefthook*
+          - prettier*
+          - typescript*
+          - vitest*
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+        dependency-type: production
+        patterns:
+          - "*"
+      dev-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+        dependency-type: development
+        patterns:
+          - "*"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "08:00"
+      timezone: Etc/UTC
+    cooldown:
+      default-days: 7
+    labels:
+      - dependencies
+      - dependabot
+      - github-actions
+    assignees:
+      - taroj1205
+    open-pull-requests-limit: 10
+    groups:
+      security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+      github-actions:
+        patterns:
+          - "*"

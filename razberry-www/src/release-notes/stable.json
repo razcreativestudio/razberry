@@ -1,0 +1,1564 @@
+[
+  {
+    "version": "1.18b",
+    "extra": "This update includes window sync and other nice improvements! Window sync is a way to keep your windows organized across multiple monitors. If you want a blank window, you can do so by using opt+cmd+N (for mac), ctrl+alt+N (for linux) and alt+N (for windows). Enjoy!\n\nYou can read more about window sync in our documentation <a href=\"https://docs.zen-browser.app/user-manual/window-sync\">here</a>",
+    "fixes": [
+      "Improved startup time when restoring large sessions.",
+      "Improved rendering for background gradient rendering / mixing when using three color gradients.",
+      {
+        "description": "Fixed split views resetting their layout / sizes on startup.",
+        "issue": 9978
+      },
+      "Fixed pinned tabs losing their icons when being unloaded or at startup.",
+      "Fixed sub-folders separating from their parent folders when restoring in some cases.",
+      "Fixed a possible memory leak with mods."
+    ],
+    "features": [
+      "Updated to Firefox 147.0 and 147.0.1",
+      "Merged window syncing! Now, when you open multiple windows of Zen, they will stay in sync with each other. Changes made in one window will automatically reflect in all other open windows. (Experimental, some features such as glance still can't sync yet.)",
+      "Session restore now remembers which space each window was in.",
+      "Closing a tab will now focus the last accessed tab instead of the tab to the bottom",
+      "Tabs can now have custom icons (set via right-click context menu).",
+      "Implemented new tab drag-and-drop system, making it easier to rearrange tabs specially when multiple layers of folders are involved.",
+      "You can now collapse all pinned tabs by clicking on the space name below the essentials.",
+      "Before, only pinned tabs could be renamed; now, any tab can be renamed via right-click context menu or double-clicking the tab title.",
+      "New MacOS profiles will now have 'switch to N space' keyboard shortcuts filled by default (control+number).",
+      "Improved native menu bar integration on MacOS (and Windows/Linux if applicable), adding a 'Spaces' menu item for easier access to space-related actions.",
+      "Enabled de-cluttering preference for context menus.",
+      "WebGPU support is now enabled for devices with Apple Silicon processors on all supported macOS versions.",
+      "Improved video playback performance on systems with AMD GPUs by enabling zero-copy playback for hardware-decoded video where supported, bringing them to parity with Intel and NVIDIA GPUs.",
+      "Zen now supports the Safe Browsing V5 protocol and is migrating from Safe Browsing V4 to the local list mode of Safe Browsing V5 protocol.",
+      "Added an 'Essentials DnD Promo' card, shown when dragging a tab to the top of the sidebar if there are no essentials."
+    ],
+    "workflowId": 21283712817,
+    "image": false,
+    "date": "18/01/2026"
+  },
+  {
+    "version": "1.18.1b",
+    "extra": "",
+    "fixes": ["Fixed an issue with new profiles not properly migrating the session files"],
+    "changes": [
+      "Changed the default keyboard shortcut for a new blank window to cmd+shift+N (for mac), ctrl+shift+N (for linux/windows)"
+    ],
+    "features": [],
+    "workflowId": 21316668922,
+    "image": false,
+    "date": "24/01/2026"
+  },
+  {
+    "version": "1.18.2b",
+    "extra": "",
+    "fixes": [
+      "Fixed blank windows when opening Zen for the first time or new windows on some occasions.",
+      "Fixed an issue where essentials would disappear intermittently.",
+      "Fixed pinned tabs not restoring to their base URL at startup.",
+      "Other minor bug fixes and stability improvements related to window sync and its respective migration system."
+    ],
+    "features": [
+      "Updated to Firefox 147.0.2",
+      "Added 'close to the most recently used tab' option to the tab management settings."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-06/",
+    "workflowId": 21417478109,
+    "image": false,
+    "date": "28/01/2026"
+  },
+  {
+    "version": "1.18.3b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed auto-focusing on inputs not working for popup windows, such as Bitwarden's login prompt.",
+        "issue": 11377
+      },
+      "Fixed not being able to drag and drop tabs between different windows if WS is disabled.",
+      "Added extra migration backup checks to prevent possible data loss during migration."
+    ],
+    "features": [],
+    "workflowId": 21453170466,
+    "image": false,
+    "date": "28/01/2026"
+  },
+  {
+    "version": "1.18.4b",
+    "extra": "",
+    "fixes": [
+      "Fixed drag and dropping into split views not working as expected.",
+      "Resolved an issue where drag and dropping tabs into different windows would sometimes fail.",
+      "Other small quality of life improvements and bug fixes."
+    ],
+    "features": [],
+    "workflowId": 21648367079,
+    "image": false,
+    "date": "04/02/2026"
+  },
+  {
+    "version": "1.18.5b",
+    "extra": "This update includes a new setting to allow users who didn't like the window sync feature but still want to sync their pinned tabs across windows in a workspace to do so. Make sure window sync is enabled in about:config for this feature to work.",
+    "fixes": [
+      "Fixed an issue when drag and dropping tabs from normal windows to blank windows",
+      "Fixed an issue on Windows systems with a large number of fonts installed where parts of the UI (tabs, menus, and Settings) could display garbled characters or symbols instead of readable text."
+    ],
+    "features": [
+      "Added <u>'Sync only pinned tabs in workspaces'</u> option to the 'Tab Management' settings so that only pinned tabs will be synced across windows in a workspace. This is useful for users who want to keep their pinned tabs consistent across windows while allowing unpinned tabs to be different in each window.",
+      "Updated to Firefox 147.0.3"
+    ],
+    "workflowId": 21751781387,
+    "image": false,
+    "date": "05/02/2026"
+  },
+  {
+    "version": "1.18.6b",
+    "extra": "",
+    "fixes": [
+      "Zen will now restore unpinned tabs after a crash, even if the 'Restore previous session' setting is disabled.",
+      "Fixed syncing bookmarks with your Mozilla account not working correctly.",
+      "Other quality of life improvements and bug fixes."
+    ],
+    "features": [
+      "Zen will now follow the XDG Base Directory Specification for storing its configuration and data files. This means that on Linux, configuration files will be stored in `~/.config/zen`. Note that compatibility with the old configuration directory (`~/.zen`) will be enabled if the directory exists.",
+      "Dragging a tab to the center of the window to create a split will now give the option to split on top or below.",
+      "When typing directly an url or domain, a second search result will appear with the option to search for the url or domain on your selected search engine.",
+      "Added a '--blank-window' command line argument to open a blank window without pinned tabs, spaces, etc."
+    ],
+    "workflowId": 21967090031,
+    "image": false,
+    "date": "12/02/2026"
+  },
+  {
+    "version": "1.18.7b",
+    "extra": "",
+    "fixes": [
+      "Fixed accessibility issues with the workspace switcher and other buttons",
+      "Other session restore fixes and improvements"
+    ],
+    "features": [],
+    "workflowId": 22005390322,
+    "image": false,
+    "date": "14/02/2026"
+  },
+  {
+    "version": "1.18.8b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed back / forward buttons changing the page's history instead of switching spaces",
+        "issue": 9157
+      },
+      "Fixed drag and dropping tabs from multiple windows with different spaces acting weirdly",
+      "Other minor bug fixes and improvements"
+    ],
+    "features": [],
+    "workflowId": 22044886332,
+    "image": false,
+    "date": "16/02/2026"
+  },
+  {
+    "version": "1.18.9b",
+    "extra": "",
+    "fixes": ["Stability and performance improvements related to window sync and session restore."],
+    "features": [
+      "Updated to Firefox 147.0.4",
+      "Appimage .desktop file now includes 'X-AppImage-Version' metadata for better integration with application launchers and system tools.",
+      "Linux desktop files will now include an option to open a new blank window from the taskbar"
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-10/",
+    "workflowId": 22164432405,
+    "image": false,
+    "date": "16/02/2026"
+  },
+  {
+    "version": "1.18.10b",
+    "extra": "",
+    "fixes": ["Stability and performance improvements related to window sync and session restore."],
+    "features": [
+      "Improved greatly the performance for Linux users by removing bottom window rounded corners, which will be added once the core issue has been resolved upstream. To enable them back, turn 'widget.gtk.rounded-bottom-corners.enabled' to true in about:config.",
+      "Added more automatic recovery options when updating or restarting zen, to prevent tab loss.",
+      "Fixed some tabs becoming 'New Tabs' after focusing them from different windows"
+    ],
+    "workflowId": 22245081530,
+    "image": false,
+    "date": "21/02/2026"
+  },
+  {
+    "version": "1.19b",
+    "extra": "This update includes a new feature that allows you to automatically fill your folders with opened GitHub issues, pull requests or RSS feeds. To add a live folder, click the + button in the sidebar and select 'Live Folder'.\n\nLet us know what other live folder types you would like to see in the future!",
+    "fixes": [
+      "Fixed private mode windows having dark text on dark background in the sidebar.",
+      "Fixed popup windows not showing at all on certain occasions.",
+      "Other bug fixes and performance improvements."
+    ],
+    "features": [
+      "Updated to Firefox 148.0",
+      "Added live folders. Automatically fill your folders with opened GitHub issues, pull requests or RSS feeds. To add a live folder, click the + button in the sidebar and select 'Live Folder'.",
+      "Dragging a tab on top of another tab for one second will now allow the option to split those tabs.",
+      "MacOS users now get to use native popover UI, making the experience more consistent with the rest of the operating system.",
+      "Improved the icon picker for folders, tabs, etc. It now let you select icons without closing the picker.",
+      "Pressing the \"Un-split\" button while holding shift will not focus the un-split tab, allowing you to stay in the current split view."
+    ],
+    "changes": [
+      "Bluring the window will no longer close the urlbar if its open.",
+      "Emojis at the space switcher will now be larger and more visible."
+    ],
+    "themeChanges": [
+      "Removed the `-zen-window-transform-origin` CSS attribute as it is not needed anymore"
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-13/",
+    "workflowId": 22518892421,
+    "image": false,
+    "date": "27/02/2026"
+  },
+  {
+    "version": "1.19.1b",
+    "extra": "",
+    "fixes": [
+      "Fixed certain popups on MacOS appearing with no background color, making them invisible.",
+      "Fixed Github Pull Request live folders not fetching the pull request data correctly.",
+      "Other minor bug fixes and improvements."
+    ],
+    "features": [],
+    "changes": [
+      "Middle clicking on the sidebar will now simply open a new tab instead of searching the content stored inside the clipboard. This is to prevent accidental middle clicks from opening sensitive information. Middle clicking on the new tab button will still search the clipboard content."
+    ],
+    "workflowId": 22657981427,
+    "image": false,
+    "date": "04/03/2026"
+  },
+  {
+    "version": "1.19.2b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed some RSS live folders not working with certain feeds.",
+        "issue": 12685
+      },
+      {
+        "description": "Improved performance for spaces, specially when switching between them.",
+        "issue": 11851
+      },
+      "Other minor bug fixes and improvements."
+    ],
+    "changes": [
+      "Clicking on 'reset pinned tab' will now also select the pinned tab if it is not currently selected."
+    ],
+    "features": ["Updated to Firefox 148.0.2"],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-19/",
+    "workflowId": 22929917826,
+    "image": false,
+    "date": "11/03/2026"
+  },
+  {
+    "version": "1.19.3b",
+    "extra": "",
+    "fixes": [
+      "Split views will now hide when toggling fullscreen mode.",
+      "Other minor bug fixes and improvements.",
+      "Improved accessibility for split view controls.",
+      "Fixed opening a new window making all tabs appear as 'New Tab' until they are selected.",
+      {
+        "description": "Fixed chrome hide toolbar flag not being respected for new windows.",
+        "issue": 12736
+      },
+      "Others fixes and quality of life improvements"
+    ],
+    "changes": [
+      "Pressing CTRL+T again while the urlbar is open will now close it.",
+      "Bookmarks bar will now stay visible on fullscreen mode."
+    ],
+    "features": [
+      "Holding ctrl/cmd while hovering 'Reset pinned tab' will now duplicate that tab in the background",
+      "Added 'Unload all spaces except current' context menu item to the space switcher"
+    ],
+    "workflowId": 23116589584,
+    "image": false,
+    "date": "16/03/2026"
+  },
+  {
+    "version": "1.19.4b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed background grain not showing properly",
+        "issue": 12765
+      },
+      {
+        "description": "Fixed not being able to switch spaces with scroll actions",
+        "issue": 12816
+      },
+      {
+        "description": "Fixed closing blank windows when asking for confirmation",
+        "issue": 12922
+      },
+      "Increased robustness of HTTP/3 upload performance for unstable network conditions.",
+      "Other minor bug fixes and improvements."
+    ],
+    "changes": [
+      "Live folders will now perform a refresh when waking up the computer to make sure the content is up to date.",
+      "On Linux, Zen will now default to the XDG portal file picker if available, rather than the GTK3 one, which is usually better integrated with the user's desktop environment, and more powerful.",
+      "On Windows, Zen will use the modern Windows.Devices.Geolocation API for geolocation instead of Windows 7 location API."
+    ],
+    "features": [
+      "Updated to Firefox 149.0",
+      "Optimized the performance glance and its animations, making it more responsive and smoother than before.",
+      "Added a 'Un-split tabs' context menu item when right-clicking on a tab inside a split view to quickly un-split it.",
+      "Many PDF files will now load significantly faster thanks to hardware acceleration.",
+      "Zen now automatically blocks notifications and permanently revokes permissions for any website flagged as malicious by SafeBrowsing. This prevents unsafe sites from sending background notifications to users, commonly used for ads, spam or phishing.",
+      "The WebRender layer compositor is now enabled on Windows, reducing power usage during full-screen video playback and improving WebGL/WebGPU performance."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-20/",
+    "workflowId": 23604204844,
+    "image": false,
+    "date": "26/03/2026"
+  },
+  {
+    "version": "1.19.5b",
+    "extra": "Quick fixes from the 1.19.4b release, please see their respective entries for more details.",
+    "fixes": [
+      {
+        "description": "Fixed new profiles freezing on startup",
+        "issue": 12940
+      },
+      "Fixed an issue with drag and dropping tabs, making folders have empty spaces",
+      {
+        "description": "Fixed Github Live Folders not fetching Pull Request data correctly",
+        "issue": 12942
+      }
+    ],
+    "workflowId": 23679666277,
+    "image": false,
+    "date": "27/03/2026"
+  },
+  {
+    "version": "1.19.6b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed compact mode toggle being appear checked incorrectly",
+        "issue": 12973
+      },
+      "Zen now respects more 'reduce motion' system settings to disable or simplify non-essential animations",
+      {
+        "description": "Switching spaces will not be blocking anymore, meaning you can switch to another space while the current one is still animating",
+        "issue": 8206
+      },
+      {
+        "description": "Fixed website notifications not being clickable when using the right sidebar",
+        "issue": 12104
+      },
+      {
+        "description": "Improved low-FPS performance on certain occasions, such as when playing videos or using glance on low-end devices",
+        "issue": 12979
+      },
+      {
+        "description": "Fixed restoring a pinned tab also scrolling the website to it's original position",
+        "issue": 13024
+      },
+      {
+        "description": "Fixed some toolbars having unreadable text colors when using certain themes",
+        "issue": 13024
+      }
+    ],
+    "changes": [
+      "Reverted to Firefox's old search bar due to compatibility issues with the new one",
+      "Context menu for split tabs has now been renamed to 'Join tabs' to be more intuitive"
+    ],
+    "workflowId": 23924571668,
+    "image": false,
+    "date": "03/04/2026"
+  },
+  {
+    "version": "1.19.7b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed MacOS setting 'disable page swipe' making switching spaces not work at all",
+        "issue": 10687
+      },
+      {
+        "description": "Fixed double separator lines in context menus in some places",
+        "issue": 13093
+      },
+      {
+        "description": "Fixed unable to install addons in compact mode",
+        "issue": 11667
+      },
+      "Fixed an issue on Linux where the browser toolbar could become unresponsive to mouse clicks after dragging a tab when using Wayland",
+      "Other stability fixes and improvements."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-25/",
+    "features": [
+      "Updated to Firefox 149.0.2",
+      "Added a new 'Duplicate tab' keyboard shortcut available in settings"
+    ],
+    "workflowId": 24104826155,
+    "image": false,
+    "date": "07/04/2026"
+  },
+  {
+    "version": "1.19.8b",
+    "extra": "Please see the 1.19.7b release for more details on the fixes included in this release.",
+    "fixes": [
+      {
+        "description": "Fixed some animations inside Zen not respecting the 'reduce motion' system setting",
+        "issue": 13140
+      },
+      {
+        "description": "Fixed compact mode not hiding the sidebar or toolbar when a site has permissions disabled",
+        "issue": 13121
+      },
+      "Fixed accessibility issues with some toolbars such as 'find on page' in private windows"
+    ],
+    "changes": [
+      "Modified sidebar context menu to be more intuitive and simplified, removing some options and moving others to more appropriate places.",
+      "Live folders option has been moved to the sidebar context menu"
+    ],
+    "workflowId": 70497878213,
+    "image": false,
+    "date": "09/04/2026"
+  },
+  {
+    "version": "1.19.9b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed halts / unresponsiveness happening every certain amount of time",
+        "issue": 10649
+      },
+      {
+        "description": "Fixed duplicate bookmarks appearing on startup",
+        "issue": 9540
+      },
+      "Fixed an issue on macOS where, when macOS Lockdown mode is enabled, emoji characters are not displayed in web content.",
+      "Fixed live folders not working with GitHub's new Pull Request UI",
+      "Windows users can now install updates without having to accept the User Account Control (UAC) prompt. It might need a re-install to work for existing users.",
+      "Other minor bug fixes and performance improvements."
+    ],
+    "changes": ["There's a new modal UI, thanks to @12th-devs on GitHub!"],
+    "features": [
+      "Updated to Firefox 150.0",
+      "(alt or opt)+clicking a tab will now split it with the selected tab",
+      "Added a 'Move to folder...' context menu item for tabs to quickly move them to a different folder",
+      "Added a new loading progress animation when a page is loading",
+      "Safebrowsing and geo-location APIs should work more reliably now"
+    ],
+    "security": [
+      "https://www.mozilla.org/en-US/security/advisories/mfsa2026-30/",
+      [
+        "CVE-2026-41431",
+        "https://github.com/zen-browser/desktop/security/advisories/GHSA-qpj9-m8jc-mw6q"
+      ]
+    ],
+    "knownIssues": [
+      "Essentials and folders colors appear too-saturated when using certain themes. This will be fixed in the next release."
+    ],
+    "workflowId": 24884426227,
+    "image": false,
+    "date": "23/04/2026"
+  },
+  {
+    "version": "1.19.10b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed video controls being off screen in compact mode",
+        "issue": 10594
+      },
+      {
+        "description": "Fixed startup crashes and not letting any tab to be selected",
+        "issue": 13414
+      },
+      {
+        "description": "Fixed dragging tabs between windows not hiding sidebar",
+        "issue": 8643
+      },
+      "Other minor bug fixes and performance improvements."
+    ],
+    "features": [
+      "(alt or opt)+clicking again on a merged tab will now split it from the selected tab"
+    ],
+    "workflowId": 24983103164,
+    "image": false,
+    "date": "27/04/2026"
+  },
+  {
+    "version": "1.19.11b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed topbar dropping down when titlebar is enabled",
+        "issue": 7094
+      },
+      {
+        "description": "Fixed auto hide not working after installing an extension",
+        "issue": 13488
+      },
+      {
+        "description": "Fixed dragging folders around not working properly",
+        "issue": 13492
+      },
+      "Other minor bug fixes and performance improvements."
+    ],
+    "features": [
+      "Updated to Firefox 150.0.1",
+      "Added a space-only search mode for the urlbar, which can be enabled by typing ` + space in the urlbar."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-35/",
+    "workflowId": 25126816496,
+    "image": false,
+    "date": "29/04/2026"
+  },
+  {
+    "version": "1.19.12b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed search engines not being visible in settings",
+        "issue": 13522
+      },
+      {
+        "description": "Fixed Previous Space in MacOS menu bar not working",
+        "issue": 13583
+      },
+      {
+        "description": "The loading indicator should now show on-top of the webview for double toolbar mode",
+        "issue": 13516
+      },
+      {
+        "description": "Fix macos crash when native popovers are closed on some occasions",
+        "issue": 13294
+      },
+      "Fixed glance having wrong image preview when zoomed in",
+      "Other minor bug fixes and performance improvements."
+    ],
+    "features": [
+      "Updated to Firefox 150.0.2",
+      "Improved space swiping feel and performance",
+      "The option for 'Create new space' keyboard shortcut has been added to the keyboard shortcuts settings.",
+      "Desktop files on linux should now ship with translations for desktop entries."
+    ],
+    "security": [
+      "https://www.mozilla.org/en-US/security/advisories/mfsa2026-40/",
+      [
+        "CVE-2026-44658",
+        "https://github.com/zen-browser/desktop/security/advisories/GHSA-cc9c-mmmf-c5j6"
+      ],
+      [
+        "CVE-2026-44659",
+        "https://github.com/zen-browser/desktop/security/advisories/GHSA-7p2r-fp29-9w69"
+      ]
+    ],
+    "workflowId": 25509244910,
+    "image": false,
+    "date": "08/05/2026"
+  },
+  {
+    "version": "1.19.13b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed native popovers not working after using dropdowns",
+        "issue": 13623
+      },
+      {
+        "description": "Fixed unresponsive tabs when opening external links",
+        "issue": 13620
+      },
+      {
+        "description": "Fixed tab renaming input fields being too narrow",
+        "issue": 13629
+      },
+      "Other minor bug fixes and performance improvements."
+    ],
+    "features": ["Updated to Firefox 150.0.3"],
+    "security": [
+      "https://www.mozilla.org/en-US/security/advisories/mfsa2026-45/",
+      [
+        "CVE-2026-45150",
+        "https://github.com/zen-browser/desktop/security/advisories/GHSA-vjfv-85qf-v25c"
+      ]
+    ],
+    "workflowId": 25762934682,
+    "image": false,
+    "date": "13/05/2026"
+  },
+  {
+    "version": "1.20b",
+    "extra": "This release includes a major new feature called Boosts! Boosts allow you to customize the look and feel of any website to your liking. To start boosting, click the site's control icon in the urlbar and click the new 'Boost' button.",
+    "fixes": [
+      {
+        "description": "Fixed a bug where the url would be cut off when the urlbar was too small.",
+        "issue": 13719
+      },
+      {
+        "description": "Fixed 'go back to original url' button on pinned tabs showing up even when the url was not modified.",
+        "issue": 12949
+      },
+      "Added better support for cyclic workspace switching",
+      {
+        "description": "Fixed video controls going under the screen when in fullscreen mode.",
+        "issue": 10594
+      },
+      {
+        "description": "Fixed closing a split view in one window selecting it on other windows.",
+        "issue": 13761
+      }
+    ],
+    "changes": [
+      "Geolocation on Windows now respects the user's Windows location permission setting, instead of overriding it, when the user grants location permission to a page. Zen will ask users to enable the Windows permission if it is needed."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-46/",
+    "features": [
+      "Updated to Firefox 151.0 and 151.0.1",
+      "Boosts are now in Zen! This allows you to tint colors, customize fonts and styles, zap elements and enable automatic dark mode on any website!",
+      "Overflowing web extensions will now appear below the urlbar instead of being added back into the site control panel. This only happens in single-sidebar mode.",
+      "Zen now strengthens protection against fingerprinting in Standard Enhanced Tracking Protection, making it harder for websites to track you across sites by limiting the amount of information revealed about your device and browser. This reduces the number of users uniquely identifiable by common fingerprinting techniques by an average of ~14%, and by ~49% on macOS.",
+      "You can now merge multiple PDFs directly in Zen PDF. Combine separate PDF files into a single document without ever leaving Zen or relying on third-party tools."
+    ],
+    "workflowId": 26357018965,
+    "image": false,
+    "date": "21/05/2026"
+  },
+  {
+    "version": "1.20.1b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed pressing `u` duplicating tabs.",
+        "issue": 13851
+      },
+      {
+        "description": "Fixed video controls going under the screen when in fullscreen mode.",
+        "issue": 10594
+      },
+      {
+        "description": "Fixed boosts not working for certain websites.",
+        "issue": 13844
+      },
+      "Fixed an issue on macOS where smart cards and security keys could fail to load certificates automatically",
+      "Other minor bug fixes and performance improvements."
+    ],
+    "features": [
+      "Updated to Firefox 151.0.2",
+      "You can now type `New Boost` in the urlbar to quickly create a new boost for the current site!"
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-40/",
+    "workflowId": 26508951452,
+    "image": false,
+    "date": "27/05/2026"
+  },
+  {
+    "version": "1.20.2b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed auto focus for new windows not working.",
+        "issue": 12112
+      },
+      {
+        "description": "Fixed desktop shortcuts showing zen as 'Nightly'.",
+        "issue": 13745
+      },
+      "Other minor bug fixes and performance improvements."
+    ],
+    "features": [
+      "Updated to Firefox 151.0.3",
+      "Boosts now support a dark mode UI based on your system dark mode setting."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-54/",
+    "workflowId": 26919510900,
+    "image": false,
+    "date": "03/06/2026"
+  },
+  {
+    "version": "1.21b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed extension-opened tabs not being created with the correct container",
+        "issue": 14100
+      },
+      {
+        "description": "Fixed a bug with the Boosts editor having the wrong theme colors",
+        "issue": 14099
+      },
+      {
+        "description": "Improved overflowing space icons being inaccessible and improved the feeling when hovering over them",
+        "issue": 13747
+      },
+      "Other minor bug fixes and improvements"
+    ],
+    "features": [
+      "Updated to Firefox 151.0.4",
+      "Added 'Space Routing', a new feature that allows you to route links to a specific Space. To get started, click on the three dots in your Space name and click on 'Space Routing Settings'."
+    ],
+    "workflowId": 27273104941,
+    "image": false,
+    "date": "11/06/2026"
+  },
+  {
+    "version": "1.21.1b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed duplicate bookmarks appearing when re-opening a window in MacOS",
+        "issue": 9540
+      },
+      {
+        "description": "Fixed freezes when switching spaces on certain occasions",
+        "issue": 14110
+      },
+      "Improved performance for switching between tabs",
+      "Other minor bug fixes and improvements"
+    ],
+    "workflowId": 27413914698,
+    "image": false,
+    "date": "13/06/2026"
+  },
+  {
+    "version": "1.21.2b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed space routing overriding tabs with an explicit container",
+        "issue": 14242
+      },
+      {
+        "description": "Fixed background tabs focusing on routed tabs",
+        "issue": 14165
+      },
+      {
+        "description": "Fixed opening glance on links while selecting text in links",
+        "issue": 8391
+      },
+      "Other minor bug fixes and improvements"
+    ],
+    "features": [
+      "Updated to Firefox 152.0",
+      "Improved support for more advanced cursor movement commands, including those relating to paragraph boundaries, on macOS.",
+      "On Windows and Linux, you can now copy links via the tab context menu by right-clicking a tab and selecting Share > Copy Link, making it easy to copy a link without switching to the tab first."
+    ],
+    "changes": [
+      "Site zooming via keyboard or mouse now offers more zoom levels in smaller increments than before.",
+      "When a PDF or other file that Zen opens directly finishes downloading, it now opens in a background tab if you've switched tabs or closed the original page."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-57/",
+    "workflowId": 27676656745,
+    "image": false,
+    "date": "16/06/2026"
+  },
+  {
+    "version": "1.21.3b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed transparency not working after updating to 1.21.2b",
+        "issue": 14259
+      },
+      "Fixed frequent crashes affecting users with Intel Raptor Lake processors",
+      "Fixed an issue on macOS where choosing a PDF option, such as \"Save as PDF\", from the system print dialog would send the job to your printer instead of saving a file.",
+      "Other minor bug fixes and improvements."
+    ],
+    "features": ["Updated to Firefox 152.0.1"],
+    "workflowId": 27759888101,
+    "image": false,
+    "date": "18/06/2026"
+  },
+  {
+    "version": "1.21.4b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Prevent sidebar from flickering when moving a tab",
+        "issue": 14131
+      },
+      {
+        "description": "Full-screening while on a glance tab will now expand the glance tab to a normal tab",
+        "issue": 11766
+      },
+      {
+        "description": "Fixed space routing tabs opening in background when it should be in foreground",
+        "issue": 14183
+      },
+      "Other minor bug fixes and improvements."
+    ],
+    "features": [
+      "Updated to Firefox 152.0.2 and 152.0.3",
+      "Added 'Edit pinned tab' context menu item to manually set a pinned tab's URL",
+      "Added 'Add Route for Domain' context menu item to quickly add a tab's domain to the Space Routing settings"
+    ],
+    "workflowId": 28178000489,
+    "image": false,
+    "date": "26/06/2026"
+  },
+  {
+    "version": "1.21.5b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed overflowing addons not having context menus",
+        "issue": 14382
+      },
+      "Fixed copy, paste, undo, redo, and similar keyboard shortcuts not working inside macOS system dialogs such as the Save and Open panels.",
+      "Other bug fixes and improvements."
+    ],
+    "features": ["Updated to Firefox 152.0.4"],
+    "security": [
+      "https://www.mozilla.org/en-US/security/advisories/mfsa2026-62/",
+      [
+        "CVE-2026-57501",
+        "https://github.com/zen-browser/desktop/security/advisories/GHSA-vpvg-hp3v-rm5q"
+      ]
+    ],
+    "workflowId": 28578279004,
+    "image": false,
+    "date": "01/07/2026"
+  },
+  {
+    "version": "1.21.6b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed some localization strings not being translated in some places",
+        "issue": 10749
+      },
+      {
+        "description": "Fixed glance being able to be open a second time when it was already open",
+        "issue": 14460
+      },
+      "Other bug fixes and improvements."
+    ],
+    "features": ["Updated to Firefox 152.0.5"],
+    "workflowId": 28905722815,
+    "image": false,
+    "date": "07/07/2026"
+  },
+  {
+    "version": "1.21.7b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed essentials promo UI leaving gap on pressing Esc",
+        "issue": 14544
+      },
+      {
+        "description": "Fixed misaligned symbolic space icons in Space options menu on Linux",
+        "issue": 14495
+      },
+      {
+        "description": "Fixed Spaces switching when dragging tab to another monitor",
+        "issue": 14511
+      },
+      {
+        "description": "Fixed tab order flipping when moving tabs between workspaces",
+        "issue": 14495
+      },
+      "Fixed a hang that could occur after using a file picker dialog on macOS 26",
+      "Other bug fixes and improvements."
+    ],
+    "features": ["Updated to Firefox 152.0.6"],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-67/",
+    "workflowId": 29402615673,
+    "image": false,
+    "date": "15/07/2026"
+  },
+  {
+    "version": "1.21.8b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed essentials promo UI leaving gap on pressing Esc",
+        "issue": 14544
+      },
+      {
+        "description": "Fixed localization strings not being translated in some places",
+        "issue": 14605
+      },
+      {
+        "description": "Fixed new Spaces not being able to be removed",
+        "issue": 14618
+      },
+      {
+        "description": "Fixed split view drag and drop ending up opening new windows",
+        "issue": 14619
+      },
+      "Other bug fixes and improvements."
+    ],
+    "features": [],
+    "workflowId": 29532543398,
+    "image": false,
+    "date": "17/07/2026"
+  },
+  {
+    "version": "1.21.9b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed 'Add tab to essentials' context menu item being always disabled",
+        "issue": 14616
+      },
+      {
+        "description": "Fixed external links not being routed properly by Space Routing",
+        "issue": 14600
+      },
+      {
+        "description": "Fixed boosts size override not persisting",
+        "issue": 14461
+      },
+      "Other bug fixes and improvements."
+    ],
+    "features": [
+      "Updated Firefox to 153.0",
+      "High Dynamic Range (HDR) video playback is now available on Windows - this feature needs HDR mode enabled for the display in Windows Settings - Display.",
+      "Improved UI for container selection and management",
+      "It is now possible to merge multiple PDFs by dragging a PDF into the PDF sidebar.",
+      "Added support for Apple's system-wide full-screen keyboard command (Globe-F).",
+      "Zen now verifies and displays Qualified Website Authentication Certificates (QWACs) in accordance with eIDAS regulations.",
+      "Added improved support for videos with overlays so users can more easily access video actions from context menus."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-68/",
+    "workflowId": 30140905933,
+    "image": false,
+    "date": "23/07/2026"
+  },
+  {
+    "version": "1.21.10b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Various performance fixes, energy consumption improvements, RTX Super Resolution not working, and HDR video playback not working on Windows.<br/><br/><b>NOTE: This might need a restart to take effect</b>",
+        "issue": 14292
+      },
+      {
+        "description": "Fixed extra divider when urlbar has no results",
+        "issue": 14717
+      },
+      {
+        "description": "Fix boost applying wrong size override",
+        "issue": 14461
+      },
+      {
+        "description": "Fixed crashes/hangs when creating new spaces",
+        "issue": 14713
+      },
+      {
+        "description": "Fixed non-tab drags allowing to switch Spaces",
+        "issue": 14724
+      },
+      {
+        "description": "Fixed essential tab reordering not working at maximum capacity",
+        "issue": 14726
+      },
+      {
+        "description": "Fixed compact sidebar activation at right screen edge",
+        "issue": 14409
+      },
+      "Other bug fixes and improvements."
+    ],
+    "features": ["Updated Firefox to 153.0.1"],
+    "workflowId": 30437247993,
+    "image": false,
+    "date": "29/07/2026"
+  },
+  {
+    "version": "1.21.11b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixes issue setting keybinds with shift + digit or symbol",
+        "issue": 9918
+      },
+      {
+        "description": "Fix closing split tab in one window changing focus of other windows",
+        "issue": 13761
+      },
+      "Fixed audio and video failing to play, or hanging when seeking, on websites that load media from a Blob URL.",
+      "Other bug fixes and improvements."
+    ],
+    "features": [
+      "Updated Firefox to 153.0.3",
+      "You can now filter draft GitHub pull requests in live folders.",
+      "Compact mode now tracks your mouse even after it leaves the window, the sidebar stays open while your cursor lingers near the window's edge and only tucks away once you move further out. This only changed for Windows and MacOS, Linux is still the same as before.",
+      "You can now move the window by dragging empty space in the top part of a webpage, with native snapping and tiling, just like dragging the titlebar. Links, buttons, and other interactive elements still work as usual.",
+      "You can now have multiple media controls in the sidebar, allowing you to control multiple media sources at once.",
+      "Improved startup performance and feeling"
+    ],
+    "workflowId": 31058908663,
+    "image": false,
+    "date": "05/08/2026"
+  },
+  {
+    "version": "1.21.12b",
+    "extra": "",
+    "fixes": [
+      "Fixed selecting text at the top of a page making the window drag instead of selecting text.",
+      "Other bug fixes and improvements."
+    ],
+    "features": [],
+    "workflowId": 31133195036,
+    "image": false,
+    "date": "07/08/2026"
+  },
+  {
+    "version": "1.21.13b",
+    "extra": "",
+    "fixes": [
+      "Fixed infinite media players appearing infinitely in the sidebar when a page has multiple media players.",
+      "Other bug fixes and improvements."
+    ],
+    "features": [],
+    "workflowId": 31271995042,
+    "image": false,
+    "date": "07/08/2026"
+  },
+  {
+    "version": "1.21.14b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed feature callouts not using native panels",
+        "issue": 14912
+      },
+      {
+        "description": "Fixed hang when using the same tab in 2 windows with different containers",
+        "issue": 14905
+      },
+      "Other bug fixes and improvements."
+    ],
+    "features": ["Update Firefox version to 153.0.4", "Added support for FFmpeg 63"],
+    "workflowId": 31542721861,
+    "image": false,
+    "date": "13/08/2026"
+  },
+  {
+    "version": "1.21.15b",
+    "extra": "",
+    "fixes": [
+      "Improved battery life on MacOS when using vibrancy effects",
+      {
+        "description": "Improved performance of session restore, having spikes of CPU usage every time the session is stored into disk",
+        "issue": 14990
+      },
+      {
+        "description": "Fix multiple glance tabs when joining tabs",
+        "issue": 14975
+      },
+      {
+        "description": "Improved rendering performance on MacOS and memory leaks when using WebRTC",
+        "issue": 9649
+      },
+      "Fixed an issue on macOS where closing a browser window could leave behind an invisible window that continued to capture mouse clicks over the area where it used to be.",
+      "Fixed an issue on Windows where an auto-hiding taskbar would not appear until the Zen window had been minimized and restored after launch.",
+      "Fixed an issue where the Windows taskbar would appear in front of a full screen Picture-in-Picture window.",
+      "Fixed PDF documents not being scaled correctly in print preview when the Fit to Page Width option is used.",
+      "Other bug fixes and improvements."
+    ],
+    "changes": [
+      "Improved performance on all systems and benchmarks by using a different memory allocator",
+      "Video seeking is now significantly faster on all operating systems, making it quicker to jump to a point in a video.",
+      "Enabled webrender compositor on Linux, improving performance and reducing power usage on Linux systems that support it.",
+      "Text selected in a PDF is now highlighted the same way as text on a web page, and the highlight color follows operating system settings such as high-contrast mode."
+    ],
+    "features": [
+      "Update Firefox version to 154.0",
+      "Local Zen profile backups are now available on macOS in addition to Windows and Linux, and backups can be restored across all three platforms.",
+      "Sites can now be exempted from having their cookies and site data cleared on shutdown without also being exempted from tracking protection and other cookie restrictions.",
+      "The full-page Translations feature now translates &lt;iframe&gt; content.",
+      "The full-page Translations feature now runs language identification on all page loads, resulting in an improved experience for offering translations to users.",
+      "Performing a hard reload on a page (holding Shift while clicking the Refresh button) now also clears and updates its cached favicons."
+    ],
+    "knownIssues": [
+      "Following recent changes to Zen's password storage, some users may experience slower performance when Zen accesses saved passwords. Users with a Primary Password enabled may also see unexpected password prompts, such as when starting Zen or opening certain content."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-74/",
+    "workflowId": 32192158140,
+    "image": false,
+    "date": "19/08/2026"
+  },
+  {
+    "version": "1.21.16b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Improved on session store performance, lowering CPU usage spikes and disk usage when storing the session",
+        "issue": 14990
+      },
+      {
+        "description": "Fixed duplicate separator on tab context menu",
+        "issue": 15031
+      },
+      {
+        "description": "Fixed minimizing PiP window failing to collapse into the sidebar",
+        "issue": 14710
+      },
+      "Fixed slower access to saved passwords and unexpected Primary Password prompts caused by recent changes to password storage.",
+      "Fixed an issue where addresses were failing to autofill on some sites.",
+      "Other bug fixes and improvements."
+    ],
+    "features": ["Update Firefox version to 154.0.1"],
+    "workflowId": 32986542050,
+    "image": false,
+    "date": "27/08/2026"
+  },
+  {
+    "version": "1.22b",
+    "extra": "This release includes a major new feature to sync your Spaces across devices using your Mozilla account! Please note that the first time this feature is enabled, it will merge both your local and cloud Spaces.",
+    "fixes": [
+      "Fixed live folders for GitHub issues not working with the new GitHub UI",
+      "Fixed Zen preventing Linux systems from going to sleep after a long browsing session.",
+      "Fixed arrow-key and Page Up/Down scrolling not working on some pages with embedded content from other sites.",
+      "Fixed live audio streams such as internet radio stopping when playing in the background.",
+      "Other bug fixes and improvements."
+    ],
+    "features": [
+      "Updated to Firefox 155.0 and 155.0.1",
+      "By using your Mozilla account, you can now sync your Spaces, Folders, Tabs, and much more between devices! This can be enabled in Settings > Sync > Sync your Spaces across devices.",
+      "The chrome UI now has a better look and feel, implementing squircles and other design elements to make it more visually appealing.",
+      "A new on-boarding experience has been added to help new users get started with the browser and its features.",
+      "Creating a new Space is now faster and requires less animation wait time, making the process more efficient.",
+      "Containers can now be reordered in Settings, and the new order is used wherever containers are listed."
+    ],
+    "changes": [
+      "Font size has been increased for the sidebar text, making it easier to read and navigate through tabs and spaces.",
+      "Zen now uses firefox-portal-detection.com instead of detectportal.firefox.com to detect captive portals and check network connectivity, so network allowlists referencing the old domain need updating.",
+      "PDFs smaller than the paper size can now be enlarged to fill the sheet when printing, by setting the scale above 100%."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-82/",
+    "workflowId": 33904187244,
+    "image": false,
+    "date": "03/09/2026"
+  },
+  {
+    "version": "1.22.1b",
+    "extra": "",
+    "fixes": [
+      "Noticeably improved performance and battery usage while scrolling, and playing videos.",
+      "Other bug fixes and improvements."
+    ],
+    "features": [
+      "You now have the option to sync normal tabs across devices along with your Spaces, Folders, and other data. This can be enabled in Settings > Sync > Sync your Spaces across devices.",
+      "You can now share Spaces, folders and split views to other Zen users and non-Zen users via a shareable link. This can be found in the context menu of a Space, folder or split view.",
+      "The on-boarding experience will now ask if you want to enable ad blocking, which will install uBlock Origin for enhanced privacy and security."
+    ],
+    "workflowId": 34618401337,
+    "image": false,
+    "date": "12/09/2026"
+  },
+  {
+    "version": "1.22.2b",
+    "extra": "",
+    "fixes": [
+      "Fixed high-sample-rate FLAC audio in MP4 failing to play on certain video sites.",
+      "Fixed subtitles not appearing in the Picture-in-Picture window when they are turned on in the video player after the window has already opened.",
+      "Fixed the find bar becoming permanently unavailable in a tab after reversing the panes in Split View.",
+      "Fixed some sites failing to load when DNS over HTTPS is enabled and the site does not support HTTPS.",
+      "Fixed an issue on Windows where Zen could block an auto-hiding taskbar from showing.",
+      {
+        "description": "Fixed the sidebar not hiding if the urlbar is open when compact mode is enabled.",
+        "issue": 13196
+      },
+      {
+        "description": "Fixed an issue where cross-space tab routing would freeze the browser under certain conditions.",
+        "issue": 14171
+      },
+      {
+        "description": "Fixed cross-device sync losing certain tabs if they are created too quickly",
+        "issue": 15380
+      },
+      "Fixed certain issues related to live folders appearing as active even when they are no tabs showing in them.",
+      "Other bug fixes and improvements."
+    ],
+    "features": [
+      "Updated to Firefox 156.0",
+      "Zen on macOS can now be set to open automatically when the computer starts up, from the Startup section of Settings.",
+      "Added the following actions to the command bar: 'Expand current view', 'New space', 'Reopen closed tab', 'Duplicate tab', 'Reset pinned tab'."
+    ],
+    "changes": [
+      "Zen's built-in PDF viewer now starts up to 45% faster.",
+      "Improved memory and CPU usage when Zen displays large JPEG images scaled down to fit a page.",
+      "On Windows devices with ARM64 processors, WebRTC video calls may now use hardware H264 decoding instead of falling back to software.",
+      "Live Folders will now ignore archived issues and pull requests.",
+      "Improved the look and feel of drag-and-drop interactions for tabs. Specially on MacOS, where the drag-and-drop behavior is now done natively.",
+      "Folders will now fully-expand if all tabs within them are visible. Folder animations has also been improved for smoother transitions."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-90/",
+    "workflowId": 35024088099,
+    "image": false,
+    "date": "16/09/2026"
+  },
+  {
+    "version": "1.22.3b",
+    "extra": "",
+    "fixes": [
+      "Fixed Zen leaking system handles on Windows as content processes were started and stopped.",
+      {
+        "description": "Fixed context menu actions on the urlbar not working.",
+        "issue": 15437
+      },
+      {
+        "description": "Fixed overflow-extension order in single toolbar mode.",
+        "issue": 15419
+      },
+      {
+        "description": "Fixed not being able to install add-ons while in compact mode.",
+        "issue": 15445
+      },
+      "Fixed Zen windows on macOS 27 immediately returning to maximized after being restored by double-clicking the title bar.",
+      "Other bug fixes and improvements."
+    ],
+    "features": [
+      "Updated to Firefox 156.0.1",
+      "The command bar now allows you to search through tabs and folders more efficiently."
+    ],
+    "workflowId": 35757934569,
+    "image": false,
+    "date": "23/09/2026"
+  },
+  {
+    "version": "1.23b",
+    "extra": "Introducing Library! A better place to organize and access your history, media, downloads, spaces and more.",
+    "fixes": [
+      "Significant performance improvements on startups/new windows when there are lots of tabs open.",
+      {
+        "description": "Certain icon animations like the boost indicator or musical notes on the sidebar are now more performant.",
+        "issue": 15299
+      },
+      {
+        "description": "Fixed status panel and glance controls not using the correct theme colors.",
+        "issue": 15280
+      },
+      "Fixed some HDR videos encoded in 8-bit color formats looking dull and gray on Windows instead of displaying in HDR.",
+      "Improved audio and video synchronization when repeatedly changing the playback speed of videos, for example on YouTube.",
+      "Fixed an issue on Windows where making a video full screen would leave the Windows taskbar showing over the video."
+    ],
+    "changes": [
+      "When a link gets routed to a specific space, it will prioritize the window that has that space open.",
+      "Some elements like the sidebar and the command bar now appear with blur effects.",
+      "On MacOS, buttons at the bottom of the sidebar now appear larger.",
+      "Swiping to the right on the last space will now try to create a new space. (This can be disabled via <strong>zen.workspaces.swipe-actions</strong> set to <strong>false</strong> in about:config)",
+      "When the sidebar is at the right, the buttons at the bottom are now reversed."
+    ],
+    "features": [
+      "Introducing Library! A better place to organize and access your history, media, downloads, spaces and more.",
+      "You can now resize the sidebar even when its hidden. If the sidebar is resized too small, it will automatically hide itself.",
+      "Updated to Firefox 157.0",
+      "WebRTC video calls can now use hardware AV1 decoding on devices that support it, instead of always decoding AV1 video in software."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-97/",
+    "workflowId": 37027510274,
+    "image": false,
+    "date": "01/10/2026"
+  },
+  {
+    "version": "1.23.1b",
+    "extra": "",
+    "fixes": [
+      "Fixed transparent sidebars having low opacity.",
+      "Fixed downloads failing on macOS when Firefox is set to ask where to save files but doesn't have permission to access the Downloads folder.",
+      "Other bug fixes and improvements."
+    ],
+    "features": [
+      "Updated to Firefox 157.0.1",
+      "Added an option in the Library to filter closed tabs instead of history entries.",
+      "A keyboard shortcut (opt/alt + shift + L) has been added to quickly open the Library.",
+      "'Clear all downloads' and 'Clear history' options have been added to the Library by right clicking on the respective section tabs."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-104/",
+    "workflowId": 37495693564,
+    "image": false,
+    "date": "06/10/2026"
+  },
+  {
+    "version": "1.23.2b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Changed session backup file names to use local dates",
+        "issue": 15806
+      },
+      {
+        "description": "Fixed the library getting stuck after opening and closing it quickly",
+        "issue": 15833
+      },
+      {
+        "description": "Fixed blocked/unsafe downloads not having the choice to be opened or saved.",
+        "issue": 15809
+      },
+      {
+        "description": "Fixed moving multiple tabs to new window irrecoverably loses unloaded tabs.",
+        "issue": 15810
+      },
+      {
+        "description": "Fixed the sidebar having too much minimum width when they are aligned to the right.",
+        "issue": 15794
+      },
+      {
+        "description": "Fixed HEIC media being listed in the media tab but do not render correctly.",
+        "issue": 15778
+      },
+      {
+        "description": "Fixed space-assigned bookmarks not being saved anymore.",
+        "issue": 12721
+      },
+      "Fixed a memory leak issue on startup.",
+      "Other bug fixes and improvements."
+    ],
+    "features": [
+      "Added an 'open library' command to the command palette.",
+      "You can now right-click the media tab in the Library to disable it."
+    ],
+    "workflowId": 37900069684,
+    "image": false,
+    "date": "09/10/2026"
+  },
+  {
+    "version": "1.23.3b",
+    "extra": "",
+    "fixes": [
+      "Fixed various animation, urlbar and UI performance issues.",
+      {
+        "description": "Fixed Library media tab requesting onedrive to download all files from cloud.",
+        "issue": 15888
+      },
+      {
+        "description": "Fixed unwanted label next to the search icon in urlbar.",
+        "issue": 14856
+      },
+      {
+        "description": "Fixed Avahi access so CUPS printers are listed in flatpak sandbox.",
+        "issue": 9651
+      },
+      {
+        "description": "Fixed various memory leak issues.",
+        "issue": 15954
+      },
+      "Fixed a crash that could occur while Zen loaded website icons (favicons).",
+      "Fixed menus such as List all tabs, Settings, etc being hard to read with a Windows High Contrast theme. Menu background and text colors now follow the Background and Text colors chosen for a custom contrast theme in Windows Settings.",
+      "Other bug fixes and improvements."
+    ],
+    "changes": [
+      "Space routing regex will now match URLs as case-insensitive.",
+      "Library's widget hover list will now only display recently downloaded files.",
+      "Zen no longer rounds scroll positions to whole screen pixels. Scrolling is now smoother and more precise, especially on high-resolution displays or when a page is zoomed."
+    ],
+    "features": [
+      "Updated Firefox to 158.0",
+      "Added a `--space <id|name>` option to the command line interface.",
+      "Library will now show a 'Open in Folder' option and download speed when hovering over the toolbar icon.",
+      "Zen now creates more accessible PDFs when saving a page as PDF, and when printing on Linux and macOS. This also fixes a variety of PDF rendering issues, such as missing math symbols."
+    ],
+    "security": "https://www.mozilla.org/security/advisories/mfsa2026-106",
+    "workflowId": 38728992109,
+    "image": false,
+    "date": "15/10/2026"
+  },
+  {
+    "version": "1.23.4b",
+    "extra": "",
+    "fixes": [
+      "Mozilla blocked compromised eMudhra intermediate certificates via OneCRL on October 17th. The blocks were distributed to clients via Remote Settings the same day. This update contains the updated OneCRL block list, ensuring clients will block the compromised certificates even if RemoteSettings is disabled by policy or otherwise unavailable in the user's network environment. (<a href=\"https://blog.mozilla.org/security/2026/10/20/protecting-firefox-users-following-the-compromise-of-emudhra-intermediate-certificates/\"><b><u>Learn More</u></b></a>)",
+      {
+        "description": "Fixed the sidebar hiding when the mouse is still over it.",
+        "issue": 15995
+      },
+      {
+        "description": "Fixed devtools not appearing on glance tabs.",
+        "issue": 15261
+      },
+      {
+        "description": "Boosts zap bar will now push the web contents up when activated.",
+        "issue": 13972
+      },
+      {
+        "description": "Fixed sidebar scroll being reset when entering fullscreen.",
+        "issue": 14389
+      },
+      {
+        "description": "Fixed multiple windows launching on startup on Linux and Windows.",
+        "issue": 12140
+      },
+      "Fixed a crash on Windows when printing or saving a page as PDF while a screen reader or other assistive technology was running.",
+      "Fixed an issue where Zen was opening windows on the wrong monitor in multi-monitor setups on Linux.",
+      "Fixed multiple media bars appearing when 2 or more tabs are using WebRTC.",
+      "Fixed an issue where files dragged into Firefox from other applications were not dropped onto the page on macOS.",
+      "External links will now be routed through the Space Routing feature on startup",
+      "More bug fixes and improvements."
+    ],
+    "features": [
+      "Updated to Firefox 158.0.1",
+      "Boosts now have a 'focus' feature, allowing you to concentrate on a specific part of the website.",
+      "Windows builds now run with CSIR PGO, improving performance and startup times. All other platforms also have performance improvements."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-111/",
+    "workflowId": 39497770166,
+    "image": false,
+    "date": "20/10/2026"
+  },
+  {
+    "version": "1.24b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed an issue where expanded glance tabs would not appear on the right Space.",
+        "issue": 16080
+      },
+      "Fixed the file upload dialog opening in the last folder a file was saved to, such as Downloads, instead of the folder last used for uploads.",
+      "Fixed memory usage growing rapidly when sites such as the Zoom web app were left open in a minimized window.",
+      "Fixed some videos displaying incorrectly on Windows when NVIDIA RTX Video HDR is enabled.",
+      "Fixed bookmarks not being imported from Google Chrome profiles that are signed in to a Google account.",
+      "Fixed the Replace button in Apple Writing Tools on macOS inserting the clipboard contents instead of the rewritten text on some sites.",
+      "Fixed long drop-down lists on web pages sometimes showing blank space in place of the last options until the list was scrolled.",
+      "Fixed some sites, such as Slack, failing to load instead of falling back to HTTP/2 when the site rejected an HTTP/3 request.",
+      "Fixed Zen using excessive memory on Linux with AMD graphics when viewing map or place results on sites such as ChatGPT.",
+      "Fixed quick gamepad button presses sometimes being missed in web games on macOS.",
+      "Fixed tabs sometimes detaching into a new window when clicked on Linux with Wayland.",
+      "Fixed menus and panels fading in on Windows and Linux when animation effects are turned off in the operating system.",
+      "More bug fixes and improvements."
+    ],
+    "changes": [
+      "Zen's keyboard shortcuts have been improved and moved to about:keyboard.",
+      "Space Routing settings have been moved to the Library",
+      "On the site center, the reader mode button has been moved next to the 'Secure' button and shown only if available.",
+      "Web addresses written in the Javanese, Balinese, Canadian Aboriginal Syllabics, and N'Ko scripts are now displayed in their own script instead of as encoded \"xn--\" text."
+    ],
+    "features": [
+      "Updated to Firefox 159.0",
+      "You can now import Spaces and Profiles from Arc and Dia.",
+      "Boosts gets a nice upgrade! They can now be shared with others and they get an overall quality improvement.",
+      "Holding 'ctrl' (or 'cmd' on macOS) while hovering over the new tab button will now give the option to 'Paste & Search'.",
+      "You can now remove/add tabs from the library.",
+      "An indicator will now show when a tab is not visible."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-118/",
+    "workflowId": 40795256828,
+    "image": false,
+    "date": "28/10/2026"
+  },
+  {
+    "version": "1.24.1b",
+    "extra": "",
+    "fixes": [
+      "Fixed a command prompt window briefly appearing on Windows when Zen restarts to apply an update.",
+      "Fixed passkey sign-in failing on websites that share passkeys across related sites, such as Facebook and Instagram.",
+      "Fixed crashes on Windows that could occur with some antivirus or other security software installed, in some cases also leaving WebGL disabled.",
+      "Fixed red and blue colors appearing swapped on some websites that use WebGL on Linux, including video call background effects.",
+      "More bug fixes and improvements."
+    ],
+    "changes": [
+      "On macOS, icons on the UI will now start using SF Symbols.",
+      "The 'About Zen' window has been redesigned.",
+      "'My Review Request' option for Pull Requests live folder now searches for 'user-review-requested:@me' instead of 'review-requested:@me'"
+    ],
+    "features": [
+      "Updated to Firefox 159.0.1",
+      "New grain options have been added to the theme picker. You can cycle through different grain effects by clicking on the circle inside the dial."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-123/",
+    "workflowId": 42220425548,
+    "image": false,
+    "date": "05/11/2026"
+  },
+  {
+    "version": "1.24.2b",
+    "extra": "",
+    "fixes": [
+      "Improved performance for boosts color tinting.",
+      "Fixed the first character typed into the address bar or search bar sometimes being lost when typing quickly right after clicking into it.",
+      "Fixed Zen freezing for several seconds when signing in to intranet sites that use NTLM or Kerberos (Negotiate) authentication.",
+      "Fixed double-tapping or long-pressing a word to select it, and tapping to place the cursor, not working near the cursor in text fields.",
+      "Fixed links opened in the background from other apps on macOS, such as RSS readers, bringing Zen to the foreground.",
+      "Fixed downloaded files on macOS sometimes opening in the wrong application instead of the default one set in Finder.",
+      "Fixed simultaneous downloads on macOS never finishing when Zen is set to ask where to save files. Only the first file showed a save dialog.",
+      "Restored meaningful filenames and the usual save workflow for PDFs opened in Preview from the macOS print dialog.",
+      "More bug fixes and improvements."
+    ],
+    "changes": [
+      "The address bar context menu now shows \"Paste and Search\" instead of \"Paste and Go\" when the copied text is a search term rather than a web address."
+    ],
+    "features": [
+      "Updated to Firefox 160.0",
+      "Added pause context menu button for the downloads section",
+      "The urlbar now has a bit of transparency for a more modern look.",
+      "The Picture-in-Picture player now has a playback speed setting, with options ranging from 0.25x to 2.0x speed. The setting appears only when the player window is medium-sized or larger.",
+      "Pages saved as PDF now make mathematical content (MathML) accessible to assistive technology such as screen readers.",
+      "Websites that repeatedly ask to handle email (mailto:) and other links can now be blocked with a new “Never allow” button, and blocked sites can be managed in Settings.",
+      "Zen now plays Matroska (MKV) files with FLAC, MP3, or PCM audio.",
+      "WebGL content on macOS is now rendered using Apple's Metal graphics API, which can improve performance on some sites."
+    ],
+    "security": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-125/",
+    "workflowId": 42930903396,
+    "image": false,
+    "date": "11/11/2026"
+  },
+  {
+    "version": "1.24.3b",
+    "extra": "",
+    "fixes": [
+      {
+        "description": "Fixed boosts color tinting and controls not working.",
+        "issue": 16586
+      },
+      {
+        "description": "Fixed closed browser and popup windows never being freed from memory, which made memory usage and pauses grow over time.",
+        "issue": 16587
+      },
+      {
+        "description": "Switching spaces is now smooth when spaces use gradient themes, instead of being choppy.",
+        "issue": 13029
+      },
+      {
+        "description": "Fixed tabs shown in a split view or behind a glance being unloaded when memory runs low.",
+        "issue": 16624
+      },
+      {
+        "description": "Fixed Spaces Sync for spaces and pinned tabs assigned to the built-in containers (Personal, Work, Banking, Shopping) on profiles that don't have them. Missing containers are now created when needed.",
+        "issue": 16614
+      },
+      {
+        "description": "Fixed the copy URL shortcut copying \"about:blank\" while a page is still loading.",
+        "issue": 16510
+      },
+      {
+        "description": "Improved performance when opening new windows with mods installed.",
+        "issue": 16674
+      },
+      "Fixed thin lines in PDFs printing as thick black boxes on some printers on Windows.",
+      "Fixed PDFs, web page graphics, and WebGL content appearing blank or broken on Macs with AMD graphics, such as black cells in Google Sheets.",
+      "Fixed incorrect colors in WebGL and canvas content, such as games and Google Meet backgrounds, on some Linux systems using Wayland.",
+      "Fixed links on some sites, such as the Google Store, taking a very long time to load.",
+      "Fixed tabs crashing on some sites, most notably ChatGPT.",
+      "Fixed WebTransport connections being unable to send datagrams after a site sent many in quick succession.",
+      "Fixed trackpad and mouse swipes sometimes scrolling the page when a site had blocked scrolling.",
+      "More bug fixes and improvements."
+    ],
+    "changes": [
+      "The zoom level button is now hidden in the single toolbar layout. A toast shows the current zoom level when you change it instead."
+    ],
+    "features": [
+      "Updated to Firefox 160.0.1",
+      "The copy URL and copy URL as Markdown shortcuts now copy the URLs of all selected tabs when multiple tabs are selected."
+    ],
+    "security": [
+      "https://www.mozilla.org/en-US/security/advisories/mfsa2026-130/",
+      [
+        "GHSA-384m-hxgx-xpph",
+        "https://github.com/zen-browser/desktop/security/advisories/GHSA-384m-hxgx-xpph"
+      ],
+      [
+        "GHSA-gv58-qvc9-mhv2",
+        "https://github.com/zen-browser/desktop/security/advisories/GHSA-gv58-qvc9-mhv2"
+      ],
+      [
+        "GHSA-gq43-4g7g-3fc9",
+        "https://github.com/zen-browser/desktop/security/advisories/GHSA-gq43-4g7g-3fc9"
+      ],
+      [
+        "GHSA-p9x3-fx2f-hf87",
+        "https://github.com/zen-browser/desktop/security/advisories/GHSA-p9x3-fx2f-hf87"
+      ]
+    ],
+    "workflowId": 44224373786,
+    "image": false,
+    "date": "17/11/2026"
+  }
+]

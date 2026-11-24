@@ -1,0 +1,57 @@
+{
+  "name": "RAZBerry",
+  "vendor": "RAZ Creative Studio",
+  "appId": "razberry",
+  "binaryName": "razberry",
+  "version": {
+    "product": "firefox",
+    "version": "160.0.1",
+    "candidate": "161.0",
+    "candidateBuild": 1
+  },
+  "buildOptions": {
+    "generateBranding": true
+  },
+  "addons": {},
+  "brands": {
+    "release": {
+      "backgroundColor": "#C72C48",
+      "brandShorterName": "RAZBerry",
+      "brandShortName": "RAZBerry",
+      "brandFullName": "RAZBerry Browser",
+      "release": {
+        "displayVersion": "1.0.0b",
+        "github": {
+          "repo": "RAZCreativeStudio/RAZBerry"
+        },
+        "archives": {
+          "windows": "windows.mar",
+          "macos-aarch64": "macos-aarch64.mar",
+          "linux": "linux.mar",
+          "macos-x64": "macos-x64.mar",
+          "windows-arm64": "windows-arm64.mar",
+          "linux-aarch64": "linux-aarch64.mar"
+        }
+      }
+    },
+    "twilight": {
+      "backgroundColor": "#8B0A1A",
+      "brandShorterName": "RAZBerry",
+      "brandShortName": "Twilight",
+      "brandFullName": "RAZBerry Twilight",
+      "release": {
+        "displayVersion": "1.0.0t",
+        "github": {
+          "repo": "RAZCreativeStudio/RAZBerry"
+        }
+      }
+    }
+  },
+  "license": {
+    "ignoredFiles": [
+      ".*\\.json"
+    ],
+    "licenseType": "MPL-2.0"
+  },
+  "updateHostname": "updates.razberry.app"
+}

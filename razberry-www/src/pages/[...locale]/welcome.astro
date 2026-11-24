@@ -1,0 +1,96 @@
+---
+import Features from '~/components/Features.astro'
+import Layout from '~/layouts/Layout.astro'
+import { getLocale, getUI } from '~/utils/i18n'
+export { getStaticPaths } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+
+const {
+  routes: { welcome },
+  layout,
+} = getUI(locale)
+---
+
+<Layout title="Welcome to RAZBerry Browser - By RAZ Creative Studio" description="Welcome to RAZBerry Browser, crafted with care by RAZ Creative Studio. Fast, privacy-focused, and beautifully designed.">
+  <main class="container mx-auto px-4 py-16 flex flex-col items-center text-center">
+    <!-- Hero Onboarding Section -->
+    <div class="welcome-hero max-w-3xl flex flex-col items-center justify-center my-8 md:my-16 space-y-8 animate-fade-in">
+      <!-- Logos Container (Transparent, No Background) -->
+      <div class="flex items-center justify-center gap-6 sm:gap-10">
+        <!-- RAZBerry Logo -->
+        <div class="relative group">
+          <img 
+            src="/logo-razberry.png" 
+            alt="RAZBerry Browser Logo" 
+            class="w-24 h-24 sm:w-32 sm:h-32 object-contain drop-shadow-xl transition-transform duration-300 group-hover:scale-105"
+            width="128"
+            height="128"
+          />
+        </div>
+
+        <div class="h-12 w-[1px] bg-neutral-300 dark:bg-neutral-700"></div>
+
+        <!-- RAZ Creative Studio Logo (Transparent) -->
+        <div class="relative group">
+          <img 
+            src="/raz-creative-studio.svg" 
+            alt="RAZ Creative Studio Logo" 
+            class="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            width="240"
+            height="80"
+          />
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="space-y-4">
+        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 font-serif">
+          Welcome to <span class="text-[#D81B60] dark:text-[#FF4081]">RAZBerry Browser</span>
+        </h1>
+        <p class="text-xl sm:text-2xl font-medium text-neutral-600 dark:text-neutral-300">
+          By <span class="font-semibold text-neutral-800 dark:text-neutral-100">RAZ Creative Studio</span>
+        </p>
+      </div>
+
+      <!-- Tagline & Description -->
+      <p class="max-w-xl text-base sm:text-lg text-neutral-500 dark:text-neutral-400">
+        Nikmati pengalaman berselancar di web yang lebih tenang, cepat, berfokus privasi, dan bebas distraksi.
+      </p>
+
+      <!-- Action Button -->
+      <div class="pt-4">
+        <a 
+          href="#features" 
+          class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-[#D81B60] hover:bg-[#C2185B] dark:bg-[#D81B60] dark:hover:bg-[#E91E63] shadow-lg shadow-pink-500/25 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
+        >
+          <span>Mulai Menjelajah</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Feature Showcase Section -->
+    <div class="w-full mt-12 pt-12 border-t border-neutral-200 dark:border-neutral-800">
+      <Features titles={welcome.title} />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

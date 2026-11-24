@@ -1,0 +1,17 @@
+diff --git a/toolkit/mozapps/extensions/content/aboutaddons.css b/toolkit/mozapps/extensions/content/aboutaddons.css
+index 1e1eef0ce3b483c933cfd84687f4314d617a8a14..2e6477a96beeb78166c6a4bab1731d57073594ee 100644
+--- a/toolkit/mozapps/extensions/content/aboutaddons.css
++++ b/toolkit/mozapps/extensions/content/aboutaddons.css
+@@ -879,6 +879,12 @@ recommended-themes-section > moz-card {
+   --card-cover-image-padding: 0;
+ }
+ 
++@media -moz-pref('zen.theme.disable-lightweight') {
++  #category-theme {
++    display: none;
++  }
++}
++
+ /* Position the badged dot in the top-end (right in ltr, left in rtl)
+  * corner of the badged category icon. */
+ @media (max-width: 950px) {

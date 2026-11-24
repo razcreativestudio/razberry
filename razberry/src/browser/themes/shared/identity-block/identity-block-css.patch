@@ -1,0 +1,53 @@
+diff --git a/browser/themes/shared/identity-block/identity-block.css b/browser/themes/shared/identity-block/identity-block.css
+index 2e369abc224354629a50ed22927aa3f685b6ef72..26fe8003772232a682c039e73f5c3e5da9b064a5 100644
+--- a/browser/themes/shared/identity-block/identity-block.css
++++ b/browser/themes/shared/identity-block/identity-block.css
+@@ -26,7 +26,7 @@
+     margin-inline-start: var(--urlbar-component-gap);
+   }
+ 
+-  &[pageproxystate="invalid"] {
++  :root[zen-has-empty-tab='true'] & {
+     pointer-events: none;
+     -moz-user-focus: ignore;
+ 
+@@ -116,18 +116,6 @@
+   margin: 0;
+ }
+ 
+-#identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button,
+-#urlbar-label-box {
+-  background-color: var(--urlbar-box-background-color);
+-  color: var(--urlbar-box-text-color);
+-  /* Prefer pixels to space tokens in platform styles */
+-  /* stylelint-disable-next-line stylelint-plugin-mozilla/use-design-tokens */
+-  padding-inline: 8px;
+-  /* Use urlbar inner border radius set in urlbar/variables.css */
+-  /* stylelint-disable-next-line stylelint-plugin-mozilla/use-design-tokens */
+-  border-radius: var(--urlbar-inner-border-radius);
+-}
+-
+ #urlbar[focused] {
+   #identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button:not(:hover, [open]),
+   #urlbar-label-box {
+@@ -219,16 +207,17 @@
+   }
+ 
+   #identity-icon {
+-    list-style-image: url(chrome://global/skin/icons/search-glass.svg);
++    list-style-image: url(chrome://global/skin/icons/search-glass.svg) !important;
++    fill-opacity: 0.5;
+   }
+ }
+ 
+ #urlbar[actiontype="extension"] > .urlbar-input-container > #identity-box #identity-icon {
+-  list-style-image: url(chrome://mozapps/skin/extensions/extension.svg);
++  list-style-image: url(chrome://mozapps/skin/extensions/extension.svg) !important;
+ }
+ 
+ #identity-box[pageproxystate="valid"].extensionPage #identity-icon {
+-  list-style-image: url(chrome://mozapps/skin/extensions/extension.svg);
++  list-style-image: url(chrome://mozapps/skin/extensions/extension.svg) !important;
+ }
+ 
+ #identity-box[pageproxystate="valid"].verifiedDomain #identity-icon,

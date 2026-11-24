@@ -1,0 +1,66 @@
+# ==============================================================================
+# RAZDeployHosting.yml
+# GitHub Actions CI/CD Pipeline - RAZBerry Web Deployment
+# Author: RAZ Creative Studio
+# Deskripsi: Otomatisasi build Astro SSG & upload ke hosting IDwebhost (Paket Tera)
+#            setiap kali ada push ke branch main atau dipicu secara manual.
+# ==============================================================================
+
+name: Deploy RAZBerry Web to IDwebhost
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'razberry-www/**'
+      - '.github/workflows/RAZDeployHosting.yml'
+  workflow_dispatch: # Mengizinkan deploy manual satu-klik dari tab Actions di GitHub
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy to IDwebhost
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # 1. Mengambil kode sumber dari repository
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. Menyiapkan Package Manager pnpm
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      # 3. Menyiapkan Lingkungan Node.js 20 LTS
+      - name: 🟢 Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          cache-dependency-path: razberry-www/pnpm-lock.yaml
+
+      # 4. Memasang Dependensi Proyek
+      - name: ⚙️ Install Dependencies
+        working-directory: ./razberry-www
+        run: pnpm install
+
+      # 5. Mengompilasi Website Astro ke Format Statis (HTML/CSS/JS/Assets)
+      - name: 🚀 Build Static Website
+        working-directory: ./razberry-www
+        run: pnpm build
+
+      # 6. Mengunggah Berkas Hasil Build ke Hosting IDwebhost via FTPS/FTP
+      - name: 🌐 Sync to IDwebhost Hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}
+          protocol: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
+          local-dir: ./razberry-www/dist/
+          server-dir: ${{ secrets.FTP_REMOTE_DIR || 'public_html/' }}
+          dangerous-clean-slate: false

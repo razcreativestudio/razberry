@@ -1,0 +1,98 @@
+# RAZBerry Branding Patch
+# Deskripsi: Patch untuk mengubah branding Chromium menjadi RAZBerry
+# Author: RAZ Creative Studio
+# Tanggal: 2026-01-06
+# Versi: 0.1.0
+#
+# CATATAN PENTING:
+# Patch ini BELUM BISA DIGUNAKAN karena membutuhkan source code Chromium yang sudah di-download.
+# File ini adalah TEMPLATE yang perlu disesuaikan setelah source code tersedia.
+#
+# Cara menggunakan patch (setelah source code tersedia):
+# 1. Download Chromium source: ./utils/downloads.py retrieve -c build/download_cache -i downloads.ini
+# 2. Unpack source: ./utils/downloads.py unpack -c build/download_cache -i downloads.ini -- build/src
+# 3. Apply patches: ./utils/patches.py apply build/src patches
+#
+# Files yang akan di-patch:
+# - chrome/app/chromium_strings.grd (Browser name strings)
+# - chrome/app/generated_resources.grd (UI strings)
+# - chrome/common/channel_info.h (Channel/version info)
+# - components/version_info/version_info_values.h (Version info)
+
+--- a/chrome/app/chromium_strings.grd
++++ b/chrome/app/chromium_strings.grd
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!-- 
+-  Chromium Strings - Default browser strings
++  RAZBerry Strings - RAZ Creative Studio Browser
+   This file contains the UI strings for the browser.
+ -->
+ <grit base_dir="." latest_public_release="0" current_release="1"
+@@ -10,11 +10,11 @@
+     <output filename="grit/chromium_strings.h" type="rc_header">
+       <emit emit_type='prepend'></emit>
+     </output>
+-    <!-- Browser name: Chromium -->
++    <!-- Browser name: RAZBerry -->
+     <messages fallback_to_english="true">
+-      <message name="IDS_PRODUCT_NAME" desc="The application name">
+-        Chromium
++      <message name="IDS_PRODUCT_NAME" desc="The application name - RAZBerry Browser by RAZ Creative Studio">
++        RAZBerry
+       </message>
+-      <message name="IDS_SHORT_PRODUCT_NAME" desc="The short application name">
+-        Chromium
++      <message name="IDS_SHORT_PRODUCT_NAME" desc="The short application name - RAZBerry">
++        RAZBerry
+       </message>
+     </messages>
+   </release>
+
+--- a/chrome/common/channel_info.h
++++ b/chrome/common/channel_info.h
+@@ -1,6 +1,10 @@
+ // Copyright 2024 The Chromium Authors
++// Modified by RAZ Creative Studio for RAZBerry Browser
+ // Use of this source code is governed by a BSD-style license.
+
++// KETERANGAN: File ini menentukan channel/version info browser
++// Digunakan untuk menampilkan info di About page dan User-Agent
++
+ #ifndef CHROME_COMMON_CHANNEL_INFO_H_
+ #define CHROME_COMMON_CHANNEL_INFO_H_
+
+@@ -12,7 +16,7 @@
+ namespace version_info {
+ enum class Channel;
+
+-// Returns the channel for the current Chrome browser.
++// Returns the channel for RAZBerry browser (modified from Chrome)
+ Channel GetChannel();
+
+ // Returns a human-readable modifier for the version string.
+
+--- a/components/version_info/version_info_values.h.in
++++ b/components/version_info/version_info_values.h.in
+@@ -1,5 +1,9 @@
+ // Copyright 2024 The Chromium Authors
++// Modified by RAZ Creative Studio for RAZBerry Browser
+ // Use of this source code is governed by a BSD-style license.
++
++// KETERANGAN: File ini berisi konstanta untuk version info
++// Dimodifikasi untuk menampilkan RAZBerry branding
+
+ #ifndef COMPONENTS_VERSION_INFO_VERSION_INFO_VALUES_H_
+ #define COMPONENTS_VERSION_INFO_VERSION_INFO_VALUES_H_
+@@ -7,9 +11,9 @@
+ #define PRODUCT_NAME "@PRODUCT_FULLNAME@"
+ #define PRODUCT_VERSION "@MAJOR@.@MINOR@.@BUILD@.@PATCH@"
+
+-// Company name for this build
+-#define COMPANY_FULLNAME "The Chromium Authors"
+-#define COMPANY_SHORTNAME "Chromium"
++// Company name for RAZBerry build - RAZ Creative Studio
++#define COMPANY_FULLNAME "RAZ Creative Studio"
++#define COMPANY_SHORTNAME "RAZ"
+
+ #endif  // COMPONENTS_VERSION_INFO_VERSION_INFO_VALUES_H_

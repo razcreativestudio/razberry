@@ -1,0 +1,46 @@
+# ==============================================================================
+# RAZBerry Browser - Git Ignore Rules
+# Author: RAZ Creative Studio
+# ==============================================================================
+
+# 1. Standalone Distribution & Engine Binaries (Dibuat otomatis via RAZBuildBrowser.ps1)
+dist/
+
+# 2. Local Centralized Backups (File backup terpusat)
+backup/
+
+# 3. Node Modules & Package Manager Caches
+node_modules/
+**/node_modules/
+.pnpm-store/
+.npm/
+
+# 4. Astro Build Output & Framework Cache
+razberry-www/dist/
+razberry-www/.astro/
+
+# 5. Temporary & Cache Files
+*.tmp
+*.temp
+*.bak
+*.log
+*.swp
+*.zip
+*~
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# 6. Credentials & Environment Secrets (Jangan pernah commit password hosting)
+.env
+.env.*
+!.env.example
+*.secret
+deploy_config.json
+.raz_deploy_config.json
+
+# 7. IDE / Editor Configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
