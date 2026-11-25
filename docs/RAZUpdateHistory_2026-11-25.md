@@ -88,3 +88,14 @@
 - **Integrasi Start Menu Folder (`RAZSetupWizard.cs`)**:
   - Menempatkan shortcut `RAZBerry` dan `Uninstall RAZBerry` ke dalam subfolder Start Menu `Programs\RAZBerry\` (sekaligus membersihkan shortcut lama di root Programs agar tampil rapi dalam satu folder).
   - Mendaftarkan `UninstallString`, `QuietUninstallString`, `EstimatedSize` (KB), `NoModify`, dan `NoRepair` di Registry `HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\RAZBerry` agar tombol **Uninstall** dan ukuran aplikasi tampil aktif di **Windows Settings > Apps > Installed apps**.
+
+---
+
+### 🩹 [12:05 WIB] - Perbaikan Welcome Screen Blank & Auto-Open `razberry.it-raz.com/welcome/`
+
+- **Perbaikan `ZenWelcome.mjs` & `zen-welcome.css` (`RAZFixWelcomeAndLaunch.py`)**:
+  - Menghapus `opacity: 0` permanen di `zen-welcome.css` pada `#zen-welcome-brand-logos`, `#zen-welcome-start-button`, dan `.zen-welcome-char` agar Welcome Screen tidak pernah tampil kosong jika animasi JS tertunda/gagal.
+  - Menambahkan fallback l10n (`Welcome to RAZBerry Browser` / `By RAZ Creative Studio`) serta memasang event listener tombol start **sebelum** animasi dijalankan.
+  - Memastikan fungsi `finish()` langsung membuka tab aktif `https://razberry.it-raz.com/welcome/` tepat setelah jendela utama RAZBerry Browser terbuka.
+- **Perbaikan Launch Flag (`RAZSetupWizard.cs`)**:
+  - Menghapus flag `-app browser\application.ini` saat meluncurkan `razberry.exe` dari *Finish & Open* maupun shortcut Desktop/Start Menu agar browser berjalan dalam mode native normal.

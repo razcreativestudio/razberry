@@ -432,7 +432,7 @@ namespace RAZBerrySetup
                 // Desktop shortcut
                 CreateShortcut(
                     Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "RAZBerry.lnk"),
-                    exePath, "-app browser\\application.ini", _installDir, icoPath,
+                    exePath, "", _installDir, icoPath,
                     "RAZBerry Browser - By RAZ Creative Studio"
                 );
 
@@ -449,7 +449,7 @@ namespace RAZBerrySetup
 
                 CreateShortcut(
                     Path.Combine(startMenuFolder, "RAZBerry.lnk"),
-                    exePath, "-app browser\\application.ini", _installDir, icoPath,
+                    exePath, "", _installDir, icoPath,
                     "RAZBerry Browser - By RAZ Creative Studio"
                 );
 
@@ -568,7 +568,6 @@ namespace RAZBerrySetup
                 Process.Start(new ProcessStartInfo
                 {
                     FileName = exePath,
-                    Arguments = "-app browser\\application.ini",
                     WorkingDirectory = _installDir,
                     UseShellExecute = true
                 });
