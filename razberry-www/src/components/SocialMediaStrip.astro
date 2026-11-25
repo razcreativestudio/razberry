@@ -1,86 +1,77 @@
 ---
-const { class: className, ...props } = Astro.props
-
-import { icon, library } from '@fortawesome/fontawesome-svg-core'
-import {
-  faBluesky,
-  faDiscord,
-  faGithub,
-  faMastodon,
-  faReddit,
-  faXTwitter,
-} from '@fortawesome/free-brands-svg-icons'
 import { cn } from '~/utils/merge'
-
-library.add(faMastodon, faBluesky, faGithub, faXTwitter, faReddit, faDiscord)
-const Mastodon = icon({ prefix: 'fab', iconName: 'mastodon' })
-const Bluesky = icon({ prefix: 'fab', iconName: 'bluesky' })
-const Github = icon({ prefix: 'fab', iconName: 'github' })
-const XTwitter = icon({ prefix: 'fab', iconName: 'x-twitter' })
-const Reddit = icon({ prefix: 'fab', iconName: 'reddit' })
-const Discord = icon({ prefix: 'fab', iconName: 'discord' })
+const { class: className, ...props } = Astro.props
 ---
 
-<ul class={cn('flex items-center gap-4 opacity-80', className)} {...props}>
+<ul class={cn('flex flex-wrap items-center gap-3', className)} {...props}>
   <li>
     <a
-      href="https://github.com/zen-browser"
+      href="https://www.instagram.com/raz_studio.id/"
       target="_blank"
-      class="font-bold"
-      aria-label="Visit Zen Browser on GitHub"
+      rel="noopener noreferrer"
+      class="raz-control-btn !w-9 !h-9 text-sm"
+      aria-label="Instagram RAZ Creative Studio"
+      title="Instagram @raz_studio.id"
     >
-      <Fragment set:html={Github.html} />
+      <i class="fab fa-instagram"></i>
     </a>
   </li>
   <li>
     <a
-      href="https://links.zen-browser.app/twitter"
+      href="https://www.youtube.com/@razcreativestudio"
       target="_blank"
-      class="font-normal"
-      aria-label="Visit Zen Browser on X"
+      rel="noopener noreferrer"
+      class="raz-control-btn !w-9 !h-9 text-sm"
+      aria-label="YouTube RAZ Creative Studio"
+      title="YouTube @razcreativestudio"
     >
-      <Fragment set:html={XTwitter.html} />
+      <i class="fab fa-youtube"></i>
     </a>
   </li>
   <li>
     <a
-      href="https://links.zen-browser.app/masto"
+      href="https://www.tiktok.com/@razcreativestudio"
       target="_blank"
-      class="font-normal"
-      aria-label="Visit Zen Browser on Mastodon"
+      rel="noopener noreferrer"
+      class="raz-control-btn !w-9 !h-9 text-sm"
+      aria-label="TikTok RAZ Creative Studio"
+      title="TikTok @razcreativestudio"
     >
-      <Fragment set:html={Mastodon.html} />
+      <i class="fab fa-tiktok"></i>
     </a>
   </li>
   <li>
     <a
-      href="https://links.zen-browser.app/bsky"
+      href="https://github.com/razcreativestudio/razberry"
       target="_blank"
-      class="font-normal"
-      aria-label="Visit Zen Browser on Bluesky"
+      rel="noopener noreferrer"
+      class="raz-control-btn !w-9 !h-9 text-sm"
+      aria-label="GitHub RAZBerry Browser"
+      title="GitHub razcreativestudio/razberry"
     >
-      <Fragment set:html={Bluesky.html} />
+      <i class="fab fa-github"></i>
     </a>
   </li>
   <li>
     <a
-      href="https://links.zen-browser.app/reddit"
+      href="https://wa.me/6283173002527"
       target="_blank"
-      class="font-normal"
-      aria-label="Visit Zen Browser on Reddit"
+      rel="noopener noreferrer"
+      class="raz-control-btn !w-9 !h-9 text-sm"
+      aria-label="WhatsApp RAZ Creative Studio"
+      title="WhatsApp +62 831 7300 2527"
     >
-      <Fragment set:html={Reddit.html} />
+      <i class="fab fa-whatsapp"></i>
     </a>
   </li>
-
   <li>
     <a
-      href="https://links.zen-browser.app/discord"
-      target="_blank"
-      class="font-normal"
-      aria-label="Visit Zen Browser on Discord"
+      href="mailto:razcreativestudio@gmail.com"
+      class="raz-control-btn !w-9 !h-9 text-sm"
+      aria-label="Email RAZ Creative Studio"
+      title="razcreativestudio@gmail.com"
     >
-      <Fragment set:html={Discord.html} />
+      <i class="fas fa-envelope"></i>
     </a>
   </li>
 </ul>

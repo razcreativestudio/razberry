@@ -44,3 +44,16 @@
    - `NavBar.astro` & `Footer.astro`: Header fixed glassmorphic dan 4-kolom footer terhubung ke ekosistem RAZ Creative Studio.
 3. **Seluruh Halaman (`index.astro`, `welcome.astro`, `about.astro`, `privacy-policy.astro`, `donate.astro`, `download.astro`)**:
    - Disesuaikan menyeluruh dengan palet Black-Pink Raspberry dan layout responsif.
+
+---
+
+### 📱 [11:20 WIB] - Penyelarasan Sosial Media, Email, & Kontak Resmi RAZ Creative Studio
+
+- Seluruh tautan komunitas dan kontak pada `SocialMediaStrip.astro`, `Community.astro`, `MobileMenu.astro`, `Footer.astro`, `privacy-policy.astro`, `whatsnew.astro`, dan `donate.astro` telah diselaraskan dengan web utama **RAZ Creative Studio** (`https://raz.web.id/`):
+  - **Instagram**: `https://www.instagram.com/raz_studio.id/`
+  - **YouTube**: `https://www.youtube.com/@razcreativestudio`
+  - **TikTok**: `https://www.tiktok.com/@razcreativestudio`
+  - **GitHub**: `https://github.com/razcreativestudio/razberry`
+  - **Email Resmi**: `razcreativestudio@gmail.com`
+  - **WhatsApp / Telepon**: `+62 831 7300 2527` (`https://wa.me/6283173002527`)
+  - **Halaman Kontak**: `https://raz.web.id/hubungi-raz.html`

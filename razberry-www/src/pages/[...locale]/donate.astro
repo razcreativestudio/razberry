@@ -29,15 +29,15 @@ const {
       <div class="raz-card flex flex-col items-center justify-between gap-6 p-8 text-center">
         <div class="space-y-3">
           <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl text-2xl" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
-            <i class="fab fa-patreon"></i>
+            <i class="fab fa-whatsapp"></i>
           </div>
-          <h2 class="text-3xl font-extrabold">{donate.patreon.title}</h2>
+          <h2 class="text-3xl font-extrabold">Dukungan Langsung RAZ</h2>
           <Description class="text-sm" style="color: var(--color-light-secondary);">
-            {donate.patreon.description}
+            Ingin mendukung pengembangan RAZBerry Browser atau kolaborasi bersama RAZ Creative Studio? Hubungi tim kami langsung via WhatsApp atau halaman kontak resmi.
           </Description>
         </div>
-        <Button isPrimary href="https://www.patreon.com/zen_browser" class="w-full">
-          {donate.patreon.button}
+        <Button isPrimary href="https://wa.me/6283173002527" localePath={false} target="_blank" class="w-full">
+          Hubungi via WhatsApp
           <ArrowRightIcon class="size-4" />
         </Button>
       </div>
@@ -45,15 +45,15 @@ const {
       <div class="raz-card flex flex-col items-center justify-between gap-6 p-8 text-center">
         <div class="space-y-3">
           <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl text-2xl" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
-            <i class="fas fa-mug-hot"></i>
+            <i class="fas fa-envelope"></i>
           </div>
-          <h2 class="text-3xl font-extrabold">{donate.koFi.title}</h2>
+          <h2 class="text-3xl font-extrabold">Partner & Sponsorship</h2>
           <Description class="text-sm" style="color: var(--color-light-secondary);">
-            {donate.koFi.description}
+            Kirimkan dukungan, sponsor, atau penawaran kerja sama resmi melalui email studio kami di razcreativestudio@gmail.com.
           </Description>
         </div>
-        <Button href="https://ko-fi.com/zen_browser" isPrimary class="w-full">
-          {donate.koFi.button}
+        <Button href="mailto:razcreativestudio@gmail.com" localePath={false} isPrimary class="w-full">
+          Kirim Email Resmi
           <ArrowRightIcon class="size-4" />
         </Button>
       </div>

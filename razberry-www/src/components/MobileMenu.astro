@@ -10,92 +10,49 @@ const {
 } = getUI(locale)
 ---
 
-<!-- Hidden checkbox for menu toggle -->
 <input type="checkbox" id="mobile-menu-toggle" class="peer sr-only lg:hidden" aria-hidden="true" />
 
-<!-- Mobile Slide Menu -->
 <div
   id="mobile-menu"
-  class="bg-paper fixed inset-y-0 right-0 z-40 w-64 translate-x-full transform shadow-lg transition-transform duration-300 peer-checked:translate-x-0 lg:hidden"
+  class="bg-paper fixed inset-y-0 right-0 z-50 w-72 translate-x-full transform border-l shadow-2xl transition-transform duration-300 peer-checked:translate-x-0 lg:hidden"
+  style="border-color: var(--color-border);"
 >
-  <div class="border-dark flex items-center justify-between border-b px-4 py-2">
-    <div class="text-lg font-bold">{menu.menu}</div>
-    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+  <div class="flex items-center justify-between border-b px-5 py-4" style="border-color: var(--color-border);">
+    <div class="text-lg font-extrabold">
+      <span class="pink-text">RAZ</span>Berry
+    </div>
     <label for="mobile-menu-toggle" class="text-dark cursor-pointer p-2">
       <span class="sr-only">Close menu</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width={2}
-          d="M6 18L18 6M6 6l12 12"
-        ></path>
-      </svg>
+      <i class="fas fa-times text-lg"></i>
     </label>
   </div>
-  <nav class="px-4 py-2">
-    <ul class="space-y-4">
-      <!-- Getting Started Links -->
+  <nav class="px-5 py-4">
+    <ul class="space-y-5 text-sm">
       <li>
-        <div class="mb-2 font-bold">{menu.gettingStarted}</div>
-        <ul class="ml-4 space-y-2">
-          <li>
-            <a href={getLocalePath('/mods')} class="text-dark hover:text-coral block">
-              {menu.zenMods}
-            </a>
-          </li>
-          <li>
-            <a href={getLocalePath('/release-notes')} class="text-dark hover:text-coral block">
-              {menu.releaseNotes}
-            </a>
-          </li>
-          <li>
-            <a href="https://discord.gg/zen-browser" class="text-dark hover:text-coral block">
-              {menu.discord}
-            </a>
-          </li>
+        <a href={getLocalePath('/')} class="block font-bold hover:text-coral">Home</a>
+      </li>
+      <li>
+        <div class="mb-2 text-xs font-bold uppercase tracking-wider pink-text">{menu.gettingStarted}</div>
+        <ul class="ml-3 space-y-2.5">
+          <li><a href={getLocalePath('/mods')} class="block hover:text-coral">{menu.zenMods}</a></li>
+          <li><a href={getLocalePath('/release-notes')} class="block hover:text-coral">{menu.releaseNotes}</a></li>
+          <li><a href={getLocalePath('/welcome')} class="block hover:text-coral">Welcome Tour</a></li>
         </ul>
       </li>
-      <!-- Useful Links -->
       <li>
-        <div class="mb-2 font-bold">{menu.usefulLinks}</div>
-        <ul class="ml-4 space-y-2">
-          <li>
-            <a href={getLocalePath('/about')} class="text-dark hover:text-coral block">
-              {menu.aboutUs}
-            </a>
-          </li>
-          <li>
-            <a href="https://docs.zen-browser.app" class="text-dark hover:text-coral block">
-              {menu.documentation}
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/zen-browser"
-              target="_blank"
-              class="text-dark hover:text-coral block"
-            >
-              {menu.github}
-            </a>
-          </li>
+        <div class="mb-2 text-xs font-bold uppercase tracking-wider pink-text">{menu.usefulLinks}</div>
+        <ul class="ml-3 space-y-2.5">
+          <li><a href={getLocalePath('/about')} class="block hover:text-coral">{menu.aboutUs}</a></li>
+          <li><a href={getLocalePath('/privacy-policy')} class="block hover:text-coral">Privacy Policy</a></li>
+          <li><a href="https://raz.web.id/hubungi-raz.html" target="_blank" class="block hover:text-coral">Hubungi RAZ Studio</a></li>
+          <li><a href="https://github.com/razcreativestudio/razberry" target="_blank" class="block hover:text-coral">{menu.github}</a></li>
         </ul>
       </li>
-      <!-- Extra Links -->
-      <li>
-        <a href={getLocalePath('/donate')} class="text-dark hover:text-coral block font-bold">
+      <li class="pt-2 space-y-2">
+        <a href={getLocalePath('/donate')} class="raz-cta-secondary w-full !py-2.5 !text-xs">
           {menu.donate}
         </a>
-      </li>
-      <li>
-        <a href={getLocalePath('/download')} class="text-dark hover:text-coral block font-bold">
+        <a href={getLocalePath('/download')} class="raz-cta-primary w-full !py-2.5 !text-xs">
           {menu.download}
         </a>
       </li>
@@ -103,10 +60,8 @@ const {
   </nav>
 </div>
 
-<!-- Overlay for Mobile Menu -->
-{/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
 <label
   for="mobile-menu-toggle"
-  class="pointer-events-none fixed inset-0 z-30 bg-black opacity-0 transition-opacity duration-300 peer-checked:pointer-events-auto peer-checked:opacity-50"
+  class="pointer-events-none fixed inset-0 z-40 bg-black opacity-0 transition-opacity duration-300 peer-checked:pointer-events-auto peer-checked:opacity-60"
   aria-hidden="true"
 ></label>
