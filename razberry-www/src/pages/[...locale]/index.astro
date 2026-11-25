@@ -8,7 +8,12 @@ import { getLocale, getUI } from '~/utils/i18n'
 export { getStaticPaths } from '~/utils/i18n'
 
 const locale = getLocale(Astro)
-const { layout } = getUI(locale)
+const {
+  layout,
+  routes: {
+    index: { whySection },
+  },
+} = getUI(locale)
 ---
 
 <Layout title={layout.index.title} description={layout.index.description} isHome>
@@ -21,26 +26,24 @@ const { layout } = getUI(locale)
     <div class="container">
       <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
         <div class="space-y-5">
-          <span class="raz-section-label">Why RAZBerry</span>
+          <span class="raz-section-label">{whySection.label}</span>
           <h2 class="text-3xl font-extrabold sm:text-4xl leading-tight">
-            Teknologi Browser Modern,<br />
-            <span class="pink-text">Fokus & Privasi Maksimal</span>
+            {whySection.titleLine1}<br />
+            <span class="pink-text">{whySection.titleLine2}</span>
           </h2>
-          <p class="text-base leading-relaxed" style="color: var(--color-light-secondary);">
-            RAZBerry Browser dibangun oleh <strong>RAZ Creative Studio</strong> di atas fondasi open-source Firefox/Gecko dengan desain antarmuka bertema Black-Pink Raspberry yang tegas, bersih, dan nyaman untuk sesi kerja panjang.
-          </p>
+          <p class="text-base leading-relaxed" style="color: var(--color-light-secondary);" set:html={whySection.description} />
           <div class="grid grid-cols-3 gap-4 pt-4">
             <div class="raz-card p-4 text-center">
               <div class="text-2xl font-extrabold pink-text">0%</div>
-              <div class="text-xs uppercase tracking-wider mt-1 opacity-75">Telemetry</div>
+              <div class="text-xs uppercase tracking-wider mt-1 opacity-75">{whySection.stats.telemetry}</div>
             </div>
             <div class="raz-card p-4 text-center">
               <div class="text-2xl font-extrabold pink-text">100%</div>
-              <div class="text-xs uppercase tracking-wider mt-1 opacity-75">Open Source</div>
+              <div class="text-xs uppercase tracking-wider mt-1 opacity-75">{whySection.stats.openSource}</div>
             </div>
             <div class="raz-card p-4 text-center">
               <div class="text-2xl font-extrabold pink-text">All-in-One</div>
-              <div class="text-xs uppercase tracking-wider mt-1 opacity-75">Productivity</div>
+              <div class="text-xs uppercase tracking-wider mt-1 opacity-75">{whySection.stats.productivity}</div>
             </div>
           </div>
         </div>
@@ -50,36 +53,36 @@ const { layout } = getUI(locale)
             <div class="flex h-10 w-10 items-center justify-center rounded-lg" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
               <i class="fas fa-layer-group"></i>
             </div>
-            <h3 class="text-lg font-bold">Workspaces & Vertical Tabs</h3>
+            <h3 class="text-lg font-bold">{whySection.cards.workspacesTitle}</h3>
             <p class="text-sm leading-relaxed" style="color: var(--color-light-secondary);">
-              Pisahkan proyek kerja, riset, dan hiburan dengan ruang kerja rapi dan tab vertikal lega.
+              {whySection.cards.workspacesDesc}
             </p>
           </div>
           <div class="raz-card p-6 space-y-2.5">
             <div class="flex h-10 w-10 items-center justify-center rounded-lg" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
               <i class="fas fa-columns"></i>
             </div>
-            <h3 class="text-lg font-bold">Built-in Split View</h3>
+            <h3 class="text-lg font-bold">{whySection.cards.splitViewTitle}</h3>
             <p class="text-sm leading-relaxed" style="color: var(--color-light-secondary);">
-              Bandingkan dua hingga beberapa tab berdampingan dalam satu jendela tanpa ekstensi tambahan.
+              {whySection.cards.splitViewDesc}
             </p>
           </div>
           <div class="raz-card p-6 space-y-2.5">
             <div class="flex h-10 w-10 items-center justify-center rounded-lg" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
               <i class="fas fa-wand-magic-sparkles"></i>
             </div>
-            <h3 class="text-lg font-bold">RAZBerry Mods</h3>
+            <h3 class="text-lg font-bold">{whySection.cards.modsTitle}</h3>
             <p class="text-sm leading-relaxed" style="color: var(--color-light-secondary);">
-              Kustomisasi tampilan dan perilaku browser sesuka hati lewat ekosistem Mods terkurasi.
+              {whySection.cards.modsDesc}
             </p>
           </div>
           <div class="raz-card p-6 space-y-2.5">
             <div class="flex h-10 w-10 items-center justify-center rounded-lg" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
               <i class="fas fa-shield-halved"></i>
             </div>
-            <h3 class="text-lg font-bold">Privacy First</h3>
+            <h3 class="text-lg font-bold">{whySection.cards.privacyTitle}</h3>
             <p class="text-sm leading-relaxed" style="color: var(--color-light-secondary);">
-              Tanpa pelacakan, tanpa telemetri tersembunyi, dan proteksi pelacak aktif secara bawaan.
+              {whySection.cards.privacyDesc}
             </p>
           </div>
         </div>

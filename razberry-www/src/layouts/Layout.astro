@@ -33,7 +33,7 @@ const locale = getLocale(Astro)
   document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : 'dark')
 </script>
 
-<html lang={locale}>
+<html lang={locale === 'id-oke' ? 'id' : locale}>
   <head>
     <meta charset="UTF-8" />
     {redirect ? <meta http-equiv="refresh" content={`0;url=${redirect}`} /> : null}

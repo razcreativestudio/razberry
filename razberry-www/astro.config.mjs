@@ -11,8 +11,8 @@ export default defineConfig({
   },
   site: 'https://razberry.it-raz.com',
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'ja'],
+    defaultLocale: 'id-oke',
+    locales: ['id-oke', 'id', 'en'],
     routing: {
       fallbackType: 'rewrite',
       prefixDefaultLocale: false,

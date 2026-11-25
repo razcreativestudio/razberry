@@ -47,7 +47,8 @@ export const getPath =
  * @returns The current locale cast as a Locale type
  */
 export const getLocale = (Astro: AstroGlobal): Locale => {
-  return Astro.currentLocale as Locale
+  const current = Astro.currentLocale as Locale | undefined
+  return current && locales.includes(current) ? current : (CONSTANT.I18N.DEFAULT_LOCALE as Locale)
 }
 
 /**

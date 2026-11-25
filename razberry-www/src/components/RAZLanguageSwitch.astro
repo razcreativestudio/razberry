@@ -1,0 +1,100 @@
+---
+/**
+ * Updated: 2026-11-25 16:22:00 WIB
+ * Deskripsi: Komponen pemilih bahasa (Language Switcher) untuk 3 bahasa resmi website RAZBerry:
+ *            Indo Oke (id-oke, default), Bahasa Indonesia (id), dan English (en).
+ */
+import { Dropdown, DropdownItems } from 'astro-navbar'
+import { CONSTANT } from '~/constants'
+import ChevronDownIcon from '~/icons/ChevronDownIcon.astro'
+import { getLocale, getPath, type Locale } from '~/utils/i18n'
+
+interface Props {
+  compact?: boolean
+}
+
+const { compact = false } = Astro.props
+const currentLocale = getLocale(Astro)
+const locales = CONSTANT.I18N.LOCALES
+
+// Bersihkan prefix locale (/id atau /en) dari pathname saat ini agar perpindahan bahasa selalu akurat
+const rawPath = Astro.url.pathname || '/'
+const nonDefaultPattern = new RegExp(
+  `^/(${locales
+    .filter(l => l.value !== CONSTANT.I18N.DEFAULT_LOCALE)
+    .map(l => l.value)
+    .join('|')})(?=/|$)`
+)
+const cleanPath = rawPath.replace(nonDefaultPattern, '') || '/'
+
+const currentMeta = locales.find(l => l.value === currentLocale) ?? locales[0]
+const shortCode: Record<string, string> = {
+  'id-oke': 'OKE',
+  id: 'ID',
+  en: 'EN',
+}
+---
+
+{
+  compact ? (
+    <div class="flex flex-wrap gap-2">
+      {locales.map(item => {
+        const href = getPath(item.value as Locale)(cleanPath)
+        const isActive = item.value === currentLocale
+        return (
+          <a
+            href={href}
+            class:list={[
+              'rounded-lg border px-3 py-1.5 text-xs font-semibold transition-all',
+              isActive
+                ? 'border-[#D81B60] bg-[#D81B60]/20 text-[#FF4081]'
+                : 'border-white/10 hover:border-[#D81B60]/60 opacity-80 hover:opacity-100',
+            ]}
+            aria-current={isActive ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        )
+      })}
+    </div>
+  ) : (
+    <Dropdown class="group relative">
+      <button
+        type="button"
+        class="raz-nav-link flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs font-semibold transition-colors"
+        style="border-color: var(--color-border);"
+        aria-label="Pilih bahasa"
+      >
+        <i class="fas fa-globe text-[#FF4081]" aria-hidden="true"></i>
+        <span>{shortCode[currentMeta.value] ?? currentMeta.label}</span>
+        <ChevronDownIcon class="size-3.5 transform transition-transform duration-200 group-open:rotate-180" />
+      </button>
+      <DropdownItems>
+        <div
+          class="absolute right-0 z-50 mt-2 w-44 rounded-xl border p-1.5 shadow-2xl"
+          style="background: var(--color-dark-secondary); border-color: var(--color-border);"
+        >
+          {locales.map(item => {
+            const href = getPath(item.value as Locale)(cleanPath)
+            const isActive = item.value === currentLocale
+            return (
+              <a
+                href={href}
+                class:list={[
+                  'flex items-center justify-between rounded-lg px-3 py-2 text-xs font-medium transition-colors',
+                  isActive
+                    ? 'bg-[#D81B60]/20 text-[#FF4081] font-bold'
+                    : 'hover:bg-white/5 opacity-85 hover:opacity-100',
+                ]}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                <span>{item.label}</span>
+                <span class="text-[10px] uppercase opacity-60">{shortCode[item.value]}</span>
+              </a>
+            )
+          })}
+        </div>
+      </DropdownItems>
+    </Dropdown>
+  )
+}

@@ -125,3 +125,17 @@
     - `razberry-kit-1.19.8b-raz2.zip` & `SHA256SUMS.txt`
 - **Pembaruan Link & Checksum Website (`checksum.ts` & `download.astro`)**:
   - Menyelaraskan SHA-256 checksums dan menambahkan tombol akses cepat download langsung (`razberry.installer.exe`, `Uninstall-RAZBerry.exe`, dan `All GitHub Releases`) pada halaman `/download/`.
+
+
+### 16:22 WIB — Dukungan 3 Bahasa Website Utama (`id-oke`, `id`, `en`)
+- **Konfigurasi Astro i18n (`razberry-www/astro.config.mjs` & `src/constants/i18n.ts`)**:
+  - Mengubah bahasa utama (default) website menjadi **Indo Oke (`id-oke`)** yang menggunakan gaya santai khas RAZ Creative Studio (campuran bahasa gaul Jakarta & istilah komputer umum seperti *download*, *install*, *browser*, *privacy*).
+  - Menambahkan **Bahasa Indonesia (`id`)** formal yang rapi dan mempertahankan **English (`en`)**, serta menghapus locale `ja` sehingga website resmi memiliki tepat 3 pilihan bahasa.
+- **File Terjemahan Baru**:
+  - Menambahkan `razberry-www/src/i18n/id-oke/translation.json` dan `razberry-www/src/i18n/id/translation.json`.
+  - Menyelaraskan key `whySection`, `hero.buttons.explore`, dan `nav.menu.language` pada ketiga file terjemahan (`id-oke`, `id`, `en`).
+- **Komponen Language Switcher (`RAZLanguageSwitch.astro`)**:
+  - Membuat komponen `razberry-www/src/components/RAZLanguageSwitch.astro` untuk desktop (`NavBar.astro`) dan mobile (`MobileMenu.astro`) agar pengunjung dapat berpindah langsung antara **Indo Oke**, **Indonesia**, dan **English**.
+- **Sinkronisasi Halaman Utama (`index.astro` & `Hero.astro`) & Versi**:
+  - Menghubungkan section *Why RAZBerry* dan tombol eksplorasi fitur ke `getUI(locale)`.
+  - Menaikkan versi dokumen & proyek ke `1.1.0`.

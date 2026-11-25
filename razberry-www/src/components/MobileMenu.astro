@@ -1,5 +1,6 @@
 ---
 import { getLocale, getPath, getUI } from '~/utils/i18n'
+import RAZLanguageSwitch from './RAZLanguageSwitch.astro'
 
 const locale = getLocale(Astro)
 const getLocalePath = getPath(locale)
@@ -47,6 +48,10 @@ const {
           <li><a href="https://raz.web.id/hubungi-raz.html" target="_blank" class="block hover:text-coral">Hubungi RAZ Studio</a></li>
           <li><a href="https://github.com/razcreativestudio/razberry" target="_blank" class="block hover:text-coral">{menu.github}</a></li>
         </ul>
+      </li>
+      <li class="pt-1">
+        <div class="mb-2 text-xs font-bold uppercase tracking-wider pink-text">{menu.language}</div>
+        <RAZLanguageSwitch compact />
       </li>
       <li class="pt-2 space-y-2">
         <a href={getLocalePath('/donate')} class="raz-cta-secondary w-full !py-2.5 !text-xs">

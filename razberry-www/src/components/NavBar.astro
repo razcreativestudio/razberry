@@ -7,6 +7,7 @@ import DownloadIcon from '~/icons/DownloadIcon.astro'
 import MenuIcon from '~/icons/MenuIcon.astro'
 import { getLocale, getPath, getUI } from '~/utils/i18n'
 import MobileMenu from './MobileMenu.astro'
+import RAZLanguageSwitch from './RAZLanguageSwitch.astro'
 import ThemeSwitch from './ThemeSwitch.astro'
 
 const locale = getLocale(Astro)
@@ -50,7 +51,7 @@ const {
                 <div class="dropdown-title">{menu.zenMods}</div>
                 <div class="dropdown-description">{menu.zenModsDesc}</div>
                 <Button isPrimary class="mt-auto !py-2.5 !px-4 !text-xs">
-                  {menu.tryZenMods}
+                  {menu.tryRAZBerryMods}
                   <ArrowRightIcon class="size-3.5" />
                 </Button>
               </a>
@@ -95,6 +96,9 @@ const {
       </div>
 
       <div class="flex items-center gap-3 place-self-end">
+        <div class="hidden lg:block">
+          <RAZLanguageSwitch />
+        </div>
         <div id="theme-switcher" class="raz-control-btn">
           <ThemeSwitch label="Toggle theme" />
         </div>

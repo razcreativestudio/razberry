@@ -35,7 +35,29 @@
         ],
         "buttons": {
           "beta": "Beta is now available!",
+          "explore": "Explore Features",
           "support": "Support Us ❤️"
+        }
+      },
+      "whySection": {
+        "label": "Why RAZBerry",
+        "titleLine1": "Modern Browser Technology,",
+        "titleLine2": "Maximum Focus & Privacy",
+        "description": "RAZBerry Browser is built by <strong>RAZ Creative Studio</strong> on top of the open-source Firefox/Gecko engine with a crisp, clean Black-Pink Raspberry interface designed for long, focused work sessions.",
+        "stats": {
+          "telemetry": "Telemetry",
+          "openSource": "Open Source",
+          "productivity": "Productivity"
+        },
+        "cards": {
+          "workspacesTitle": "Workspaces & Vertical Tabs",
+          "workspacesDesc": "Separate work projects, research, and entertainment with tidy workspaces and spacious vertical tabs.",
+          "splitViewTitle": "Built-in Split View",
+          "splitViewDesc": "Compare two or more tabs side by side in a single window without extra extensions.",
+          "modsTitle": "RAZBerry Mods",
+          "modsDesc": "Customize the browser look and behavior freely through our curated Mods ecosystem.",
+          "privacyTitle": "Privacy First",
+          "privacyDesc": "No tracking, no hidden telemetry, and built-in tracker protection enabled by default."
         }
       },
       "features": {
@@ -547,7 +569,8 @@
         "documentationDesc": "Learn how to use RAZBerry with our documentation.",
         "github": "GitHub",
         "githubDesc": "Contribute to the development of RAZBerry on GitHub.",
-        "menu": "Menu"
+        "menu": "Menu",
+        "language": "Language"
       }
     }
   }
