@@ -73,7 +73,7 @@ function formatRssDate(dateStr: string) {
  */
 function formatReleaseNote(releaseNote: ReleaseNote) {
   let content = `<p>
-        If you encounter any issues, please report them on <a href="https://github.com/zen-browser/desktop/issues/">the issues page</a>.
+        If you encounter any issues, please report them on <a href="https://github.com/razcreativestudio/razberry/issues/">the issues page</a>.
         Thanks everyone for your feedback! ❤️
     </p>`
 
@@ -119,7 +119,7 @@ function fixToReleaseNote(fix?: Exclude<ReleaseNote['fixes'], undefined>[number]
 
   let note = fix.description
   if (fix.issue) {
-    note += ` (<a href="https://github.com/zen-browser/desktop/issues/${fix.issue}" target="_blank">#${fix.issue}</a>)`
+    note += ` (<a href="https://github.com/razcreativestudio/razberry/issues/${fix.issue}" target="_blank">#${fix.issue}</a>)`
   }
   return note
 }

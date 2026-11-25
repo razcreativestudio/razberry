@@ -57,3 +57,11 @@
   - **Email Resmi**: `razcreativestudio@gmail.com`
   - **WhatsApp / Telepon**: `+62 831 7300 2527` (`https://wa.me/6283173002527`)
   - **Halaman Kontak**: `https://raz.web.id/hubungi-raz.html`
+
+---
+
+### 🚀 [11:36 WIB] - GitHub Release Action (`RAZReleaseBrowser.yml`) & Migrasi Penuh Link Download/GitHub
+
+- **GitHub Actions Release Pipeline**: Membuat `.github/workflows/RAZReleaseBrowser.yml` dengan trigger tag `v*` dan `workflow_dispatch`, pengemasan aset rilis resmi, SHA-256 checksums, dan publikasi otomatis via `softprops/action-gh-release@v2` ke `razcreativestudio/razberry/releases`.
+- **Link Download & Checksum**: Memperbarui `release-data.ts` dan `githubChecksums.ts` agar seluruh unduhan Windows, macOS, dan Linux mengarah ke `https://github.com/razcreativestudio/razberry/releases/latest/download/...`.
+- **Migrasi Link GitHub & i18n**: Memperbarui `about.astro`, `feed.xml.ts`, `ReleaseNoteItem.astro`, `en/translation.json`, dan `ja/translation.json` (sekaligus menambal missing translation key `tryRAZBerryMods`) ke repositori `razcreativestudio/razberry`.

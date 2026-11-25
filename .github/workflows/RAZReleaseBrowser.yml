@@ -1,0 +1,99 @@
+# ==============================================================================
+# RAZReleaseBrowser.yml
+# GitHub Actions CI/CD Pipeline - RAZBerry Browser Release Automation
+# Author: RAZ Creative Studio
+# Deskripsi: Membuat GitHub Release resmi di razcreativestudio/razberry,
+#            mengemas branding kit & skrip otomasi, serta menghasilkan SHA-256 checksums.
+# ==============================================================================
+
+name: Release RAZBerry Browser
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Versi rilis RAZBerry (contoh: 1.19.8b-raz1)'
+        required: true
+        default: '1.19.8b-raz1'
+        type: string
+      prerelease:
+        description: 'Tandai sebagai Beta / Pre-release'
+        required: false
+        default: false
+        type: boolean
+      release_notes:
+        description: 'Catatan rilis tambahan (opsional)'
+        required: false
+        default: 'Rilis resmi RAZBerry Browser oleh RAZ Creative Studio.'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create RAZBerry GitHub Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🏷️ Determine Release Tag & Version
+        id: meta
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "push" ]]; then
+            TAG="${GITHUB_REF#refs/tags/}"
+            VERSION="${TAG#v}"
+          else
+            VERSION="${{ github.event.inputs.version }}"
+            TAG="v${VERSION}"
+          fi
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "Tag rilis: ${TAG} | Versi: ${VERSION}"
+
+      - name: 📦 Package RAZBerry Branding & Tools Kit
+        shell: bash
+        run: |
+          mkdir -p release-assets
+          PKG_NAME="razberry-kit-${{ steps.meta.outputs.version }}.zip"
+          zip -r "release-assets/${PKG_NAME}" \
+            README.md \
+            RAZApplyCustomizations.py \
+            RAZApplyPinkTheme.py \
+            RAZPatchExeIcons.py \
+            RAZPatchAboutSupport.py \
+            RAZRebrandAllZenText.py \
+            RAZFixVisualIssues.py \
+            RAZUpdateProfileAndTabs.py \
+            razberry-logo.png \
+            logo-razberry.png \
+            RAZ_Creative_Studio_Identik.svg \
+            razberry/configs/branding \
+            -x "**/__pycache__/*" "*.bak"
+          (cd release-assets && sha256sum "${PKG_NAME}" > SHA256SUMS.txt)
+          ls -lh release-assets
+
+      - name: 🚀 Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.meta.outputs.tag }}
+          name: RAZBerry Browser ${{ steps.meta.outputs.version }}
+          prerelease: ${{ github.event.inputs.prerelease == 'true' }}
+          generate_release_notes: true
+          body: |
+            ## 🍓 RAZBerry Browser `${{ steps.meta.outputs.version }}`
+            **Designed by RAZ Creative Studio** — [razberry.it-raz.com](https://razberry.it-raz.com/)
+
+            ${{ github.event.inputs.release_notes || 'Rilis resmi RAZBerry Browser dengan tema Black-Pink Raspberry, privasi tanpa telemetri, dan produktivitas modern.' }}
+
+            ### 📦 Lampiran Rilis
+            - `razberry-kit-${{ steps.meta.outputs.version }}.zip`: Paket branding resmi, aset ikon, dan skrip otomasi RAZBerry.
+            - `SHA256SUMS.txt`: Verifikasi integritas checksum SHA-256.
+          files: |
+            release-assets/*

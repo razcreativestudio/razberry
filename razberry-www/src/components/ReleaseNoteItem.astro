@@ -32,7 +32,7 @@ const currentReleaseIndex = releaseNotesData.findIndex(
 const prevReleaseNote = releaseNotesData[currentReleaseIndex + 1]
 let compareLink = ''
 if (prevReleaseNote && !isTwilight) {
-  compareLink = `https://github.com/zen-browser/desktop/compare/${prevReleaseNote.version}...${props.version}`
+  compareLink = `https://github.com/razcreativestudio/razberry/compare/${prevReleaseNote.version}...${props.version}`
 }
 
 const isLatest = currentReleaseIndex === 0
@@ -62,7 +62,7 @@ const generateItems = (items: any, type: string) => {
             ? {
                 link: {
                   text: `Bug gh-${item.issue}`,
-                  href: `https://github.com/zen-browser/desktop/issues/${item.issue}`,
+                  href: `https://github.com/razcreativestudio/razberry/issues/${item.issue}`,
                 },
               }
             : {}),
@@ -164,7 +164,7 @@ generateItems(props.knownIssues, 'known')
           rel="noopener noreferrer"
           class="zen-link text-xs whitespace-nowrap !no-underline opacity-80"
           target="_blank"
-          href={`https://github.com/zen-browser/desktop/releases/tag/${isTwilight ? 'twilight-1' : props.version}`}
+          href={`https://github.com/razcreativestudio/razberry/releases/tag/${isTwilight ? 'twilight-1' : props.version}`}
         >
           {releaseNoteItem.githubRelease}
         </a>
@@ -175,7 +175,7 @@ generateItems(props.knownIssues, 'known')
               rel="noopener noreferrer"
               class="zen-link text-xs whitespace-nowrap !no-underline opacity-80"
               target="_blank"
-              href={`https://github.com/zen-browser/desktop/actions/runs/${props.workflowId}`}
+              href={`https://github.com/razcreativestudio/razberry/actions/runs/${props.workflowId}`}
             >
               {releaseNoteItem.workflowRun}
             </a>
