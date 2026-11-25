@@ -461,8 +461,10 @@ namespace RAZBerrySetup
 
                 if (File.Exists(uninstallerPath))
                 {
+                    // Windows 11 menyembunyikan shortcut Start Menu bernama "Uninstall ...",
+                    // gunakan "Remove RAZBerry.lnk" agar tampil di dalam folder Start Menu RAZBerry.
                     CreateShortcut(
-                        Path.Combine(startMenuFolder, "Uninstall RAZBerry.lnk"),
+                        Path.Combine(startMenuFolder, "Remove RAZBerry.lnk"),
                         uninstallerPath, "", _installDir, icoPath,
                         "Hapus RAZBerry Browser dari perangkat ini"
                     );
