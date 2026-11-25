@@ -205,117 +205,91 @@
     },
     "about": {
       "title": "About RAZBerry",
-      "description": "We are simply a group of developers and designers who care about your experience on the web. We believe that the internet should be a place where you can explore, learn, and connect without worrying about your data being collected.",
-      "littleHelp": "A little help?",
-      "mainTeam": {
-        "title": "Main Team",
-        "description": "This list shows the main team members who are working hard to bring you the best browsing experience.",
-        "subTitle": {
-          "browser": "Browser",
-          "website": "Website and Branding"
-        },
-        "members": {
-          "browser": {
-            "mauro": {
-              "name": "Mauro V.",
-              "description": "Creator, Main Developer",
-              "link": "https://cheff.dev/"
-            },
-            "jan": {
-              "name": "Jan Heres",
-              "description": "Active contributor and helps with MacOS builds",
-              "link": "https://janheres.eu/"
-            },
-            "bryan": {
-              "name": "Bryan Galdámez",
-              "description": "Huge contributor on theme functionalities",
-              "link": "https://josuegalre.netlify.app/"
-            },
-            "oscar": {
-              "name": "Oscar Gonzalez",
-              "description": "Site Reliability Engineer (SRE) and code signing.",
-              "link": false
-            },
-            "daniel": {
-              "name": "Daniel García",
-              "description": "MacOS certificate and app notarization maintainer",
-              "link": false
-            },
-            "brhm": {
-              "name": "BrhmDev",
-              "description": "Active contributor with great contributions",
-              "link": "https://github.com/BrhmDev"
-            },
-            "kristijanribaric": {
-              "name": "Kristijan Ribaric",
-              "description": "Active contributor with split views / workspaces",
-              "link": "https://github.com/kristijanribaric"
-            },
-            "larvey": {
-              "name": "Larvey",
-              "description": "AUR maintainer",
-              "link": "https://github.com/LarveyOfficial/"
-            },
-            "studio": {
-              "name": "Studio Movie Girl",
-              "description": "Big contributor with the gradient generator",
-              "link": "https://github.com/StudioMovieGirl"
-            }
+      "description": "RAZBerry Browser is built for people who want fast, focused, and distraction-free browsing with strong privacy defaults. Zero hidden telemetry, crisp Black-Pink Raspberry aesthetics, and built-in productivity tools.",
+      "littleHelp": "Support / Donate",
+      "hero": {
+        "badge": "About & Studio",
+        "downloadBtn": "Download RAZBerry"
+      },
+      "purpose": {
+        "fastTitle": "Fast & Lightweight",
+        "fastDesc": "Built on top of the open-source Firefox/Gecko engine without bloatware so multi-tab sessions stay snappy.",
+        "privacyTitle": "Privacy First",
+        "privacyDesc": "All telemetry and tracking endpoints are stripped out so your browsing activity stays strictly yours.",
+        "designTitle": "Black-Pink Raspberry Theme",
+        "designDesc": "High-contrast Black-Pink Raspberry interface engineered for visual comfort day and night."
+      },
+      "studio": {
+        "badge": "RAZ Creative Studio",
+        "titleLine1": "Where High-Speed Tech Meets",
+        "titleLine2": "Sharp Design",
+        "paragraph1": "RAZ Creative Studio is an Indonesian digital technology & creative studio focused on building products that are not only visually sharp, but also lightweight, intuitive, and impactful.",
+        "paragraph2": "From fast modern web development, brand identity, and precision 3D & CAD visualization to free open-source productivity software for the public, every pixel and line of code is crafted with purpose.",
+        "visitWebsite": "Visit raz.web.id",
+        "contactBtn": "Contact RAZ Studio",
+        "cardNote": "Digital technology & creative studio from Indonesia — crafting fast, clean, and practical software."
+      },
+      "projects": {
+        "badge": "RAZ Ecosystem",
+        "title": "Projects by RAZ Creative Studio",
+        "description": "Alongside RAZBerry Browser, explore other digital products and open-source tools created by RAZ Creative Studio:",
+        "visitLabel": "Explore Project",
+        "items": {
+          "razberry": {
+            "name": "RAZBerry Browser",
+            "tag": "Browser FOSS",
+            "desc": "Modern Black-Pink Raspberry browser focused on privacy with Workspaces, Split View, and Mods."
           },
-          "website": {
-            "taroj1205": {
-              "name": "Shintaro Jokagi",
-              "description": "Core Website Architect, Spearheading Refactoring and Technical Enhancements",
-              "link": "https://github.com/taroj1205"
-            },
-            "jace": {
-              "name": "Jace",
-              "description": "Contributes to website design and branding",
-              "link": "https://x.com/JaceThings"
-            },
-            "canoa": {
-              "name": "Canoa",
-              "description": "Active contributor, and very active in issue handling and website management",
-              "link": "https://thatcanoa.org/"
-            },
-            "adam": {
-              "name": "Adam",
-              "description": "Branding and design",
-              "link": "https://cybrneon.xyz/"
-            },
-            "n7itro": {
-              "name": "n7itro",
-              "description": "Active contributor and release notes writer",
-              "link": "https://github.com/n7itro"
-            },
-            "jafeth": {
-              "name": "Jafeth Garro",
-              "description": "Documentation writer",
-              "link": "https://iamjafeth.com/"
-            }
+          "razdm": {
+            "name": "RAZ Download Manager",
+            "tag": "Desktop App",
+            "desc": "Fast and lightweight download manager developed by RAZ Creative Studio at dm.it-raz.com."
+          },
+          "invitraz": {
+            "name": "InvitRAZ",
+            "tag": "Digital Invitations",
+            "desc": "Modern digital invitation platform with elegant templates and effortless customization."
+          },
+          "simajuraz": {
+            "name": "SIMAJURAZ POS",
+            "tag": "POS FOSS",
+            "desc": "Open-source Point of Sale system designed to streamline daily business operations."
+          },
+          "razoffice": {
+            "name": "RAZ Office",
+            "tag": "Productivity FOSS",
+            "desc": "Lightweight open-source office suite for everyday document workflows."
+          },
+          "razpdf": {
+            "name": "RAZ PDF Tools",
+            "tag": "Web Tools FOSS",
+            "desc": "Fast, free browser-based PDF utilities without extra installation."
           }
         }
       },
-      "contributors": {
-        "title": "Contributors",
-        "description": "This list shows the contributors who have helped us to make RAZBerry Browser the best it can be.",
-        "browser": "Browser",
-        "website": "Website"
+      "connect": {
+        "badge": "Support & Community",
+        "title": "Love What RAZ Studio Builds?",
+        "description": "If our open-source tools help your daily workflow, consider supporting us via the Donate page or following our official social media channels.",
+        "donateBtn": "Donate Now",
+        "socialLabel": "Follow RAZ Creative Studio"
       }
     },
     "donate": {
-      "title": "Donate",
-      "description": "We are a small team of developers working hard to bring you the best browsing experience. If you like what we do, please consider supporting us.",
-      "patreon": {
-        "title": "Patreon",
-        "description": "Patreon allows you to support us with a monthly donation. You can choose the level of support that works best for you.",
-        "button": "Go to Patreon"
+      "badge": "Support Open Source",
+      "title": "Donate & Support",
+      "description": "RAZ Creative Studio is continuously improving RAZBerry Browser. If you enjoy using our work, consider supporting our ongoing development.",
+      "directSupport": {
+        "title": "Direct RAZ Support",
+        "description": "Want to support RAZBerry Browser development or collaborate with RAZ Creative Studio? Reach out directly via our official WhatsApp.",
+        "button": "Chat via WhatsApp"
       },
-      "koFi": {
-        "title": "Ko-fi",
-        "description": "Ko-fi allows you to support us with a one-time donation. You can choose the amount that works best for you. Monthly donations are also available.",
-        "button": "Go to Ko-fi"
-      }
+      "partner": {
+        "title": "Partner & Sponsorship",
+        "description": "Send official sponsorship inquiries, partnerships, or support offers to our studio email at razcreativestudio@gmail.com.",
+        "button": "Send Official Email"
+      },
+      "socialLabel": "RAZ Creative Studio Social Media"
     },
     "download": {
       "title": "Start your journey",
@@ -471,6 +445,11 @@
       }
     },
     "welcome": {
+      "badge": "Official Onboarding • RAZBerry Browser",
+      "headlinePrefix": "Welcome to",
+      "subtitle": "Enjoy a calmer, faster, privacy-focused, and distraction-free web experience with the exclusive Black-Pink Raspberry theme.",
+      "startBtn": "Start Browsing",
+      "modsBtn": "Explore RAZBerry Mods",
       "title": [
         "Welcome ",
         "to ",

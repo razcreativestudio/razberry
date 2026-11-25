@@ -9,7 +9,7 @@
             "highlight": false
           },
           {
-            "text": "lebih ",
+            "text": "makin ",
             "highlight": false
           },
           {
@@ -17,68 +17,68 @@
             "highlight": false
           },
           {
-            "text": "tenang & ",
+            "text": "tenang, ",
             "highlight": false
           },
           {
-            "text": "sat-set",
+            "text": "gak bakal nyesel",
             "highlight": true
           }
         ],
         "description": [
-          "Desain cakep, fokus ke privacy, dan fiturnya lengkap banget.",
-          "Kami peduli sama experience kamu, bukan ngincer data kamu."
+          "Tampilannya cakep banget, privacy aman, dan fiturnya lengkap.",
+          "Gue bikin ini biar browsing lo makin nyaman, bukan buat nyedot data lo."
         ],
         "buttons": {
           "beta": "Download Sekarang!",
-          "explore": "Lihat Fitur",
+          "explore": "Liat Fiturnya",
           "support": "Support Kami ❤️"
         }
       },
       "whySection": {
-        "label": "Kenapa RAZBerry?",
-        "titleLine1": "Teknologi Browser Modern,",
-        "titleLine2": "Fokus & Privacy Maksimal",
-        "description": "RAZBerry Browser dibikin sama <strong>RAZ Creative Studio</strong> di atas engine open-source Firefox/Gecko dengan tampilan Black-Pink Raspberry yang clean, tegas, dan nyaman banget buat kerja lama.",
+        "label": "Kenapa Harus RAZBerry?",
+        "titleLine1": "Browser Kenceng & Modern,",
+        "titleLine2": "Fokus Kerja, Gak Pake Ribet",
+        "description": "RAZBerry Browser dibikin sama <strong>RAZ Creative Studio</strong> di atas mesin open-source Firefox/Gecko dengan tema Black-Pink Raspberry yang cakep, bersih, dan bikin betah dipake seharian.",
         "stats": {
           "telemetry": "Telemetry",
           "openSource": "Open Source",
-          "productivity": "Productivity"
+          "productivity": "Produktivitas"
         },
         "cards": {
-          "workspacesTitle": "Workspaces & Vertical Tabs",
-          "workspacesDesc": "Pisahin project kerja, riset, sama hiburan pake workspace rapi dan vertical tab yang lega.",
-          "splitViewTitle": "Built-in Split View",
-          "splitViewDesc": "Buka dua atau lebih tab sebelahan dalam satu window, gak perlu install extension tambahan.",
+          "workspacesTitle": "Workspaces & Tab Vertikal",
+          "workspacesDesc": "Pisahin urusan kerjaan, riset, sama hiburan biar gak kecampur aduk pake workspace rapi.",
+          "splitViewTitle": "Split View Bawaan",
+          "splitViewDesc": "Buka dua tab sebelahan langsung dalam satu layar, gak perlu repot install tambahan lagi.",
           "modsTitle": "RAZBerry Mods",
-          "modsDesc": "Custom tampilan dan behavior browser sesuka hati lewat koleksi Mods yang udah dikurasi.",
-          "privacyTitle": "Privacy First",
-          "privacyDesc": "Gak ada tracking, gak ada telemetry ngumpet, dan tracker protection langsung aktif dari awal."
+          "modsDesc": "Bisa lo custom tampilannya sesuka hati lo lewat koleksi Mods yang udah dipilih.",
+          "privacyTitle": "Privacy Dijamin Aman",
+          "privacyDesc": "Gak ada tracking ngumpet, gak ada telemetry, dan pelindung pelacak langsung nyala dari awal."
         }
       },
       "features": {
         "titles": [
-          "Produktivitas ",
-          "di level ",
-          "terbaiknya"
+          "Kerjaan ",
+          "kelar makin ",
+          "sat-set"
         ],
-        "description": "RAZBerry punya segudang fitur yang bikin kamu tetap produktif dan fokus. Browser itu harusnya jadi tools buat beresin kerjaan, bukan malah bikin terdistraksi.",
+        "description": "RAZBerry punya fitur lengkap yang bikin lo tetep fokus. Browser itu harusnya bantuin kerjaan lo beres, bukan malah bikin terdistraksi.",
         "featureTabs": {
           "workspaces": {
             "title": "Workspaces",
-            "description": "Kelompokkin tab ke dalam Workspaces biar project gak kecampur aduk, dan gampang pindah-pindahnya."
+            "description": "Kelompokkin tab lo ke dalam Workspaces biar gak berantakan, pindah-pindahnya juga gampang banget."
           },
           "compactMode": {
             "title": "Compact Mode",
-            "description": "Compact Mode ngasih layar yang lebih lega dengan nyembunyiin tab bar pas lagi gak dibutuhin, dan muncul lagi pas kamu arahin kursor."
+            "description": "Layar berasa jauh lebih lega soalnya bar tab otomatis ngumpet pas lagi gak lo pake, muncul lagi pas lo arahin kursor."
           },
           "glance": {
             "title": "Glance",
-            "description": "Glance bikin kamu bisa intip dan pindah ke tab yang sering dipakai secara kilat tanpa ribet scroll history."
+            "description": "Mau intip tab yang sering lo buka? Pake Glance aja, langsung sat-set tanpa ribet scroll history."
           },
           "splitView": {
             "title": "Split View",
-            "description": "Split View bikin kamu bisa lihat dua tab bersebelahan langsung, jadi makin gampang buat bandingin konten."
+            "description": "Bandingin dua halaman sekaligus dalam satu jendela, cocok banget buat lo yang suka multitasking."
           }
         }
       },
@@ -201,117 +201,91 @@
     },
     "about": {
       "title": "Tentang RAZBerry",
-      "description": "Kami tim developer dan designer yang peduli banget sama kenyamanan kamu di internet. Menurut kami, internet harusnya jadi tempat buat eksplorasi, belajar, dan koneksi tanpa was-was data kamu disedot.",
-      "littleHelp": "Mau ikut bantu?",
-      "mainTeam": {
-        "title": "Tim Inti",
-        "description": "Ini daftar tim inti yang kerja keras di balik layar buat ngasih pengalaman browsing terbaik buat kamu.",
-        "subTitle": {
-          "browser": "Browser",
-          "website": "Website & Branding"
-        },
-        "members": {
-          "browser": {
-            "mauro": {
-              "name": "Mauro V.",
-              "description": "Creator, Main Developer",
-              "link": "https://cheff.dev/"
-            },
-            "jan": {
-              "name": "Jan Heres",
-              "description": "Kontributor aktif dan bantu build macOS",
-              "link": "https://janheres.eu/"
-            },
-            "bryan": {
-              "name": "Bryan Galdámez",
-              "description": "Kontributor besar di fitur tema",
-              "link": "https://josuegalre.netlify.app/"
-            },
-            "oscar": {
-              "name": "Oscar Gonzalez",
-              "description": "Site Reliability Engineer (SRE) dan code signing.",
-              "link": false
-            },
-            "daniel": {
-              "name": "Daniel García",
-              "description": "Maintainer sertifikat macOS dan notarization",
-              "link": false
-            },
-            "brhm": {
-              "name": "BrhmDev",
-              "description": "Kontributor aktif dengan berbagai fitur keren",
-              "link": "https://github.com/BrhmDev"
-            },
-            "kristijanribaric": {
-              "name": "Kristijan Ribaric",
-              "description": "Kontributor aktif di split view & workspaces",
-              "link": "https://github.com/kristijanribaric"
-            },
-            "larvey": {
-              "name": "Larvey",
-              "description": "Maintainer AUR",
-              "link": "https://github.com/LarveyOfficial/"
-            },
-            "studio": {
-              "name": "Studio Movie Girl",
-              "description": "Kontributor besar di gradient generator",
-              "link": "https://github.com/StudioMovieGirl"
-            }
+      "description": "RAZBerry Browser dibikin buat lo yang pengen browsing kenceng, tampilannya cakep, tapi tetep aman dan gak ribet. Pake RAZBerry gak bakal nyesel deh — bebas iklan pelacak, gak ada telemetry ngumpet, dan nyaman banget buat kerja lama.",
+      "littleHelp": "Support / Donate",
+      "hero": {
+        "badge": "Tentang Kami & Studio",
+        "downloadBtn": "Download RAZBerry"
+      },
+      "purpose": {
+        "fastTitle": "Kenceng & Ringan",
+        "fastDesc": "Dibangun di atas mesin Firefox/Gecko tanpa bloatware, jadi buka banyak tab tetep enteng.",
+        "privacyTitle": "Privacy Aman Banget",
+        "privacyDesc": "Gak nyedot data lo sama sekali. Semua telemetry dimatiin biar lo tenang pas browsing.",
+        "designTitle": "Tema Black-Pink Cakep",
+        "designDesc": "Tampilan Black-Pink Raspberry yang tegas, kontras jelas, dan enak dilihat siang maupun malam."
+      },
+      "studio": {
+        "badge": "RAZ Creative Studio",
+        "titleLine1": "Saat Tech Kenceng Ketemu",
+        "titleLine2": "Desain yang Cakep",
+        "paragraph1": "RAZ Creative Studio lahir dari keresahan simpel: banyak website sama aplikasi di luar sana yang tampilannya cakep tapi beratnya minta ampun, atau sistemnya canggih tapi bikin pusing penggunanya. Gue dan tim hadir buat nyambungin dua hal itu — desain modern ketemu performa yang kenceng.",
+        "paragraph2": "Kami gak cuma bikin desain pemanis layar, tapi mikirin juga alur pemakaian yang gampang buat lo. Dari bikin website ngebut, brand identity, desain 3D & CAD presisi, sampe tools gratis berbasis web buat publik.",
+        "visitWebsite": "Kunjungi raz.web.id",
+        "contactBtn": "Hubungi RAZ Studio",
+        "cardNote": "Partner teknologi & kreatif digital dari Indonesia — bikin produk digital yang cakep, ringan, dan beneran kepake."
+      },
+      "projects": {
+        "badge": "Karya & Project RAZ",
+        "title": "Project-Project RAZ Creative Studio",
+        "description": "Selain RAZBerry Browser, ini dia beberapa karya dan tools open-source bikinan RAZ Creative Studio yang bisa langsung lo cobain:",
+        "visitLabel": "Lihat Project",
+        "items": {
+          "razberry": {
+            "name": "RAZBerry Browser",
+            "tag": "Browser FOSS",
+            "desc": "Browser modern bertema Black-Pink Raspberry, fokus privacy, punya Workspaces, Split View, dan Mods."
           },
-          "website": {
-            "taroj1205": {
-              "name": "Shintaro Jokagi",
-              "description": "Arsitek Website Utama, Refactoring & Technical Enhancements",
-              "link": "https://github.com/taroj1205"
-            },
-            "jace": {
-              "name": "Jace",
-              "description": "Kontribusi di desain website dan branding",
-              "link": "https://x.com/JaceThings"
-            },
-            "canoa": {
-              "name": "Canoa",
-              "description": "Kontributor aktif di penanganan issue & manajemen website",
-              "link": "https://thatcanoa.org/"
-            },
-            "adam": {
-              "name": "Adam",
-              "description": "Branding dan desain",
-              "link": "https://cybrneon.xyz/"
-            },
-            "n7itro": {
-              "name": "n7itro",
-              "description": "Kontributor aktif dan penulis release notes",
-              "link": "https://github.com/n7itro"
-            },
-            "jafeth": {
-              "name": "Jafeth Garro",
-              "description": "Penulis dokumentasi",
-              "link": "https://iamjafeth.com/"
-            }
+          "razdm": {
+            "name": "RAZ Download Manager",
+            "tag": "Desktop App",
+            "desc": "Aplikasi download manager kenceng dan ringan bikinan RAZ Studio di dm.it-raz.com."
+          },
+          "invitraz": {
+            "name": "InvitRAZ",
+            "tag": "Undangan Digital",
+            "desc": "Platform undangan digital modern dengan desain elegan dan gampang banget diatur."
+          },
+          "simajuraz": {
+            "name": "SIMAJURAZ POS",
+            "tag": "Kasir FOSS",
+            "desc": "Sistem kasir (Point of Sale) open-source buat bantu operasional bisnis makin rapi."
+          },
+          "razoffice": {
+            "name": "RAZ Office",
+            "tag": "Produktivitas FOSS",
+            "desc": "Paket tools perkantoran open-source yang ringan buat kebutuhan dokumen harian."
+          },
+          "razpdf": {
+            "name": "RAZ PDF Tools",
+            "tag": "Web Tools FOSS",
+            "desc": "Tools olah file PDF langsung di web — gratis, cepet, dan gak perlu install macem-macem."
           }
         }
       },
-      "contributors": {
-        "title": "Kontributor",
-        "description": "Daftar kontributor yang ikut ngebantu bikin RAZBerry Browser makin oke.",
-        "browser": "Browser",
-        "website": "Website"
+      "connect": {
+        "badge": "Dukungan & Komunitas",
+        "title": "Suka sama Karya RAZ Studio?",
+        "description": "Kalau project-project kami ngebantu kerjaan lo, lo bisa kasih dukungan lewat halaman Donate atau ikutin update kami di sosial media. Makasih banyak udah mampir!",
+        "donateBtn": "Donate Sekarang",
+        "socialLabel": "Ikuti Sosial Media RAZ Studio"
       }
     },
     "donate": {
-      "title": "Donasi & Support",
-      "description": "Kami tim kecil yang terus ngembangin browser terbaik buat kamu. Kalau kamu suka sama karya kami, yuk support biar makin semangat!",
-      "patreon": {
-        "title": "Patreon",
-        "description": "Lewat Patreon kamu bisa support dengan donasi bulanan sesuai level yang kamu mau.",
-        "button": "Buka Patreon"
+      "badge": "Support Open Source",
+      "title": "Donate & Support",
+      "description": "Gue dan tim RAZ Creative Studio terus ngembangin RAZBerry biar makin mantap buat lo pake tiap hari. Kalau lo suka dan ngerasa kebantu, yuk support kami biar makin semangat!",
+      "directSupport": {
+        "title": "Support Langsung RAZ",
+        "description": "Mau kasih dukungan langsung, traktir kopi, atau ngobrolin kolaborasi bareng RAZ Creative Studio? Langsung chat aja lewat WhatsApp resmi kami.",
+        "button": "Chat via WhatsApp"
       },
-      "koFi": {
-        "title": "Ko-fi",
-        "description": "Lewat Ko-fi kamu bisa traktir kopi sekali jalan atau langganan bulanan juga bisa.",
-        "button": "Buka Ko-fi"
-      }
+      "partner": {
+        "title": "Partner & Sponsor",
+        "description": "Mau ajak kerja sama atau jadi sponsor resmi buat project-project RAZ Studio? Kirim aja penawaran lo ke email razcreativestudio@gmail.com.",
+        "button": "Kirim Email Resmi"
+      },
+      "socialLabel": "Sosial Media RAZ Creative Studio"
     },
     "download": {
       "title": "Mulai perjalananmu",
@@ -467,6 +441,11 @@
       }
     },
     "welcome": {
+      "badge": "Onboarding Resmi • RAZBerry Browser",
+      "headlinePrefix": "Selamat Datang di",
+      "subtitle": "Nikmatin pengalaman browsing yang lebih tenang, kenceng, jaga privacy, dan gak banyak distraksi dengan tema Black-Pink Raspberry. Pake ini dijamin gak bakal nyesel!",
+      "startBtn": "Mulai Jelajah",
+      "modsBtn": "Liat RAZBerry Mods",
       "title": [
         "Selamat Datang ",
         "di ",

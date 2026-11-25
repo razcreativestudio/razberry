@@ -1,152 +1,138 @@
 # RAZBerry Browser
 
 <p align="center">
-  <img src="razberry-logo.png" alt="RAZBerry Logo" width="160" />
+  <img src="razberry-logo.png" alt="RAZBerry Browser Logo" width="150" />
 </p>
 
 <p align="center">
-  <strong>Peramban Web Modern, Produktif & Berpusat pada Privasi oleh RAZ Creative Studio</strong>
+  <strong>Browser Modern yang Cepat, Fokus, dan Menjaga Privasi — Dibuat oleh RAZ Creative Studio</strong>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Versi-1.1.0-D81B60.svg" alt="Versi" />
-  <img src="https://img.shields.io/badge/Engine-Firefox%20%2F%20Zen-BA1257.svg" alt="Engine" />
-  <img src="https://img.shields.io/badge/Build-Ready%20to%20Run-success.svg" alt="Build" />
-  <img src="https://img.shields.io/badge/Website-razberry.it--raz.com-FF4081.svg" alt="Website" />
+  <img src="https://img.shields.io/badge/Engine-Firefox%20%2F%20Gecko-BA1257.svg" alt="Engine" />
+  <img src="https://img.shields.io/badge/Platform-Windows%2010%2F11-FF4081.svg" alt="Platform" />
+  <img src="https://img.shields.io/badge/Website-razberry.it--raz.com-D81B60.svg" alt="Website" />
   <img src="https://img.shields.io/badge/CI%2FCD-Passing-brightgreen.svg" alt="CI/CD" />
 </p>
 
 ---
 
-## 📖 Ringkasan Proyek
+## Apa Itu RAZBerry Browser?
 
-**RAZBerry** adalah peramban web custom yang dirancang untuk pengguna yang mengutamakan produktivitas tinggi, kenyamanan visual, dan privasi tanpa kompromi. Berbasiskan arsitektur modern **Zen Browser** (mesin Firefox), RAZBerry menghadirkan pengalaman navigasi multi-tab cerdas dengan balutan identitas visual eksklusif bertema **Solid Raspberry Pink** (`#D81B60`) dari RAZ Creative Studio.
+**RAZBerry Browser** adalah browser web modern bertema **Black-Pink Raspberry** yang dibuat oleh **RAZ Creative Studio** (`raz.web.id`). Browser ini dirancang buat kamu yang butuh kerja cepat, tampilan bersih tanpa gangguan visual, serta privasi penuh tanpa pelacakan (zero telemetry).
 
-Peramban ini didukung oleh portal website mandiri **RAZBerry Web** (`https://razberry.it-raz.com`) yang dibangun menggunakan Astro, Tailwind CSS, dan React, mencakup halaman utama, halaman Welcome onboarding (`/welcome/`), dan Privacy Policy (`/privacy-policy/`).
-
----
-
-## ✨ Fitur Unggulan
-
-- 🍇 **Tema Solid Raspberry Pink**: Tampilan bersih, kontras tinggi, dan elegan dengan warna khas Raspberry Pink (`#D81B60` dan `#FF4081`) yang telah terverifikasi 100% lulus standar aksesibilitas WCAG AA/AAA. Seluruh efek glassmorphism, blur berlebih, transparansi, dan Windows Mica dinonaktifkan secara total.
-- 🚀 **Welcome Screen Onboarding Eksklusif**: Layar sambutan awal yang elegan menampilkan judul *"Welcome to RAZBerry Browser By RAZ Creative Studio"* dengan **Logo RAZBerry** dan **Logo RAZ Creative Studio** transparan tanpa background.
-- 🖼️ **Ikon Konsisten & Presisi**: Ikon logo RAZBerry disuntikkan langsung ke 32 slot Win32 PE Resource pada `razberry.exe`, window title bar dialog XUL, taskbar grouping, dan favicon global.
-- 🛠️ **Informasi Sistem Akurat (`about:support`)**: Nama peramban terkonfigurasi permanen sebagai **RAZBerry** pada tabel *Application Basics* di `about:support`.
-- 🔒 **Proteksi Anti Auto-Update**: Seluruh mekanisme background updater upstream dinonaktifkan total (`MOZ_UPDATER: false`, cache ProgramData dibersihkan, Enterprise Policies) sehingga kustomisasi peramban tidak akan pernah tertimpa.
-- 📁 **Space Folder "razberrys"**: Folder default pertama ruang kerja (spaces) dinamai `razberrys`.
-- 🌐 **Ekosistem Web Terintegrasi**: Halaman welcome default mengarah ke `https://razberry.it-raz.com/welcome/` dan privacy policy ke `https://razberry.it-raz.com/privacy-policy/`.
-- 📑 **Manajemen Tab Vertikal**: Penataan ruang layar yang jauh lebih lega untuk layar modern 16:9 dan ultra-wide.
-- 🪟 **Built-in Split View**: Menampilkan dua halaman web berdampingan dalam satu jendela tanpa ekstensi tambahan.
-- 🛡️ **Privasi Maksimal**: Zero telemetry, zero tracking, dan pelindung pelacakan bawaan.
+Website resmi: **[https://razberry.it-raz.com](https://razberry.it-raz.com)**
 
 ---
 
-## 🎨 Identitas Brand & Aset
+## Kemampuan & Fitur Utama
 
-| Komponen | Spesifikasi | Keterangan |
-|----------|-------------|------------|
-| **Nama Aplikasi** | RAZBerry | Ditampilkan di menu & title bar |
-| **Vendor** | RAZ Creative Studio | Identitas pembuat |
-| **App ID / Binary** | `razberry` | Nama proses & eksekusi |
-| **Domain Resmi** | `https://razberry.it-raz.com` | Portal & welcome server |
-| **Warna Utama** | `#C72C48` (Raspberry Red) | Aksen utama tema |
-| **Warna Latar** | `#120305` & `#1A0508` (Dark Berry) | Kanvas solid tanpa blur |
-| **Warna Urlbar** | `#26080F` (Maroon Berry) | Kontras kolom pencarian |
-| **Aset Logo RAZBerry** | `razberry-logo.png` | Format 32-bit ARGB transparan |
-| **Aset Logo RAZ Studio** | `RAZ_Creative_Studio_Transparent.png` / `.svg` | Format transparan tanpa latar belakang |
+1. **Workspaces & Tab Vertikal**  
+   Pisahkan tab kerja, riset, kuliah, dan hiburan ke ruang kerja masing-masing agar tidak menumpuk dan tetap rapi.
+2. **Split View Bawaan**  
+   Buka dan bandingkan dua halaman web atau lebih secara berdampingan dalam satu jendela tanpa perlu install ekstensi tambahan.
+3. **Compact Mode & Glance**  
+   Sembunyikan bar tab saat tidak dibutuhkan agar layar lebih lega, dan intip tab favorit dengan cepat lewat fitur Glance.
+4. **Tema Eksklusif Black-Pink Raspberry**  
+   Tampilan solid dengan kontras tinggi (`#120305` & `#D81B60`) yang nyaman di mata untuk pemakaian siang maupun malam, tanpa efek blur berat.
+5. **RAZBerry Mods**  
+   Bebas kustomisasi tampilan dan perilaku browser melalui koleksi Mods di `razberry.it-raz.com/mods`.
+6. **Privasi Maksimal (Zero Telemetry)**  
+   Semua telemetri dan pelacakan bawaan dimatikan. Riwayat, cookies, dan pengaturan tersimpan lokal di perangkatmu.
+7. **Proteksi Anti Auto-Update Paksa**  
+   Kustomisasi tema dan pengaturanmu aman karena mekanisme penimpaan otomatis sudah dinonaktifkan.
 
 ---
 
-## 📁 Struktur Direktori
+## Teknologi yang Digunakan
 
-Informasi struktur lengkap dapat dibaca pada [RAZProjectStructure.md](file:///c:/Users/Administrator/Documents/DATA%20ZUL/RAZ/RAZBerry/RAZProjectStructure.md).
+| Komponen | Teknologi | Fungsi |
+|----------|-----------|--------|
+| **Mesin Browser** | Firefox / Gecko + Zen UI | Rendering web cepat, aman, dan mendukung ekstensi Firefox |
+| **Tema & Antarmuka** | CSS Tokens, XUL, Fluent (`.ftl`), JS Modules (`.mjs`) | Tema Black-Pink Raspberry, Welcome Onboarding, dan Migration Wizard |
+| **Installer Windows** | C# WinForms (`.NET Framework 4.0+`) | `RAZBerrySetup.exe` & `Uninstall RAZBerry.exe` bergaya floating banner |
+| **Website Resmi** | Astro, Tailwind CSS v4, React, TypeScript | Portal multi-bahasa (`Indo Oke`, `Indonesia`, `English`) |
+| **CI/CD & Rilis** | GitHub Actions & GitHub Releases | Build otomatis, rilis binary, dan deploy ke `razberry.it-raz.com` |
 
-```
-RAZBerry/
-├── backup/                 # Salinan backup aman sebelum modifikasi file
-├── dist/                   # Hasil build distribusi mandiri RAZBerry
-│   └── RAZBerry/
-│       ├── razberry.exe    # Eksekutabel peramban dengan 28 patched Win32 PE icons
-│       ├── RAZBerry.bat    # Batch launcher
-│       ├── RAZBerry.lnk    # Shortcut peramban Windows
-│       ├── chrome/icons/   # Ikon window native XUL (main-window, default, about)
-│       └── browser/omni.ja # Mesin UI terinjeksi tema solid raspberry, dual logo & prefs
-├── docs/                   # Log harian dan histori update proyek
-│   ├── RAZUpdateHistory_2026-01-06.md
-│   └── RAZUpdateHistory_2026-11-24.md
-├── razberry/               # Base repository RAZBerry Desktop
-│   ├── configs/branding/   # Aset logo, ICO multi-resolusi, dan SVG RAZBerry
-│   ├── src/                # Kode sumber UI dan ekstensi antarmuka
-│   └── locales/            # File lokalisasi (en-US, id, dll) dengan teks sambutan RAZBerry
-├── razberry-www/           # Source code website resmi RAZBerry (Astro + Tailwind CSS)
-├── RAZ_Creative_Studio_Transparent.png  # Aset logo RAZ Studio transparan
-├── RAZ_Creative_Studio_Transparent.svg  # Aset vektor RAZ Studio transparan
-├── RAZCreateTransparentLogo.py          # Skrip pembuatan logo transparan
-├── RAZApplyCustomizations.py            # Skrip injeksi kustomisasi & branding
-├── RAZBuildBrowser.ps1                  # Otomatisasi build & packaging lengkap
-├── RAZPatchExeIcons.py                  # Skrip patching Win32 PE resources
-└── RAZRebrandWebsite.py                 # Skrip rebranding website resmi
-│   ├── prefs/              # Pengaturan preferensi default browser
-│   ├── surfer.json         # Konfigurasi identitas aplikasi RAZBerry
-│   └── package.json        # Toolchain build npm & surfer
-├── razberry-www/           # Repositori website resmi RAZBerry (Astro + Tailwind)
-│   ├── src/pages/          # Halaman index, welcome, privacy-policy
-│   ├── src/components/     # Komponen UI Logo, Hero, NavBar bertema raspberry
-│   └── public/             # Favicon, logo.png, dan aset statis website
-├── razberry-logo.png       # Master icon RAZBerry transparan
-├── RAZApplyCustomizations.py # Skrip injeksi kustomisasi tema, update, & URLs
-├── RAZPatchExeIcons.py     # Skrip injeksi 28 embedded icons pada razberry.exe
-├── RAZRebrandWebsite.py    # Skrip otomatisasi rebranding website Astro
-├── RAZBuildBrowser.ps1     # Skrip otomatisasi build & packaging distribusi
-├── RAZGenerateIcons.ps1    # Skrip otomatisasi konversi & generate aset ikon
-├── RAZBerry.bat            # Launcher cepat di root direktori
-├── RAZBerry.lnk            # Shortcut berikon di root direktori
-├── RAZGuide.md             # Panduan instalasi dan build lengkap
-├── RAZProjectPlan.md       # Roadmap dan status tahapan proyek
-├── RAZProjectStructure.md  # Rincian organisasi berkas
-└── README.md               # Pusat dokumentasi ini (Single Source of Truth)
+---
+
+## Cara Install (Windows 10 / 11)
+
+1. Download installer terbaru **`RAZBerrySetup.exe`** (atau `razberry.installer.exe`) dari:
+   - Website resmi: [https://razberry.it-raz.com/download](https://razberry.it-raz.com/download)
+   - Halaman Rilis GitHub: [Latest Release](https://github.com/razcreativestudio/razberry/releases/latest)
+2. Klik dua kali file `RAZBerrySetup.exe`.
+3. Pada jendela **RAZBerry Setup Wizard**, klik tombol **Install**.
+4. Tunggu progress bar selesai mengekstrak file ke `%LocalAppData%\RAZBerry`.
+5. Setelah selesai, klik **Finish & Open** untuk langsung membuka RAZBerry Browser.
+
+> **Catatan:** Installer otomatis membuat folder **RAZBerry** di Start Menu berisi shortcut `RAZBerry`, `RAZBerry Private Mode`, dan `Remove RAZBerry`, serta mendaftarkannya di *Windows Settings → Installed Apps*.
+
+### Cara Uninstall
+- Buka **Windows Settings → Apps → Installed Apps → RAZBerry Browser → Uninstall**, atau
+- Buka **Start Menu → RAZBerry → Remove RAZBerry**.
+
+---
+
+## Cara Pakai Sehari-hari
+
+- **Pertama Kali Buka**: Ikuti Welcome Screen dan Migration Wizard untuk memindahkan bookmark/data dari Chrome, Edge, atau Brave (atau klik **Skip** jika ingin mulai dari nol).
+- **Membuat Workspace**: Klik ikon workspace di sidebar kiri untuk memisahkan grup tab kerja dan pribadi.
+- **Membuka Split View**: Klik kanan pada beberapa tab yang ingin dibandingkan → pilih *Split Tabs*.
+- **Mengaktifkan Compact Mode**: Tekan pintasan keyboard bawaan atau klik tombol sidebar untuk menyembunyikan/menampilkan bar tab secara otomatis.
+- **Mode Privat**: Jalankan shortcut **RAZBerry Private Mode** dari Start Menu atau tekan `Ctrl + Shift + P`.
+
+---
+
+## Cara Build Sendiri (Untuk Developer)
+
+Jika ingin membangun ulang browser, installer, atau website dari source code:
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/razcreativestudio/razberry.git
+cd razberry
 ```
 
----
-
-## 🚀 Cara Menjalankan & Membangun
-
-### 1. Menjalankan RAZBerry Browser
-Cukup buka salah satu file berikut di root direktori:
-- Klik ganda **`RAZBerry.lnk`** (Shortcut Windows resmi dengan ikon Raspberry), ATAU
-- Jalankan **`RAZBerry.bat`**.
-
-### 2. Membangun / Memperbarui Build Browser
-Jalankan skrip PowerShell otomatis:
+### 2. Build Browser Distribution (Windows)
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\RAZBuildBrowser.ps1
+.\RAZBuildBrowser.ps1
 ```
-Skrip ini akan secara otomatis:
-1. Menyalin runtime binary engine dari `C:\Program Files\Zen Browser`.
-2. Melakukan patching 28 slot icon Win32 PE pada `razberry.exe`.
-3. Memasang window icons native di `chrome/icons/default/`.
-4. Menginjeksi branding, tema Solid Raspberry Red, anti auto-update, dan welcome URLs ke dalam `omni.ja`.
-5. Mengonfigurasi `defaults/pref/razberry-prefs.js`.
-6. Membuat launcher batch dan shortcut Windows.
+Script ini menyiapkan folder distribusi di `dist\RAZBerry\`, menyalin branding, preferensi tema, dan mem-patch `omni.ja`.
 
-### 3. Menjalankan Website Resmi RAZBerry
-Masuk ke direktori `razberry-www` dan jalankan:
+### 3. Compile Installer & Uninstaller (`RAZBerrySetup.exe`)
+Memerlukan Windows dengan `.NET Framework 4.0+` (`csc.exe`):
+```powershell
+.\RAZBuildInstaller.ps1
+```
+Output dihasilkan di:
+- `dist\RAZBerrySetup.exe`
+- `dist\razberry.installer.exe`
+- `dist\Uninstall RAZBerry.exe`
+
+### 4. Build Website (`razberry-www`)
+Memerlukan Node.js 20+:
 ```bash
 cd razberry-www
-pnpm install
-pnpm dev
+npm install
+npm run build
 ```
-Website akan berjalan di `http://localhost:3000`.
-
-### 4. Deployment Otomatis ke Hosting IDwebhost (Paket Tera)
-Proyek ini mendukung CI/CD otomatis via GitHub Actions dan deploy lokal:
-- **GitHub Actions (Auto-Deploy)**: Setiap push ke branch `main` pada `razberry-www` akan otomatis mengompilasi dan mengunggah website ke cPanel IDwebhost melalui FTPS.
-- **Local Deploy**: Jalankan `.\RAZDeployToIDwebhost.ps1` untuk deploy instan satu klik dari komputer Anda.
-- Panduan lengkap konfigurasi secrets dan kredensial hosting dapat dilihat di [docs/RAZHostingDeployGuide.md](file:///c:/Users/Administrator/Documents/DATA%20ZUL/RAZ/RAZBerry/docs/RAZHostingDeployGuide.md).
+Hasil build statis berada di `razberry-www/dist/` dengan dukungan 3 bahasa: **Indo Oke** (`/`), **Indonesia** (`/id/`), dan **English** (`/en/`).
 
 ---
 
-## 📜 Lisensi & Atribusi
+## Ekosistem & Kontak RAZ Creative Studio
 
-- **RAZBerry Browser**: Berdasarkan Mozilla Public License v2.0 (MPL-2.0).
-- **Aset & Identitas Brand**: © 2026 RAZ Creative Studio. Hak Cipta Dilindungi Undang-Undang.
+- **Website Studio**: [https://raz.web.id](https://raz.web.id)
+- **Website RAZBerry**: [https://razberry.it-raz.com](https://razberry.it-raz.com)
+- **RAZ Download Manager**: [https://dm.it-raz.com](https://dm.it-raz.com)
+- **Email Resmi**: `razcreativestudio@gmail.com`
+- **WhatsApp**: `+62 831 7300 2527`
+- **Sosial Media**: Instagram `@raz_studio.id` • YouTube `@razcreativestudio` • TikTok `@razcreativestudio`
+
+---
+
+<p align="center">
+  Dibuat dengan dedikasi oleh <strong>RAZ Creative Studio</strong>
+</p>

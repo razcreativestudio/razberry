@@ -201,117 +201,91 @@
     },
     "about": {
       "title": "Tentang RAZBerry",
-      "description": "Kami adalah tim pengembang dan perancang yang peduli terhadap pengalaman Anda di web. Kami percaya internet seharusnya menjadi tempat untuk menjelajah, belajar, dan terhubung tanpa khawatir data Anda dikumpulkan.",
-      "littleHelp": "Ingin membantu?",
-      "mainTeam": {
-        "title": "Tim Utama",
-        "description": "Daftar anggota tim utama yang bekerja keras menghadirkan pengalaman menjelajah terbaik untuk Anda.",
-        "subTitle": {
-          "browser": "Peramban",
-          "website": "Situs Web dan Penjenamaan"
-        },
-        "members": {
-          "browser": {
-            "mauro": {
-              "name": "Mauro V.",
-              "description": "Pencipta, Pengembang Utama",
-              "link": "https://cheff.dev/"
-            },
-            "jan": {
-              "name": "Jan Heres",
-              "description": "Kontributor aktif dan membantu kompilasi macOS",
-              "link": "https://janheres.eu/"
-            },
-            "bryan": {
-              "name": "Bryan Galdámez",
-              "description": "Kontributor utama pada fungsionalitas tema",
-              "link": "https://josuegalre.netlify.app/"
-            },
-            "oscar": {
-              "name": "Oscar Gonzalez",
-              "description": "Site Reliability Engineer (SRE) dan penandatanganan kode.",
-              "link": false
-            },
-            "daniel": {
-              "name": "Daniel García",
-              "description": "Pengelola sertifikat macOS dan notarization aplikasi",
-              "link": false
-            },
-            "brhm": {
-              "name": "BrhmDev",
-              "description": "Kontributor aktif dengan kontribusi besar",
-              "link": "https://github.com/BrhmDev"
-            },
-            "kristijanribaric": {
-              "name": "Kristijan Ribaric",
-              "description": "Kontributor aktif pada tampilan terbagi / ruang kerja",
-              "link": "https://github.com/kristijanribaric"
-            },
-            "larvey": {
-              "name": "Larvey",
-              "description": "Pengelola paket AUR",
-              "link": "https://github.com/LarveyOfficial/"
-            },
-            "studio": {
-              "name": "Studio Movie Girl",
-              "description": "Kontributor utama pada generator gradien",
-              "link": "https://github.com/StudioMovieGirl"
-            }
+      "description": "RAZBerry Browser dikembangkan untuk Anda yang menginginkan peramban cepat, tampil modern, aman, dan bebas gangguan. Tanpa pelacakan tersembunyi, tanpa telemetri, serta nyaman digunakan untuk produktivitas harian.",
+      "littleHelp": "Dukung / Donasi",
+      "hero": {
+        "badge": "Tentang Kami & Studio",
+        "downloadBtn": "Unduh RAZBerry"
+      },
+      "purpose": {
+        "fastTitle": "Cepat & Ringan",
+        "fastDesc": "Dibangun di atas mesin sumber terbuka Firefox/Gecko tanpa perangkat lunak tambahan yang memberatkan.",
+        "privacyTitle": "Privasi Maksimal",
+        "privacyDesc": "Seluruh pengumpulan telemetri dan pelacakan dinonaktifkan agar aktivitas menjelajah Anda tetap pribadi.",
+        "designTitle": "Desain Black-Pink Elegan",
+        "designDesc": "Antarmuka bertema Black-Pink Raspberry dengan kontras tinggi yang nyaman di mata sepanjang hari."
+      },
+      "studio": {
+        "badge": "RAZ Creative Studio",
+        "titleLine1": "Saat Teknologi Kencang Bertemu",
+        "titleLine2": "Desain yang Rapi",
+        "paragraph1": "RAZ Creative Studio adalah mitra teknologi dan studio kreatif digital dari Indonesia. Kami hadir untuk menjembatani desain visual modern dengan sistem berkinerja tinggi yang ringan dan mudah digunakan.",
+        "paragraph2": "Kami merancang alur penggunaan, antarmuka, hingga arsitektur backend dengan tujuan jelas: mulai dari pengembangan web modern, identitas merek, visualisasi 3D & CAD presisi, hingga perangkat lunak produktivitas sumber terbuka untuk publik.",
+        "visitWebsite": "Kunjungi raz.web.id",
+        "contactBtn": "Hubungi RAZ Studio",
+        "cardNote": "Mitra teknologi & studio kreatif digital dari Indonesia — menghadirkan produk digital modern yang ringan dan berdampak nyata."
+      },
+      "projects": {
+        "badge": "Portofolio & Proyek RAZ",
+        "title": "Proyek-Proyek RAZ Creative Studio",
+        "description": "Selain RAZBerry Browser, berikut adalah berbagai produk digital dan perangkat lunak sumber terbuka karya RAZ Creative Studio:",
+        "visitLabel": "Lihat Proyek",
+        "items": {
+          "razberry": {
+            "name": "RAZBerry Browser",
+            "tag": "Peramban FOSS",
+            "desc": "Peramban modern bertema Black-Pink Raspberry dengan fokus privasi, Ruang Kerja, Tampilan Terbagi, dan Mods."
           },
-          "website": {
-            "taroj1205": {
-              "name": "Shintaro Jokagi",
-              "description": "Arsitek Situs Web Inti, Refaktorisasi, dan Peningkatan Teknis",
-              "link": "https://github.com/taroj1205"
-            },
-            "jace": {
-              "name": "Jace",
-              "description": "Berkontribusi pada desain situs web dan penjenamaan",
-              "link": "https://x.com/JaceThings"
-            },
-            "canoa": {
-              "name": "Canoa",
-              "description": "Kontributor aktif dalam penanganan masalah dan pengelolaan situs web",
-              "link": "https://thatcanoa.org/"
-            },
-            "adam": {
-              "name": "Adam",
-              "description": "Penjenamaan dan desain",
-              "link": "https://cybrneon.xyz/"
-            },
-            "n7itro": {
-              "name": "n7itro",
-              "description": "Kontributor aktif dan penulis catatan rilis",
-              "link": "https://github.com/n7itro"
-            },
-            "jafeth": {
-              "name": "Jafeth Garro",
-              "description": "Penulis dokumentasi",
-              "link": "https://iamjafeth.com/"
-            }
+          "razdm": {
+            "name": "RAZ Download Manager",
+            "tag": "Aplikasi Desktop",
+            "desc": "Aplikasi pengelola unduhan yang cepat dan ringan buatan RAZ Creative Studio di dm.it-raz.com."
+          },
+          "invitraz": {
+            "name": "InvitRAZ",
+            "tag": "Undangan Digital",
+            "desc": "Platform undangan digital modern dengan desain elegan dan pengelolaan yang praktis."
+          },
+          "simajuraz": {
+            "name": "SIMAJURAZ POS",
+            "tag": "Kasir FOSS",
+            "desc": "Sistem kasir (Point of Sale) sumber terbuka untuk membantu pencatatan dan operasional usaha."
+          },
+          "razoffice": {
+            "name": "RAZ Office",
+            "tag": "Produktivitas FOSS",
+            "desc": "Paket perangkat lunak perkantoran sumber terbuka yang ringan untuk kebutuhan dokumen harian."
+          },
+          "razpdf": {
+            "name": "RAZ PDF Tools",
+            "tag": "Alat Web FOSS",
+            "desc": "Kumpulan alat pengolah berkas PDF berbasis web yang cepat, gratis, dan langsung pakai."
           }
         }
       },
-      "contributors": {
-        "title": "Kontributor",
-        "description": "Daftar kontributor yang telah membantu menjadikan RAZBerry Browser semakin baik.",
-        "browser": "Peramban",
-        "website": "Situs Web"
+      "connect": {
+        "badge": "Dukungan & Komunitas",
+        "title": "Ingin Mendukung Karya RAZ Studio?",
+        "description": "Jika proyek-proyek kami bermanfaat untuk pekerjaan Anda, berikan dukungan melalui halaman Donasi atau ikuti pembaruan kami melalui media sosial resmi.",
+        "donateBtn": "Donasi Sekarang",
+        "socialLabel": "Ikuti Media Sosial RAZ Studio"
       }
     },
     "donate": {
-      "title": "Donasi",
-      "description": "Kami adalah tim pengembang kecil yang bekerja keras menghadirkan pengalaman menjelajah terbaik. Jika Anda menyukai karya kami, pertimbangkan untuk mendukung kami.",
-      "patreon": {
-        "title": "Patreon",
-        "description": "Patreon memungkinkan Anda mendukung kami melalui donasi bulanan sesuai tingkat dukungan pilihan Anda.",
-        "button": "Buka Patreon"
+      "badge": "Dukung Sumber Terbuka",
+      "title": "Donasi & Dukungan",
+      "description": "Tim RAZ Creative Studio terus mengembangkan RAZBerry Browser agar semakin andal. Jika Anda menyukai karya kami, pertimbangkan untuk memberikan dukungan.",
+      "directSupport": {
+        "title": "Dukungan Langsung RAZ",
+        "description": "Ingin mendukung pengembangan RAZBerry Browser atau berkolaborasi bersama RAZ Creative Studio? Hubungi tim kami langsung melalui WhatsApp resmi.",
+        "button": "Hubungi via WhatsApp"
       },
-      "koFi": {
-        "title": "Ko-fi",
-        "description": "Ko-fi memungkinkan Anda mendukung kami dengan donasi satu kali maupun donasi bulanan.",
-        "button": "Buka Ko-fi"
-      }
+      "partner": {
+        "title": "Mitra & Sponsor",
+        "description": "Kirimkan dukungan, penawaran sponsor, atau kerja sama resmi melalui surat elektronik studio kami di razcreativestudio@gmail.com.",
+        "button": "Kirim Email Resmi"
+      },
+      "socialLabel": "Media Sosial RAZ Creative Studio"
     },
     "download": {
       "title": "Mulai perjalanan Anda",
@@ -467,6 +441,11 @@
       }
     },
     "welcome": {
+      "badge": "Orientasi Resmi • RAZBerry Browser",
+      "headlinePrefix": "Selamat Datang di",
+      "subtitle": "Nikmati pengalaman berselancar di web yang lebih tenang, cepat, berfokus pada privasi, dan bebas gangguan dengan tema eksklusif Black-Pink Raspberry.",
+      "startBtn": "Mulai Menjelajah",
+      "modsBtn": "Lihat RAZBerry Mods",
       "title": [
         "Selamat Datang ",
         "di ",

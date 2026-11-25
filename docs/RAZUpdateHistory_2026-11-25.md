@@ -139,3 +139,17 @@
 - **Sinkronisasi Halaman Utama (`index.astro` & `Hero.astro`) & Versi**:
   - Menghubungkan section *Why RAZBerry* dan tombol eksplorasi fitur ke `getUI(locale)`.
   - Menaikkan versi dokumen & proyek ke `1.1.0`.
+
+
+### 16:55 WIB — Overhaul Halaman About, Hapus Sponsors/Contributors, Bahasa Betawi-Jakarta, & User-Focused README
+- **Penghapusan Section**:
+  - Menghapus `<Sponsors showSponsors />` dari `razberry-www/src/pages/[...locale]/index.astro`.
+  - Menghapus section `Main Team` dan `Contributors` dari `razberry-www/src/pages/[...locale]/about.astro`.
+- **Halaman About Baru (`about.astro`)**:
+  - Menampilkan tujuan dibuatnya RAZBerry Browser, profil resmi **RAZ Creative Studio** (berdasarkan `https://raz.web.id/about-raz.html`), 6 kartu proyek RAZ Studio (`RAZBerry Browser`, `RAZ Download Manager`, `InvitRAZ`, `SIMAJURAZ POS`, `RAZ Office`, `RAZ PDF Tools`), tombol **Donate**, WhatsApp, GitHub, dan `SocialMediaStrip`.
+- **Penyempurnaan Bahasa Indo Oke (`id-oke`) & Multi-Bahasa Lengkap**:
+  - Memperbarui gaya `id-oke` menjadi dominan Bahasa Indonesia dengan logat santai Betawi/Jakarta (`lo`, `gue`, `banget`, `cakep`, `gak bakal`, `nyesel`, `sat-set`) sambil mempertahankan istilah komputer umum.
+  - Menghubungkan halaman `about.astro`, `donate.astro`, dan `welcome.astro` sepenuhnya ke `getUI(locale)` untuk 3 bahasa (`id-oke`, `id`, `en`).
+  - Memperjelas tombol pemilih bahasa di `RAZLanguageSwitch.astro` agar menampilkan label bahasa aktif lengkap.
+- **User-Focused `README.md`**:
+  - Menulis ulang `README.md` khusus untuk pengguna akhir: penjelasan, kemampuan, teknologi, cara install, cara pakai sehari-hari, cara build, dan kontak RAZ Creative Studio.

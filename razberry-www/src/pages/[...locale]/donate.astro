@@ -1,6 +1,11 @@
 ---
+/**
+ * Updated: 2026-11-25 16:50:00 WIB
+ * Deskripsi: Halaman Donasi & Dukungan untuk RAZBerry Browser & RAZ Creative Studio (multi-bahasa).
+ */
 import Button from '~/components/Button.astro'
 import Description from '~/components/Description.astro'
+import SocialMediaStrip from '~/components/SocialMediaStrip.astro'
 import ArrowRightIcon from '~/icons/ArrowRightIcon.astro'
 import Layout from '~/layouts/Layout.astro'
 import { getLocale, getUI } from '~/utils/i18n'
@@ -16,7 +21,7 @@ const {
 <Layout title={layout.donate.title} description={layout.donate.description}>
   <main class="container flex flex-col items-center gap-12 py-16 lg:py-24">
     <div class="flex flex-col items-center gap-4 text-center">
-      <span class="raz-section-label">Support Open Source</span>
+      <span class="raz-section-label">{donate.badge}</span>
       <h1 class="text-4xl font-extrabold sm:text-6xl">
         {donate.title} <span class="pink-text">RAZBerry</span>
       </h1>
@@ -31,13 +36,13 @@ const {
           <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl text-2xl" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
             <i class="fab fa-whatsapp"></i>
           </div>
-          <h2 class="text-3xl font-extrabold">Dukungan Langsung RAZ</h2>
+          <h2 class="text-3xl font-extrabold">{donate.directSupport.title}</h2>
           <Description class="text-sm" style="color: var(--color-light-secondary);">
-            Ingin mendukung pengembangan RAZBerry Browser atau kolaborasi bersama RAZ Creative Studio? Hubungi tim kami langsung via WhatsApp atau halaman kontak resmi.
+            {donate.directSupport.description}
           </Description>
         </div>
         <Button isPrimary href="https://wa.me/6283173002527" localePath={false} target="_blank" class="w-full">
-          Hubungi via WhatsApp
+          {donate.directSupport.button}
           <ArrowRightIcon class="size-4" />
         </Button>
       </div>
@@ -47,16 +52,21 @@ const {
           <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl text-2xl" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
             <i class="fas fa-envelope"></i>
           </div>
-          <h2 class="text-3xl font-extrabold">Partner & Sponsorship</h2>
+          <h2 class="text-3xl font-extrabold">{donate.partner.title}</h2>
           <Description class="text-sm" style="color: var(--color-light-secondary);">
-            Kirimkan dukungan, sponsor, atau penawaran kerja sama resmi melalui email studio kami di razcreativestudio@gmail.com.
+            {donate.partner.description}
           </Description>
         </div>
         <Button href="mailto:razcreativestudio@gmail.com" localePath={false} isPrimary class="w-full">
-          Kirim Email Resmi
+          {donate.partner.button}
           <ArrowRightIcon class="size-4" />
         </Button>
       </div>
+    </div>
+
+    <div class="flex flex-col items-center gap-3 pt-2">
+      <span class="text-xs font-semibold uppercase tracking-widest opacity-60">{donate.socialLabel}</span>
+      <SocialMediaStrip />
     </div>
   </main>
 </Layout>

@@ -1,107 +1,261 @@
 ---
-import { Image } from 'astro:assets'
+/**
+ * Updated: 2026-11-25 16:50:00 WIB
+ * Deskripsi: Halaman About RAZBerry Browser & RAZ Creative Studio (multi-bahasa: id-oke, id, en).
+ *            Menjelaskan tujuan RAZBerry, profil RAZ Creative Studio (raz.web.id/about-raz.html),
+ *            daftar project unggulan, tombol Donate, dan tautan Sosial Media.
+ */
 import Button from '~/components/Button.astro'
 import Description from '~/components/Description.astro'
+import SocialMediaStrip from '~/components/SocialMediaStrip.astro'
+import ArrowRightIcon from '~/icons/ArrowRightIcon.astro'
 import Layout from '~/layouts/Layout.astro'
-import { getLocale, getUI } from '~/utils/i18n'
+import { getLocale, getPath, getUI } from '~/utils/i18n'
 export { getStaticPaths } from '~/utils/i18n'
 
 const locale = getLocale(Astro)
+const getLocalePath = getPath(locale)
 const {
   routes: { about },
   layout,
 } = getUI(locale)
+
+const projects = [
+  {
+    icon: 'fas fa-globe',
+    name: about.projects.items.razberry.name,
+    tag: about.projects.items.razberry.tag,
+    desc: about.projects.items.razberry.desc,
+    url: getLocalePath('/download'),
+    external: false,
+  },
+  {
+    icon: 'fas fa-download',
+    name: about.projects.items.razdm.name,
+    tag: about.projects.items.razdm.tag,
+    desc: about.projects.items.razdm.desc,
+    url: 'https://dm.it-raz.com/',
+    external: true,
+  },
+  {
+    icon: 'fas fa-envelope-open-text',
+    name: about.projects.items.invitraz.name,
+    tag: about.projects.items.invitraz.tag,
+    desc: about.projects.items.invitraz.desc,
+    url: 'https://raz.web.id/',
+    external: true,
+  },
+  {
+    icon: 'fas fa-cash-register',
+    name: about.projects.items.simajuraz.name,
+    tag: about.projects.items.simajuraz.tag,
+    desc: about.projects.items.simajuraz.desc,
+    url: 'https://raz.web.id/about-raz.html',
+    external: true,
+  },
+  {
+    icon: 'fas fa-briefcase',
+    name: about.projects.items.razoffice.name,
+    tag: about.projects.items.razoffice.tag,
+    desc: about.projects.items.razoffice.desc,
+    url: 'https://raz.web.id/about-raz.html',
+    external: true,
+  },
+  {
+    icon: 'fas fa-file-pdf',
+    name: about.projects.items.razpdf.name,
+    tag: about.projects.items.razpdf.tag,
+    desc: about.projects.items.razpdf.desc,
+    url: 'https://raz.web.id/about-raz.html',
+    external: true,
+  },
+]
 ---
 
 <Layout title={layout.about.title} description={layout.about.description}>
   <main class="container flex min-h-screen w-full flex-col gap-16 py-16 lg:py-24">
-    <div class="flex w-full flex-col gap-5">
-      <span class="raz-section-label">About & Studio</span>
+    <!-- Section 1: Tentang RAZBerry Browser -->
+    <section class="flex w-full flex-col gap-6">
+      <span class="raz-section-label">{about.hero.badge}</span>
       <h1 class="text-4xl font-extrabold leading-tight sm:text-6xl">
         {about.title} <span class="pink-text">by RAZ Creative Studio</span>
       </h1>
-      <Description class="max-w-3xl text-base leading-relaxed" style="color: var(--color-light-secondary);">
+      <Description class="max-w-3xl text-base leading-relaxed sm:text-lg" style="color: var(--color-light-secondary);">
         {about.description}
       </Description>
-      <div class="pt-2">
-        <Button href="/donate" class="w-fit" isPrimary>
-          {about.littleHelp}
+
+      <div class="grid grid-cols-1 gap-4 pt-2 md:grid-cols-3">
+        <div class="raz-card p-6 space-y-2">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="text-lg font-bold">{about.purpose.fastTitle}</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--color-light-secondary);">
+            {about.purpose.fastDesc}
+          </p>
+        </div>
+        <div class="raz-card p-6 space-y-2">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <h3 class="text-lg font-bold">{about.purpose.privacyTitle}</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--color-light-secondary);">
+            {about.purpose.privacyDesc}
+          </p>
+        </div>
+        <div class="raz-card p-6 space-y-2">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3 class="text-lg font-bold">{about.purpose.designTitle}</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--color-light-secondary);">
+            {about.purpose.designDesc}
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-4 pt-2">
+        <Button href={getLocalePath('/download')} isPrimary>
+          <span>{about.hero.downloadBtn}</span>
+          <ArrowRightIcon class="size-4" />
+        </Button>
+        <Button href={getLocalePath('/donate')}>
+          <span>{about.littleHelp}</span>
         </Button>
       </div>
-    </div>
+    </section>
 
     <hr class="raz-separator" />
 
-    <div class="flex w-full flex-col gap-6">
-      <div>
-        <span class="raz-section-label">Core Contributors</span>
-        <h2 class="text-3xl font-bold lg:text-4xl">{about.mainTeam.title}</h2>
-        <Description class="mt-2" style="color: var(--color-light-secondary);">
-          {about.mainTeam.description}
+    <!-- Section 2: Tentang RAZ Creative Studio -->
+    <section class="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+      <div class="space-y-5">
+        <span class="raz-section-label">{about.studio.badge}</span>
+        <h2 class="text-3xl font-extrabold sm:text-4xl leading-tight">
+          {about.studio.titleLine1} <span class="pink-text">{about.studio.titleLine2}</span>
+        </h2>
+        <p class="text-base leading-relaxed" style="color: var(--color-light-secondary);">
+          {about.studio.paragraph1}
+        </p>
+        <p class="text-base leading-relaxed" style="color: var(--color-light-secondary);">
+          {about.studio.paragraph2}
+        </p>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <Button href="https://raz.web.id/about-raz.html" localePath={false} target="_blank" isPrimary>
+            <span>{about.studio.visitWebsite}</span>
+            <ArrowRightIcon class="size-4" />
+          </Button>
+          <Button href="https://raz.web.id/hubungi-raz.html" localePath={false} target="_blank">
+            <span>{about.studio.contactBtn}</span>
+          </Button>
+        </div>
+      </div>
+
+      <div class="raz-card flex flex-col items-center gap-6 p-8 text-center">
+        <img
+          src="/raz-creative-studio.svg"
+          alt="RAZ Creative Studio"
+          class="h-20 w-auto object-contain"
+        />
+        <div class="space-y-2">
+          <h3 class="text-xl font-bold">RAZ Creative Studio</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--color-light-secondary);">
+            {about.studio.cardNote}
+          </p>
+        </div>
+        <div class="grid w-full grid-cols-2 gap-3 text-xs">
+          <div class="rounded-lg border p-3" style="border-color: var(--color-border);">
+            <div class="font-bold pink-text">Web & App</div>
+            <div class="opacity-75 mt-0.5">Modern & Fast</div>
+          </div>
+          <div class="rounded-lg border p-3" style="border-color: var(--color-border);">
+            <div class="font-bold pink-text">Brand & 3D</div>
+            <div class="opacity-75 mt-0.5">Design & CAD</div>
+          </div>
+          <div class="rounded-lg border p-3" style="border-color: var(--color-border);">
+            <div class="font-bold pink-text">AI Solutions</div>
+            <div class="opacity-75 mt-0.5">Smart Tools</div>
+          </div>
+          <div class="rounded-lg border p-3" style="border-color: var(--color-border);">
+            <div class="font-bold pink-text">FOSS Tools</div>
+            <div class="opacity-75 mt-0.5">Open Source</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="raz-separator" />
+
+    <!-- Section 3: Project-Project RAZ Creative Studio -->
+    <section class="flex w-full flex-col gap-6">
+      <div class="space-y-2">
+        <span class="raz-section-label">{about.projects.badge}</span>
+        <h2 class="text-3xl font-extrabold lg:text-4xl">{about.projects.title}</h2>
+        <Description class="max-w-2xl" style="color: var(--color-light-secondary);">
+          {about.projects.description}
         </Description>
       </div>
 
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {Object.entries(about.mainTeam.members).map(([team, members]) => (
-          <div class="raz-card flex flex-col gap-3 p-6">
-            <h3 class="text-xl font-bold pink-text">
-              {about.mainTeam.subTitle[team as keyof typeof about.mainTeam.subTitle]}
-            </h3>
-            <ul class="flex flex-col gap-2.5">
-              {Object.entries(members).map(([_key, member]) => (
-                <li class="text-sm leading-relaxed">
-                  {member.link && typeof member.link === 'string' ? (
-                    <a href={member.link} target="_blank" class="zen-link font-bold">
-                      {member.name}
-                    </a>
-                  ) : (
-                    <strong class="font-bold">{member.name}</strong>
-                  )}
-                  <span style="color: var(--color-light-secondary);">: {member.description}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {projects.map(project => (
+          <a
+            href={project.url}
+            target={project.external ? '_blank' : undefined}
+            rel={project.external ? 'noopener noreferrer' : undefined}
+            class="raz-card flex flex-col justify-between gap-4 p-6 transition-transform duration-200 hover:-translate-y-1"
+          >
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex h-11 w-11 items-center justify-center rounded-xl text-lg" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
+                  <i class={project.icon}></i>
+                </div>
+                <span class="rounded-full border px-2.5 py-0.5 text-[11px] font-semibold pink-text" style="border-color: var(--color-border);">
+                  {project.tag}
+                </span>
+              </div>
+              <h3 class="text-lg font-bold">{project.name}</h3>
+              <p class="text-sm leading-relaxed" style="color: var(--color-light-secondary);">
+                {project.desc}
+              </p>
+            </div>
+            <div class="flex items-center gap-1.5 text-xs font-semibold pink-text pt-1">
+              <span>{about.projects.visitLabel}</span>
+              <ArrowRightIcon class="size-3.5" />
+            </div>
+          </a>
         ))}
       </div>
-    </div>
+    </section>
 
     <hr class="raz-separator" />
 
-    <div class="flex w-full flex-col gap-6">
-      <div>
-        <span class="raz-section-label">Open Source</span>
-        <h2 class="text-3xl font-bold lg:text-4xl">{about.contributors.title}</h2>
-        <Description class="mt-2" style="color: var(--color-light-secondary);">
-          {about.contributors.description}
-        </Description>
+    <!-- Section 4: Donate & Sosial Media -->
+    <section class="raz-card flex flex-col items-center gap-6 p-8 text-center lg:p-12">
+      <span class="raz-section-label">{about.connect.badge}</span>
+      <h2 class="text-3xl font-extrabold sm:text-4xl">{about.connect.title}</h2>
+      <p class="max-w-2xl text-base leading-relaxed" style="color: var(--color-light-secondary);">
+        {about.connect.description}
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <Button href={getLocalePath('/donate')} isPrimary>
+          <i class="fas fa-heart mr-1"></i>
+          <span>{about.connect.donateBtn}</span>
+        </Button>
+        <Button href="https://wa.me/6283173002527" localePath={false} target="_blank">
+          <i class="fab fa-whatsapp mr-1"></i>
+          <span>WhatsApp Studio</span>
+        </Button>
+        <Button href="https://github.com/razcreativestudio/razberry" localePath={false} target="_blank">
+          <i class="fab fa-github mr-1"></i>
+          <span>GitHub</span>
+        </Button>
       </div>
-      <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <div class="raz-card flex flex-col gap-4 p-6">
-          <h3 class="text-xl font-bold">{about.contributors.browser}</h3>
-          <a href="https://github.com/razcreativestudio/razberry/graphs/contributors" target="_blank">
-            <Image
-              src="https://contributors-img.web.app/image?repo=razcreativestudio/razberry"
-              alt="Contributors"
-              width={500}
-              height={500}
-              class="rounded-lg"
-            />
-          </a>
-        </div>
-        <div class="raz-card flex flex-col gap-4 p-6">
-          <h3 class="text-xl font-bold">{about.contributors.website}</h3>
-          <a href="https://github.com/razcreativestudio/razberry" target="_blank">
-            <Image
-              src="https://contributors-img.web.app/image?repo=razcreativestudio/razberry"
-              alt="Contributors (website)"
-              width={500}
-              height={500}
-              class="rounded-lg"
-            />
-          </a>
-        </div>
+
+      <div class="pt-4 flex flex-col items-center gap-3">
+        <span class="text-xs font-semibold uppercase tracking-widest opacity-60">{about.connect.socialLabel}</span>
+        <SocialMediaStrip />
       </div>
-    </div>
+    </section>
   </main>
 </Layout>
