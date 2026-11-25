@@ -78,3 +78,13 @@
     3. **Completed**: Tombol **Finish & Open** untuk langsung meluncurkan `razberry.exe` + tombol **Close**.
 - **Build Pipeline (`RAZBuildInstaller.ps1`)**:
   - Mengompres `dist/RAZBerry` dan mengompilasinya bersama logo serta `RAZBerry.ico` via `.NET Framework csc.exe` menjadi single-file executable `dist/RAZBerrySetup.exe` & `dist/razberry.installer.exe`.
+
+---
+
+### 🗑️ [11:53 WIB] - Penambahan Folder Start Menu `RAZBerry` & `Uninstall RAZBerry.exe`
+
+- **Standalone Uninstaller (`RAZUninstaller.cs`)**:
+  - Membuat uninstaller GUI bertema Black-Pink Raspberry (`dist/Uninstall RAZBerry.exe`) dengan opsi penghapusan profil opsional, pembersihan shortcut Desktop, penghapusan folder Start Menu `RAZBerry`, pembersihan Registry Uninstall, dan self-delete folder instalasi.
+- **Integrasi Start Menu Folder (`RAZSetupWizard.cs`)**:
+  - Menempatkan shortcut `RAZBerry` dan `Uninstall RAZBerry` ke dalam subfolder Start Menu `Programs\RAZBerry\` (sekaligus membersihkan shortcut lama di root Programs agar tampil rapi dalam satu folder).
+  - Mendaftarkan `UninstallString` di Registry `HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\RAZBerry`.

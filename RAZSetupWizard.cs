@@ -408,32 +408,70 @@ namespace RAZBerrySetup
                 }
             }
 
-            // 4. Buat Shortcut Desktop & Start Menu jika dicentang
+            // 4. Ekstrak Uninstall RAZBerry.exe ke direktori instalasi
+            _worker.ReportProgress(91, "Memasang Uninstall RAZBerry.exe...");
+            string uninstallerPath = Path.Combine(_installDir, "Uninstall RAZBerry.exe");
+            using (var uStream = asm.GetManifestResourceStream("UninstallRAZBerry.exe"))
+            {
+                if (uStream != null)
+                {
+                    using (var fs = new FileStream(uninstallerPath, FileMode.Create, FileAccess.Write))
+                    {
+                        uStream.CopyTo(fs);
+                    }
+                }
+            }
+
+            // 5. Buat Shortcut Desktop & Folder Start Menu RAZBerry
             if (createShortcuts)
             {
-                _worker.ReportProgress(93, "Membuat shortcut Desktop & Start Menu...");
+                _worker.ReportProgress(94, "Membuat shortcut Desktop & folder Start Menu RAZBerry...");
                 string exePath = Path.Combine(_installDir, "razberry.exe");
                 string icoPath = Path.Combine(_installDir, "RAZBerry.ico");
 
+                // Desktop shortcut
                 CreateShortcut(
                     Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "RAZBerry.lnk"),
-                    exePath, _installDir, icoPath
+                    exePath, "-app browser\\application.ini", _installDir, icoPath,
+                    "RAZBerry Browser - By RAZ Creative Studio"
                 );
+
+                // Start Menu: hapus shortcut lama di root Programs agar masuk rapi ke folder RAZBerry
+                string programsDir = Environment.GetFolderPath(Environment.SpecialFolder.Programs);
+                string oldRootLnk = Path.Combine(programsDir, "RAZBerry.lnk");
+                if (File.Exists(oldRootLnk))
+                {
+                    try { File.Delete(oldRootLnk); } catch { }
+                }
+
+                string startMenuFolder = Path.Combine(programsDir, "RAZBerry");
+                Directory.CreateDirectory(startMenuFolder);
+
                 CreateShortcut(
-                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Programs), "RAZBerry.lnk"),
-                    exePath, _installDir, icoPath
+                    Path.Combine(startMenuFolder, "RAZBerry.lnk"),
+                    exePath, "-app browser\\application.ini", _installDir, icoPath,
+                    "RAZBerry Browser - By RAZ Creative Studio"
                 );
+
+                if (File.Exists(uninstallerPath))
+                {
+                    CreateShortcut(
+                        Path.Combine(startMenuFolder, "Uninstall RAZBerry.lnk"),
+                        uninstallerPath, "", _installDir, icoPath,
+                        "Hapus RAZBerry Browser dari perangkat ini"
+                    );
+                }
             }
 
-            // 5. Daftarkan aplikasi ke Windows Registry (Add/Remove Programs)
+            // 6. Daftarkan aplikasi & Uninstaller ke Windows Registry (Add/Remove Programs)
             _worker.ReportProgress(97, "Mendaftarkan aplikasi di sistem Windows...");
-            RegisterApplication();
+            RegisterApplication(uninstallerPath);
 
             Thread.Sleep(250);
             _worker.ReportProgress(100, "RAZBerry Browser berhasil dipasang dan siap digunakan!");
         }
 
-        private void CreateShortcut(string shortcutPath, string targetExe, string workDir, string iconPath)
+        private void CreateShortcut(string shortcutPath, string targetExe, string arguments, string workDir, string iconPath, string description)
         {
             try
             {
@@ -441,16 +479,19 @@ namespace RAZBerrySetup
                 dynamic shell = Activator.CreateInstance(shellType);
                 dynamic sc = shell.CreateShortcut(shortcutPath);
                 sc.TargetPath = targetExe;
-                sc.Arguments = "-app browser\\application.ini";
+                if (!string.IsNullOrEmpty(arguments))
+                {
+                    sc.Arguments = arguments;
+                }
                 sc.WorkingDirectory = workDir;
                 sc.IconLocation = iconPath + ", 0";
-                sc.Description = "RAZBerry Browser - By RAZ Creative Studio";
+                sc.Description = description;
                 sc.Save();
             }
             catch { }
         }
 
-        private void RegisterApplication()
+        private void RegisterApplication(string uninstallerPath)
         {
             try
             {
@@ -463,7 +504,10 @@ namespace RAZBerrySetup
                         key.SetValue("Publisher", "RAZ Creative Studio");
                         key.SetValue("DisplayIcon", Path.Combine(_installDir, "RAZBerry.ico"));
                         key.SetValue("InstallLocation", _installDir);
+                        key.SetValue("UninstallString", "\"" + uninstallerPath + "\"");
                         key.SetValue("URLInfoAbout", "https://razberry.it-raz.com/");
+                        key.SetValue("NoModify", 1, RegistryValueKind.DWord);
+                        key.SetValue("NoRepair", 1, RegistryValueKind.DWord);
                     }
                 }
             }
