@@ -110,3 +110,5 @@
   - Menghapus referensi `browser/zen-migration.ftl` yang tidak ada di `omni.ja`.
   - Menambahkan fallback nama browser (`Google Chrome`, `Microsoft Edge`, `Brave Browser`, `Mozilla Firefox`, `Opera`, `Vivaldi`) agar tidak menampilkan raw l10n key.
   - Menghapus `opacity: 0` pada `#zen-welcome-pages`, `.zen-welcome-page`, dan `.zen-welcome-text > *` serta menambahkan proteksi fallback pada `#renderText()` dan `updateButtons()`.
+- **Start Menu Folder Windows 11 (`RAZSetupWizard.cs`)**:
+  - Menambahkan shortcut `RAZBerry Private Mode.lnk` (`-private-window`) di dalam folder `Programs\RAZBerry\` bersama `RAZBerry.lnk` dan `Uninstall RAZBerry.lnk` agar Windows 11 Start Menu menampilkan folder **`RAZBerry`** secara penuh (tidak di-collapse otomatis).

@@ -453,6 +453,12 @@ namespace RAZBerrySetup
                     "RAZBerry Browser - By RAZ Creative Studio"
                 );
 
+                CreateShortcut(
+                    Path.Combine(startMenuFolder, "RAZBerry Private Mode.lnk"),
+                    exePath, "-private-window", _installDir, icoPath,
+                    "Buka RAZBerry Browser dalam Mode Privat"
+                );
+
                 if (File.Exists(uninstallerPath))
                 {
                     CreateShortcut(
