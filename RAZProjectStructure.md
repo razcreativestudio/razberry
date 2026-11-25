@@ -1,6 +1,6 @@
 # RAZBerry Browser Project Structure
 
-**Versi Dokumen**: 0.9.9  
+**Versi Dokumen**: 0.9.10  
 **Tanggal Update**: 2026-11-25  
 **Author**: RAZ Creative Studio  
 

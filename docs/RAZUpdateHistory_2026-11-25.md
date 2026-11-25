@@ -99,3 +99,14 @@
   - Memastikan fungsi `finish()` langsung membuka tab aktif `https://razberry.it-raz.com/welcome/` tepat setelah jendela utama RAZBerry Browser terbuka.
 - **Perbaikan Launch Flag (`RAZSetupWizard.cs`)**:
   - Menghapus flag `-app browser\application.ini` saat meluncurkan `razberry.exe` dari *Finish & Open* maupun shortcut Desktop/Start Menu agar browser berjalan dalam mode native normal.
+
+---
+
+### 🧩 [12:16 WIB] - Perbaikan Halaman Migration / Import & Seluruh FTL Welcome Wizard
+
+- **Penambalan 41 File Locale `zen-welcome.ftl`**:
+  - Menambahkan seluruh key yang hilang (`zen-generic-next`, `zen-welcome-import-description`, `zen-welcome-import-no`, `zen-welcome-block-ads-*`, `zen-welcome-essentials-*`, `zen-welcome-default-browser-*`, `zen-welcome-back`, `zen-welcome-skip`) sehingga keterangan penjelasan di sidebar kiri dan tombol **Next** / **Skip** tampil lengkap.
+- **Perbaikan `ZenWelcome.mjs` & `zen-welcome.css`**:
+  - Menghapus referensi `browser/zen-migration.ftl` yang tidak ada di `omni.ja`.
+  - Menambahkan fallback nama browser (`Google Chrome`, `Microsoft Edge`, `Brave Browser`, `Mozilla Firefox`, `Opera`, `Vivaldi`) agar tidak menampilkan raw l10n key.
+  - Menghapus `opacity: 0` pada `#zen-welcome-pages`, `.zen-welcome-page`, dan `.zen-welcome-text > *` serta menambahkan proteksi fallback pada `#renderText()` dan `updateButtons()`.
