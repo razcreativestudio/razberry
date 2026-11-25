@@ -327,7 +327,7 @@ def update_source_files():
 
 if __name__ == "__main__":
     print("============================================================")
-    print("  🍓 RAZBerry Browser - Customization Application System")
+    print("  RAZBerry Browser - Customization Application System")
     print("============================================================")
     update_ini_files()
     update_prefs()

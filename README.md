@@ -1,4 +1,4 @@
-# 🍓 RAZBerry Browser
+# RAZBerry Browser
 
 <p align="center">
   <img src="razberry-logo.png" alt="RAZBerry Logo" width="160" />

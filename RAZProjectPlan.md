@@ -5,7 +5,7 @@
 
 ---
 
-## 🍓 Deskripsi Project
+## Deskripsi Project
 
 **RAZBerry** adalah web browser custom modern dan elegan berbasis **Zen Browser** (Firefox Engine) dengan branding eksklusif dari RAZ Creative Studio. Browser ini menggabungkan fitur produktivitas mutakhir (vertical tabs, split views, workspaces, privacy-first) dengan tampilan tema solid visual khas **Raspberry Pink** (`#D81B60` dan `#FF4081`) yang lulus kontras WCAG AA/AAA tanpa glassmorphism/acrylic, didukung oleh ekosistem website resmi **RAZBerry Web** (`https://razberry.it-raz.com`).
 

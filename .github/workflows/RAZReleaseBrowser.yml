@@ -87,7 +87,7 @@ jobs:
           prerelease: ${{ github.event.inputs.prerelease == 'true' }}
           generate_release_notes: true
           body: |
-            ## 🍓 RAZBerry Browser `${{ steps.meta.outputs.version }}`
+            ## RAZBerry Browser `${{ steps.meta.outputs.version }}`
             **Designed by RAZ Creative Studio** — [razberry.it-raz.com](https://razberry.it-raz.com/)
 
             ${{ github.event.inputs.release_notes || 'Rilis resmi RAZBerry Browser dengan tema Black-Pink Raspberry, privasi tanpa telemetri, dan produktivitas modern.' }}

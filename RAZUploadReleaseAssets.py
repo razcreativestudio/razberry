@@ -70,7 +70,7 @@ def ensure_release(token):
         "prerelease": False,
         "draft": False,
         "body": (
-            "## 🍓 RAZBerry Browser `1.19.8b-raz2`\n"
+            "## RAZBerry Browser `1.19.8b-raz2`\n"
             "**Designed by RAZ Creative Studio** — [razberry.it-raz.com](https://razberry.it-raz.com/)\n\n"
             "### ✨ Fitur Rilis Ini\n"
             "- Standalone Windows Installer (`razberry.installer.exe` / `RAZBerrySetup.exe`) bergaya floating banner Chrome dengan tema Black-Pink Raspberry.\n"

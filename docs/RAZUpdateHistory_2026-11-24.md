@@ -71,7 +71,7 @@
    - Menghasilkan file eksekusi `dist/RAZBerry/razberry.exe`, batch launcher `RAZBerry.bat`, dan Windows shortcut `RAZBerry.lnk` dengan ikon raspberry.
    - Melakukan pengujian verifikasi eksekusi (`razberry.exe -app browser\application.ini -v`) dan profil mandiri, menghasilkan output resmi: `RAZ Creative Studio RAZBerry 1.19.8b`.
 
-### 🍓 Hardening Rebranding & Customization RAZBerry (17:10 - 17:35)
+### Hardening Rebranding & Customization RAZBerry (17:10 - 17:35)
 
 8. **Patching Win32 PE Resource Icons & Window Icons ([RAZPatchExeIcons.py](file:///c:/Users/Administrator/Documents/DATA%20ZUL/RAZ/RAZBerry/RAZPatchExeIcons.py))**
    - Mengatasi isu window icon pada dialog "About RAZBerry" dan taskbar icon yang sebelumnya masih menampilkan ikon target konsentris Zen Browser.

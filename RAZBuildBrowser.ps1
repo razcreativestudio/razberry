@@ -20,7 +20,7 @@ param (
 $ErrorActionPreference = "Stop"
 
 Write-Host "============================================================" -ForegroundColor Magenta
-Write-Host "  🍓 RAZBerry Browser - Build & Packaging System" -ForegroundColor Cyan
+Write-Host "  RAZBerry Browser - Build & Packaging System" -ForegroundColor Cyan
 Write-Host "  Author : RAZ Creative Studio" -ForegroundColor Gray
 Write-Host "  Target : $OutputDir" -ForegroundColor Gray
 Write-Host "============================================================" -ForegroundColor Magenta

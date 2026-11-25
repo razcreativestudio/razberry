@@ -158,7 +158,7 @@ def rebrand_package_json():
             json.dump(pkg, f, indent=2)
             
     readme_path = os.path.join(WWW_DIR, "README.md")
-    readme_content = """# 🍓 RAZBerry Official Website
+    readme_content = """# RAZBerry Official Website
 
 Repositori website resmi **RAZBerry Browser** (`https://razberry.it-raz.com`).
 
@@ -179,7 +179,7 @@ MPL 2.0 - RAZ Creative Studio
 
 if __name__ == "__main__":
     print("============================================================")
-    print("  🍓 RAZBerry Website - Rebranding & Setup System")
+    print("  RAZBerry Website - Rebranding & Setup System")
     print("============================================================")
     rebrand_assets()
     rebrand_astro_config()

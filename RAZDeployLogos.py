@@ -396,7 +396,7 @@ vendorShortName=RAZ Creative Studio
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("  🍓 RAZBerry Browser - Logo & Brand Deployment System")
+    print("  RAZBerry Browser - Logo & Brand Deployment System")
     print("=" * 60)
     process_icon_logo()
     process_wordmark_logo()

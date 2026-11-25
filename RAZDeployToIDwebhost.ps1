@@ -18,7 +18,7 @@ param (
 $ErrorActionPreference = "Stop"
 
 Write-Host "============================================================" -ForegroundColor Magenta
-Write-Host "  🍓 RAZBerry Web - Deploy to IDwebhost Hosting" -ForegroundColor Cyan
+Write-Host "  RAZBerry Web - Deploy to IDwebhost Hosting" -ForegroundColor Cyan
 Write-Host "  Author : RAZ Creative Studio" -ForegroundColor Gray
 Write-Host "============================================================" -ForegroundColor Magenta
 

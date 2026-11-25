@@ -18,7 +18,7 @@
 
 ---
 
-## 🍓 Tentang RAZBerry
+## Tentang RAZBerry
 
 **RAZBerry** adalah peramban web modern tingkat enterprise yang dibangun di atas fondasi **Zen Browser** (Firefox Engine). RAZBerry menggabungkan:
 - ✅ **Kekuatan Produktivitas**: Tab vertikal cerdas, multi split-view, dan pengelompokan ruang kerja (spaces) dengan folder default `"razberrys"`.

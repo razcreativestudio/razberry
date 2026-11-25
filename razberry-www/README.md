@@ -1,4 +1,4 @@
-# 🍓 RAZBerry Official Website
+# RAZBerry Official Website
 
 Repositori website resmi **RAZBerry Browser** (`https://razberry.it-raz.com`).
 
