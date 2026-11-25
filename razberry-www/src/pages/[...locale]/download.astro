@@ -124,14 +124,39 @@ const platformDescriptions = download.platformDescriptions
         />
       </div>
 
-      <div class="mt-20 flex flex-col items-center justify-center gap-2 text-center">
+      <div class="mt-20 flex flex-col items-center justify-center gap-4 text-center">
         <div class="flex cursor-default items-center justify-center gap-3 text-sm font-bold">
-          {download.beta}
-          <span class="caption border-dark inline-flex h-6 items-center rounded-md border px-2 text-xs leading-4">
-            BETA
+          <span>Latest Release: v1.19.8b-raz2</span>
+          <span class="caption inline-flex h-6 items-center rounded-md border px-2 text-xs leading-4 pink-text" style="border-color: var(--color-pink-accent);">
+            WINDOWS READY
           </span>
         </div>
-        <div class="max-w-[55ch] cursor-default text-sm font-normal text-balance text-black/50 dark:text-white/50">
+        <div class="flex flex-wrap items-center justify-center gap-3 text-xs">
+          <a
+            href="https://github.com/razcreativestudio/razberry/releases/latest/download/razberry.installer.exe"
+            class="raz-cta-secondary !py-2 !px-4 !text-xs"
+          >
+            <i class="fab fa-windows"></i>
+            <span>razberry.installer.exe (143 MB)</span>
+          </a>
+          <a
+            href="https://github.com/razcreativestudio/razberry/releases/latest/download/Uninstall-RAZBerry.exe"
+            class="raz-cta-secondary !py-2 !px-4 !text-xs"
+          >
+            <i class="fas fa-trash-alt"></i>
+            <span>Uninstall-RAZBerry.exe</span>
+          </a>
+          <a
+            href="https://github.com/razcreativestudio/razberry/releases/latest"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="raz-cta-secondary !py-2 !px-4 !text-xs"
+          >
+            <i class="fab fa-github"></i>
+            <span>All GitHub Releases</span>
+          </a>
+        </div>
+        <div class="max-w-[55ch] cursor-default text-sm font-normal text-balance" style="color: var(--color-light-secondary);">
           <Fragment set:html={download.otherDownload} />
         </div>
       </div>

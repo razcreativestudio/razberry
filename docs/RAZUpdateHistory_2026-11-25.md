@@ -112,3 +112,16 @@
   - Menghapus `opacity: 0` pada `#zen-welcome-pages`, `.zen-welcome-page`, dan `.zen-welcome-text > *` serta menambahkan proteksi fallback pada `#renderText()` dan `updateButtons()`.
 - **Start Menu Folder Windows 11 (`RAZSetupWizard.cs`)**:
   - Menambahkan shortcut `RAZBerry Private Mode.lnk` (`-private-window`) dan `Remove RAZBerry.lnk` (menjalankan `Uninstall RAZBerry.exe`) di dalam folder `Programs\RAZBerry\` bersama `RAZBerry.lnk` agar Windows 11 Start Menu menampilkan folder **`RAZBerry`** beserta opsi penghapusannya tanpa tersembunyi oleh filter nama `Uninstall`.
+
+---
+
+### 🎉 [12:55 WIB] - Rilis Resmi `v1.19.8b-raz2` ke GitHub Releases & Update Link Download Website (v1.0.0)
+
+- **Upload Aset Rilis (`RAZUploadReleaseAssets.py`)**:
+  - Berhasil mempublikasikan Release **`v1.19.8b-raz2`** (`https://github.com/razcreativestudio/razberry/releases/tag/v1.19.8b-raz2`) dengan aset lengkap:
+    - `razberry.installer.exe` (`143.06 MB`, SHA-256: `e01022ad4b1dae27c12a414e4ba7c3549d4578f1301cef533aec9d908044f756`)
+    - `RAZBerrySetup.exe` (`143.06 MB`)
+    - `Uninstall-RAZBerry.exe` (`0.22 MB`)
+    - `razberry-kit-1.19.8b-raz2.zip` & `SHA256SUMS.txt`
+- **Pembaruan Link & Checksum Website (`checksum.ts` & `download.astro`)**:
+  - Menyelaraskan SHA-256 checksums dan menambahkan tombol akses cepat download langsung (`razberry.installer.exe`, `Uninstall-RAZBerry.exe`, dan `All GitHub Releases`) pada halaman `/download/`.
