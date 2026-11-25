@@ -14,6 +14,12 @@ const {
   localePath = true,
   ...props
 } = Astro.props
+
+const variantClass = isPrimary
+  ? 'raz-cta-primary'
+  : isAlert
+    ? 'bg-red-500/20 border border-red-500/40 text-red-300 rounded-lg px-6 py-3'
+    : 'raz-cta-secondary'
 ---
 
 {href ? (
@@ -21,17 +27,7 @@ const {
     id={id}
     {...extra}
     href={localePath ? getLocalePath(href) : href}
-    class:list={[
-      'transition-bg flex items-center justify-center gap-2 rounded-xl px-6 py-4 transition-transform duration-150 hover:scale-[1.02] active:scale-[0.98]',
-      className,
-      isPrimary
-        ? 'border-dark bg-dark text-paper shadow-lg'
-        : isAlert
-          ? 'text-dark bg-red-300'
-          : !isBordered
-            ? 'bg-subtle'
-            : '!transition-bg border-dark hover:bg-dark hover:text-paper border-2 hover:shadow-sm',
-    ]}
+    class:list={[variantClass, className]}
     {...props}
   >
     <slot />
@@ -40,17 +36,7 @@ const {
   <button
     id={id}
     {...extra}
-    class:list={[
-      'transition-bg flex items-center justify-center gap-2 rounded-lg px-6 py-3 transition-transform duration-150 hover:scale-[1.02]',
-      className,
-      isPrimary
-        ? 'border-dark bg-dark text-paper shadow-md'
-        : isAlert
-          ? 'text-dark bg-red-300'
-          : !isBordered
-            ? ''
-            : '!transition-bg border-dark hover:bg-dark hover:text-paper border-2 hover:shadow-sm',
-    ]}
+    class:list={[variantClass, className]}
     {...props}
   >
     <slot />
@@ -59,8 +45,6 @@ const {
 <style>
   button,
   a {
-    font-size: 0.9rem;
-
     &[disabled] {
       cursor: not-allowed;
       opacity: 0.5;

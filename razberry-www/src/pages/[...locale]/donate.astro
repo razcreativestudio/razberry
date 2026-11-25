@@ -14,25 +14,45 @@ const {
 ---
 
 <Layout title={layout.donate.title} description={layout.donate.description}>
-  <main class="container flex flex-col items-center gap-12 pt-24 pb-52">
-    <div class="flex flex-col gap-4 lg:text-center">
-      <Description class="text-6xl font-bold">{donate.title}</Description>
-      <Description class="max-w-3xl">{donate.description}</Description>
+  <main class="container flex flex-col items-center gap-12 py-16 lg:py-24">
+    <div class="flex flex-col items-center gap-4 text-center">
+      <span class="raz-section-label">Support Open Source</span>
+      <h1 class="text-4xl font-extrabold sm:text-6xl">
+        {donate.title} <span class="pink-text">RAZBerry</span>
+      </h1>
+      <Description class="max-w-2xl text-base" style="color: var(--color-light-secondary);">
+        {donate.description}
+      </Description>
     </div>
-    <div class="grid max-w-5xl grid-cols-1 gap-12 text-center lg:grid-cols-[1fr_1px_1fr]">
-      <div class="flex flex-col items-center gap-4">
-        <div class="text-6xl font-bold">{donate.patreon.title}</div>
-        <Description>{donate.patreon.description}</Description>
-        <Button isPrimary href="https://www.patreon.com/zen_browser" class="w-fit">
+
+    <div class="grid w-full max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+      <div class="raz-card flex flex-col items-center justify-between gap-6 p-8 text-center">
+        <div class="space-y-3">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl text-2xl" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
+            <i class="fab fa-patreon"></i>
+          </div>
+          <h2 class="text-3xl font-extrabold">{donate.patreon.title}</h2>
+          <Description class="text-sm" style="color: var(--color-light-secondary);">
+            {donate.patreon.description}
+          </Description>
+        </div>
+        <Button isPrimary href="https://www.patreon.com/zen_browser" class="w-full">
           {donate.patreon.button}
           <ArrowRightIcon class="size-4" />
         </Button>
       </div>
-      <hr class="bg-dark hidden h-72 w-[1px] opacity-15 lg:block" />
-      <div class="flex flex-col items-center gap-4">
-        <div class="text-6xl font-bold">{donate.koFi.title}</div>
-        <Description>{donate.koFi.description}</Description>
-        <Button href="https://ko-fi.com/zen_browser" isPrimary class="w-fit">
+
+      <div class="raz-card flex flex-col items-center justify-between gap-6 p-8 text-center">
+        <div class="space-y-3">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl text-2xl" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
+            <i class="fas fa-mug-hot"></i>
+          </div>
+          <h2 class="text-3xl font-extrabold">{donate.koFi.title}</h2>
+          <Description class="text-sm" style="color: var(--color-light-secondary);">
+            {donate.koFi.description}
+          </Description>
+        </div>
+        <Button href="https://ko-fi.com/zen_browser" isPrimary class="w-full">
           {donate.koFi.button}
           <ArrowRightIcon class="size-4" />
         </Button>

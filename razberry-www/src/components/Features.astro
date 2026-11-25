@@ -19,12 +19,13 @@ const { titles } = Astro.props
 const descriptions = Object.values(features.featureTabs).map(tab => tab.description)
 ---
 
-<section id="features" class="relative flex w-full flex-col py-12 text-start lg:py-36">
-  <Description class="mb-2 text-4xl font-bold sm:text-6xl">
+<section id="features" class="relative flex w-full flex-col py-20 text-start lg:py-28">
+  <span class="raz-section-label">Core Capabilities</span>
+  <Description class="mb-3 text-3xl font-extrabold sm:text-5xl">
     {(titles || features.titles).map((title, index) =>
       title !== '\n' ? (
         <span class="title-line opacity-0" data-index={index}>
-          {title}
+          {title}{' '}
         </span>
       ) : (
         <br class="hidden md:block" />
@@ -32,12 +33,14 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
     )}
   </Description>
 
-  <p class="feature-description-text opacity-0 lg:w-1/2">{features.description}</p>
+  <p class="feature-description-text opacity-0 lg:w-2/3 text-base" style="color: var(--color-light-secondary);">
+    {features.description}
+  </p>
 
-  <div class="mt-6 flex flex-col gap-6 lg:flex-row lg:justify-between lg:gap-2">
-    <div class="flex w-full flex-col lg:w-1/3">
+  <div class="mt-10 flex flex-col gap-8 lg:flex-row lg:justify-between lg:gap-8">
+    <div class="flex w-full flex-col lg:w-2/5">
       <!-- Mobile Tabs -->
-      <div class="flex gap-2 overflow-x-auto overflow-y-clip lg:hidden">
+      <div class="flex gap-2 overflow-x-auto overflow-y-clip pb-2 lg:hidden">
         {Object.entries(features.featureTabs).map(([key, tab], i) => (
           <button
             class="feature-tab whitespace-nowrap opacity-0"
@@ -51,16 +54,18 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
       </div>
 
       <!-- Desktop features list -->
-      <div id="features-list" class="hidden lg:flex lg:flex-col lg:gap-3">
+      <div id="features-list" class="hidden lg:flex lg:flex-col lg:gap-3.5">
         {Object.entries(features.featureTabs).map(([key, tab], i) => (
           <div
-            class="feature opacity-0"
+            class="feature raz-card opacity-0"
             data-index={i}
             data-feature-key={key}
             data-active={i === 0 ? 'true' : undefined}
           >
-            <Description class="text-2xl font-bold">{tab.title}</Description>
-            <Description>{tab.description}</Description>
+            <Description class="text-lg font-bold mb-1">{tab.title}</Description>
+            <Description class="text-sm" style="color: var(--color-light-secondary);">
+              {tab.description}
+            </Description>
           </div>
         ))}
       </div>
@@ -73,8 +78,11 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
     </div>
 
     <!-- Video Section -->
-    <div class="sticky top-6 h-fit w-full lg:w-3/5">
-      <div class="relative w-full">
+    <div class="sticky top-24 h-fit w-full lg:w-3/5">
+      <div
+        class="relative w-full rounded-2xl border p-2"
+        style="background: var(--color-dark-secondary); border-color: var(--color-border); box-shadow: var(--shadow-pink), var(--shadow-card);"
+      >
         <div class="video-stack relative h-full w-full">
           <Video
             autoplay
@@ -121,25 +129,24 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
 <script>
   import { animate, stagger } from 'animejs'
 
-  // Animate Titles
   animate('.title-line', {
     opacity: [0, 1],
-    delay: stagger(200, { start: 200 }),
-    duration: 600,
+    delay: stagger(180, { start: 150 }),
+    duration: 500,
     easing: 'easeOutQuad',
   })
 
   animate('.feature-description-text', {
     opacity: [0, 1],
-    delay: 600,
-    duration: 600,
+    delay: 450,
+    duration: 500,
     easing: 'easeOutQuad',
   })
 
   animate('.feature-tab, .feature', {
     opacity: [0, 1],
-    delay: stagger(200, { start: 800 }),
-    duration: 500,
+    delay: stagger(120, { start: 600 }),
+    duration: 450,
     easing: 'easeOutQuad',
   })
 
@@ -155,7 +162,6 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
     const index = parseInt(targetEl.dataset.index as string, 10)
     if (isNaN(index)) return
 
-    // Toggle active states
     features.forEach((el, i) => {
       if (i % 4 === index) {
         el.setAttribute('data-active', 'true')
@@ -164,12 +170,10 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
       }
     })
 
-    // Update mobile description
     if (descriptionEl && descriptions) {
       descriptionEl.textContent = descriptions[index]
     }
 
-    // Animate videos
     videos.forEach((vid, i) => {
       const yOffset = (i - index) * 20
       const zOffset = i === index ? 0 : -100 - Math.abs(i - index) * 50
@@ -192,33 +196,38 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
     })
   }
 
-  // Set up event listeners
   features.forEach(f => f.addEventListener('click', changeToFeature as unknown as EventListener))
   changeToFeature({ target: features[0] })
 </script>
+
 <style>
   @reference '../styles/global.css';
 
   .feature {
-    @apply hover:bg-subtle w-full cursor-pointer rounded-lg p-4 opacity-0 select-none;
-    transition: background 0.2s ease-in-out;
+    @apply w-full cursor-pointer rounded-xl p-5 opacity-0 select-none;
 
     &[data-active='true'] {
-      @apply bg-subtle;
+      border-color: var(--color-pink-accent);
+      background: var(--color-pink-dim);
+      box-shadow: var(--shadow-pink);
     }
   }
 
   .feature-tab {
-    @apply hover:bg-subtle rounded-lg px-4 py-2 text-lg font-medium opacity-0;
-    transition: background 0.2s ease-in-out;
+    @apply rounded-lg border px-4 py-2 text-sm font-semibold opacity-0;
+    border-color: var(--color-border);
+    background: var(--color-dark-secondary);
 
     &[data-active='true'] {
-      @apply bg-subtle;
+      border-color: var(--color-pink-accent);
+      background: var(--color-pink-dim);
+      color: var(--color-pink-accent);
     }
   }
 
   .feature-description {
-    @apply px-4 text-sm;
+    @apply px-2 text-sm;
+    color: var(--color-light-secondary);
   }
 
   .video-stack {
@@ -228,7 +237,7 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
   }
 
   .feature-video {
-    @apply left-1/2 hidden transform rounded-3xl shadow-md lg:absolute lg:mx-auto lg:block lg:w-full dark:opacity-80;
+    @apply left-1/2 hidden transform rounded-xl lg:absolute lg:mx-auto lg:block lg:w-full;
     max-width: 800px;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     position: absolute;
@@ -239,7 +248,6 @@ const descriptions = Object.values(features.featureTabs).map(tab => tab.descript
     transform: translate3d(-50%, 0, -100px) scale(0.95);
   }
 
-  /* Don't animate translation on small screens */
   @media (max-width: 1024px) {
     .feature-video {
       position: absolute;

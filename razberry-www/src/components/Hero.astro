@@ -1,15 +1,11 @@
 ---
 import Button from '~/components/Button.astro'
-import Title from '~/components/Title.astro'
 import ArrowRightIcon from '~/icons/ArrowRightIcon.astro'
 import { getLocale, getPath, getUI } from '~/utils/i18n'
-import SocialMediaStrip from './SocialMediaStrip.astro'
 import Video from './Video.astro'
 
 const locale = getLocale(Astro)
-
 const getLocalePath = getPath(locale)
-
 const {
   routes: {
     index: { hero },
@@ -17,91 +13,142 @@ const {
 } = getUI(locale)
 ---
 
-<header
-  id="header"
-  class="flex w-full flex-col items-center gap-6 py-16 text-center lg:gap-12 lg:py-32"
+<section
+  id="hero"
+  class="relative flex min-h-[88vh] w-full flex-col items-center justify-center overflow-hidden py-16 text-center lg:py-24"
 >
-  <div class="flex h-full flex-col items-center justify-center gap-6 md:gap-8">
-    <div class="flex flex-col items-center justify-center gap-4 md:gap-8">
-      <div>
-        <Title class="relative px-12 text-center text-5xl md:text-7xl lg:px-0 lg:text-9xl">
-          {hero.title.map(title =>
-            title.text !== '\n' ? (
-              <b
-                class:list={['font-normal', title.highlight && 'text-coral italic']}
-                style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-              >
-                {title.text}
-              </b>
-            ) : (
-              <br class="hidden md:block" />
-            )
-          )}
-        </Title>
-        <p
-          class="px-12 text-center lg:px-0"
-          style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-        >
-          <span class="sm:block">{hero.description[0]}</span>{' '}
-          <span class="sm:block">{hero.description[1]}</span>
-        </p>
-      </div>
-      <div class="flex w-2/3 flex-col items-center justify-center gap-3 sm:gap-6 md:w-fit md:flex-row">
-        <div style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)">
-          <Button class="w-fit" href={getLocalePath('/download')} isPrimary>
-            {hero.buttons.beta}
-            <ArrowRightIcon class="size-4" />
-          </Button>
-        </div>
-        <div style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)">
-          <Button class="w-fit" href={getLocalePath('/donate')}>
-            {hero.buttons.support}
-          </Button>
-        </div>
-      </div>
-    </div>
-    <SocialMediaStrip style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)" />
+  <!-- Canvas Partikel Jaringan Pink ala RAZ Creative Studio -->
+  <canvas id="raz-hero-canvas" class="pointer-events-none absolute inset-0 h-full w-full opacity-60"></canvas>
+
+  <!-- Floating Keywords Background -->
+  <div class="raz-hero-keywords">
+    <span class="keyword" style="top:14%;left:7%;">Vertical Tabs</span>
+    <span class="keyword" style="top:22%;right:9%;animation-delay:2s;">Split View</span>
+    <span class="keyword" style="top:46%;left:4%;animation-delay:4s;">Workspaces</span>
+    <span class="keyword" style="top:54%;right:5%;animation-delay:1s;">RAZBerry Mods</span>
+    <span class="keyword" style="bottom:20%;left:12%;animation-delay:3s;">Zero Telemetry</span>
+    <span class="keyword" style="bottom:26%;right:14%;animation-delay:5s;">Privacy First</span>
   </div>
-  <Video
-    name="hero-video"
-    autoplay
-    loop
-    muted
-    playsinline
-    preload="none"
-    class="rounded-xl"
-    style="transform: translateY(20px); opacity: 0.001; filter: blur(4px); transform-origin: top;"
-  />
-</header>
+
+  <div class="container relative z-10 flex flex-col items-center gap-8">
+    <!-- Hero Badge ala webraz -->
+    <div class="raz-hero-badge animate-fadeIn">
+      <span class="raz-badge-dot"></span>
+      <span>RAZBerry Browser • Designed by RAZ Creative Studio</span>
+    </div>
+
+    <!-- Main Headline -->
+    <div class="max-w-4xl space-y-5">
+      <h1 class="text-4xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl leading-[1.1]">
+        {hero.title.map(title =>
+          title.text !== '\n' ? (
+            <span class:list={[title.highlight ? 'pink-text pink-shimmer' : '']}>
+              {title.text}{' '}
+            </span>
+          ) : (
+            <br class="hidden md:block" />
+          )
+        )}
+      </h1>
+      <p class="mx-auto max-w-2xl text-base sm:text-lg leading-relaxed" style="color: var(--color-light-secondary);">
+        {hero.description[0]} {hero.description[1]}
+      </p>
+    </div>
+
+    <!-- CTA Buttons ala webraz -->
+    <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <Button href={getLocalePath('/download')} isPrimary>
+        <span>{hero.buttons.beta}</span>
+        <ArrowRightIcon class="size-4" />
+      </Button>
+      <Button href="#features" localePath={false}>
+        <span>Jelajahi Fitur</span>
+      </Button>
+      <Button href={getLocalePath('/donate')}>
+        <span>{hero.buttons.support}</span>
+      </Button>
+    </div>
+
+    <!-- Showcase Video dalam Browser Frame Pink Glow -->
+    <div
+      class="mt-6 w-full max-w-5xl overflow-hidden rounded-2xl border p-2 shadow-2xl"
+      style="background: var(--color-dark-secondary); border-color: var(--color-border); box-shadow: var(--shadow-pink), var(--shadow-card);"
+    >
+      <div class="mb-2 flex items-center justify-between px-3 py-1.5 text-xs" style="color: var(--color-light-secondary);">
+        <div class="flex items-center gap-2">
+          <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#FF4081]"></span>
+          <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#D81B60]/70"></span>
+          <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#BA1257]/50"></span>
+        </div>
+        <span class="font-mono text-[11px] opacity-75">razberry.it-raz.com — RAZBerry Browser 1.19.8b</span>
+        <span class="w-10"></span>
+      </div>
+      <Video
+        name="hero-video"
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="none"
+        class="w-full rounded-xl"
+      />
+    </div>
+  </div>
+</section>
 
 <script>
-  import { animate, onScroll, stagger } from 'animejs'
+  // Animasi Canvas Partikel Node Pink ala webraz
+  const canvas = document.getElementById('raz-hero-canvas') as HTMLCanvasElement | null
+  if (canvas) {
+    const ctx = canvas.getContext('2d')
+    let particles: { x: number; y: number; vx: number; vy: number; r: number }[] = []
 
-  function initAnimations() {
-    const debug = false
+    const resize = () => {
+      canvas.width = canvas.offsetWidth
+      canvas.height = canvas.offsetHeight
+      const count = Math.min(48, Math.floor((canvas.width * canvas.height) / 22000))
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        r: Math.random() * 2 + 1,
+      }))
+    }
 
-    const elements = document.querySelectorAll(
-      '#header h1 b, #header p, #header div:has(a), #header video, #header ul'
-    )
+    const draw = () => {
+      if (!ctx) return
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i]
+        p.x += p.vx
+        p.y += p.vy
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1
 
-    animate(elements, {
-      // @ts-expect-error - element is HTMLElement
-      opacity: element => {
-        if (element.tagName === 'UL') {
-          return { from: 0.001, to: 0.8 }
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+        ctx.fillStyle = 'rgba(255, 64, 129, 0.55)'
+        ctx.fill()
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const q = particles[j]
+          const dist = Math.hypot(p.x - q.x, p.y - q.y)
+          if (dist < 130) {
+            ctx.beginPath()
+            ctx.moveTo(p.x, p.y)
+            ctx.lineTo(q.x, q.y)
+            ctx.strokeStyle = `rgba(216, 27, 96, ${0.22 * (1 - dist / 130)})`
+            ctx.lineWidth = 1
+            ctx.stroke()
+          }
         }
-        return { from: 0.001, to: 1 }
-      },
-      translateY: { from: 20, to: 0 },
-      filter: { from: 'blur(4px)', to: 'blur(0px)' },
-      duration: 300,
-      delay: stagger(150),
-      ease: 'cubicBezier(0.25, 0.1, 0.25, 1)',
-      autoplay: onScroll({
-        target: '#header',
-        debug,
-      }),
-    })
+      }
+      requestAnimationFrame(draw)
+    }
+
+    resize()
+    draw()
+    window.addEventListener('resize', resize)
   }
-  initAnimations()
 </script>

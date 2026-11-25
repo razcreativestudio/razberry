@@ -1,8 +1,5 @@
 ---
 import Button from '~/components/Button.astro'
-import Circles from '~/components/Circles.astro'
-import Description from '~/components/Description.astro'
-import SocialMediaStrip from '~/components/SocialMediaStrip.astro'
 import ArrowRightIcon from '~/icons/ArrowRightIcon.astro'
 import { getLocale, getPath, getUI } from '~/utils/i18n'
 
@@ -13,140 +10,143 @@ const {
 } = getUI(locale)
 ---
 
+<hr class="raz-separator" />
+
 <footer
   id="footer"
-  class="border-dark bg-dark text-paper relative flex w-full flex-col items-center gap-16 overflow-hidden border-t px-4 py-12 lg:p-24"
+  class="relative w-full pt-16 pb-10"
+  style="background: var(--color-dark-secondary);"
   role="contentinfo"
   aria-label="Site footer"
 >
-  <div class="container flex w-full flex-col items-start justify-between gap-12">
-    <section
-      class="flex w-full flex-col gap-4 text-center lg:w-1/2 lg:text-left"
-      aria-labelledby="footer-title"
-    >
-      <a href="/">
-        <Description id="footer-title" class="!text-paper text-6xl font-bold">
-          {footer.title}
-        </Description>
-      </a>
-      <Description class="mx-auto max-w-xl lg:mx-0">{footer.description}</Description>
-    </section>
-    <section class="grid gap-10 place-self-center lg:place-self-start">
-      <Button
-        href="/download"
-        isPrimary
-        class="bg-paper !text-dark h-fit w-fit"
-        aria-label={footer.download}
-      >
-        {footer.download}
-        <ArrowRightIcon class="size-4" aria-hidden="true" />
-      </Button>
-    </section>
-    <section
-      class="grid w-full max-w-5xl place-items-center gap-12 text-center sm:text-left"
-      aria-label="Footer navigation and links"
-    >
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:w-full">
-        <div class="grid gap-8 sm:col-span-2 sm:grid-cols-2 md:col-span-1 md:grid-cols-1">
-          <section
-            class="flex flex-col items-center gap-2 sm:items-start"
-            aria-labelledby="follow-us-heading"
-          >
-            <h2 id="follow-us-heading" class="text-base !font-semibold">
-              {footer.followUs}
-            </h2>
-            <SocialMediaStrip />
-          </section>
-          <section class="flex flex-col gap-2" aria-labelledby="about-us-heading">
-            <h2 id="about-us-heading" class="text-base !font-semibold">
-              {footer.aboutUs}
-            </h2>
-            <nav aria-label="About navigation">
-              <ul class="grid gap-2 opacity-80">
-                <li>
-                  <a href={getLocalePath('/about')} class="font-normal">
-                    {footer.teamAndContributors}
-                  </a>
-                </li>
-                <li>
-                  <a href={getLocalePath('/privacy-policy')} class="font-normal">
-                    {footer.privacyPolicy}
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </section>
+  <div class="container">
+    <div class="grid grid-cols-1 gap-10 pb-12 md:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.1fr]">
+      <!-- Kolom 1: Brand & Deskripsi ala webraz -->
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-4">
+          <img
+            src="/logo-razberry.png"
+            alt="RAZBerry Logo"
+            class="h-12 w-auto object-contain"
+            loading="lazy"
+          />
+          <div class="h-8 w-px opacity-20" style="background: var(--color-light-text);"></div>
+          <img
+            src="/raz-creative-studio.svg"
+            alt="RAZ Creative Studio"
+            class="h-9 w-auto object-contain"
+            loading="lazy"
+          />
         </div>
-        <nav class="flex flex-col gap-2" aria-labelledby="get-started-heading">
-          <h2 id="get-started-heading" class="text-base !font-semibold">
-            {footer.getStarted}
-          </h2>
-          <ul class="grid gap-2 opacity-80">
-            <li>
-              <a href="https://docs.zen-browser.app/" class="font-normal">
-                {footer.documentation}
-              </a>
-            </li>
-            <li>
-              <a href={getLocalePath('/mods')} class="font-normal">
-                {footer.zenMods}
-              </a>
-            </li>
-            <li>
-              <a href={getLocalePath('/release-notes')} class="font-normal">
-                {footer.releaseNotes}
-              </a>
-            </li>
-            <li>
-              <a href={getLocalePath('/download?twilight')} class="font-normal">
-                {footer.twilight}
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <nav class="flex flex-col gap-2" aria-labelledby="get-help-heading">
-          <h2 id="get-help-heading" class="text-base !font-semibold">
-            {footer.getHelp}
-          </h2>
-          <ul class="grid gap-2 opacity-80">
-            <li>
-              <a href="https://discord.gg/zen-browser" class="font-normal">
-                {footer.discord}
-              </a>
-            </li>
-            <li>
-              <a href="https://status.zen-browser.app/" class="font-normal">
-                {footer.uptimeStatus}
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/zen-browser/desktop/issues/new/choose"
-                class="font-normal"
-              >
-                {footer.reportAnIssue}
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/zen-browser/desktop/security/policy" class="font-normal">
-                {footer.securtiy}
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <p class="max-w-sm text-sm leading-relaxed" style="color: var(--color-light-secondary);">
+          {footer.description} Dirancang dengan presisi oleh <strong class="pink-text">RAZ Creative Studio</strong> untuk pengalaman browsing yang cepat, fokus, dan aman.
+        </p>
+        <div class="pt-2">
+          <Button href="/download" isPrimary class="!py-2.5 !px-5 !text-xs w-fit">
+            <span>{footer.download}</span>
+            <ArrowRightIcon class="size-3.5" />
+          </Button>
+        </div>
       </div>
-    </section>
-    <section
-      class="grid w-full grid-cols-[1fr_auto] items-center gap-2"
-      aria-label="Copyright information"
+
+      <!-- Kolom 2: Quick Links -->
+      <div class="flex flex-col gap-3">
+        <h4 class="text-sm font-bold tracking-wider uppercase pink-text">Quick Links</h4>
+        <ul class="flex flex-col gap-2.5 text-sm" style="color: var(--color-light-secondary);">
+          <li><a href={getLocalePath('/')} class="hover:text-coral transition-colors">Home</a></li>
+          <li><a href={getLocalePath('/download')} class="hover:text-coral transition-colors">Download RAZBerry</a></li>
+          <li><a href={getLocalePath('/about')} class="hover:text-coral transition-colors">{footer.teamAndContributors}</a></li>
+          <li><a href={getLocalePath('/privacy-policy')} class="hover:text-coral transition-colors">{footer.privacyPolicy}</a></li>
+          <li><a href={getLocalePath('/donate')} class="hover:text-coral transition-colors">Support / Donate</a></li>
+        </ul>
+      </div>
+
+      <!-- Kolom 3: Explore RAZBerry -->
+      <div class="flex flex-col gap-3">
+        <h4 class="text-sm font-bold tracking-wider uppercase pink-text">{footer.getStarted}</h4>
+        <ul class="flex flex-col gap-2.5 text-sm" style="color: var(--color-light-secondary);">
+          <li><a href={getLocalePath('/mods')} class="hover:text-coral transition-colors">{footer.zenMods}</a></li>
+          <li><a href={getLocalePath('/release-notes')} class="hover:text-coral transition-colors">{footer.releaseNotes}</a></li>
+          <li><a href={getLocalePath('/welcome')} class="hover:text-coral transition-colors">Welcome Onboarding</a></li>
+          <li><a href={getLocalePath('/whatsnew')} class="hover:text-coral transition-colors">What's New</a></li>
+          <li><a href={getLocalePath('/download?twilight')} class="hover:text-coral transition-colors">{footer.twilight}</a></li>
+        </ul>
+      </div>
+
+      <!-- Kolom 4: Ekosistem RAZ Creative Studio -->
+      <div class="flex flex-col gap-3">
+        <h4 class="text-sm font-bold tracking-wider uppercase pink-text">RAZ Ecosystem</h4>
+        <ul class="flex flex-col gap-2.5 text-sm" style="color: var(--color-light-secondary);">
+          <li>
+            <a href="https://raz.web.id/" target="_blank" class="hover:text-coral transition-colors">
+              RAZ Creative Studio <i class="fas fa-external-link-alt text-[10px] ml-1"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/razcreativestudio/razberry" target="_blank" class="hover:text-coral transition-colors">
+              GitHub Repository <i class="fab fa-github text-xs ml-1"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://simaju.raz.web.id/" target="_blank" class="hover:text-coral transition-colors">
+              SIMAJURAZ POS <span class="text-[10px] pink-text">(FOSS)</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://office.it-raz.com/" target="_blank" class="hover:text-coral transition-colors">
+              RAZ Office <span class="text-[10px] pink-text">(FOSS)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom ala webraz -->
+    <div
+      class="flex flex-col items-center justify-between gap-4 border-t pt-6 text-xs sm:flex-row"
+      style="border-color: var(--color-border); color: var(--color-light-secondary);"
     >
-      <p
-        class="flex justify-center gap-2 lg:justify-start"
-        set:html={footer.madeWith.replace('{link}', getLocalePath('/about'))}
-      />
-    </section>
-    <section class="absolute right-0 bottom-0">
-      <Circles white multiplier={0.7} class="mr-[-80px] mb-[-100px] ml-auto hidden lg:block" />
-    </section>
+      <p>
+        &copy; 2026 <strong class="pink-text">RAZBerry Browser</strong> by{' '}
+        <a href="https://raz.web.id/" target="_blank" class="underline hover:text-coral">
+          RAZ Creative Studio
+        </a>
+        . All rights reserved.
+      </p>
+      <div class="flex items-center gap-3">
+        <a
+          href="https://www.instagram.com/raz_studio.id/"
+          target="_blank"
+          aria-label="Instagram"
+          class="raz-control-btn !w-9 !h-9 text-sm"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://www.youtube.com/@razcreativestudio"
+          target="_blank"
+          aria-label="YouTube"
+          class="raz-control-btn !w-9 !h-9 text-sm"
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a
+          href="https://www.tiktok.com/@razcreativestudio"
+          target="_blank"
+          aria-label="TikTok"
+          class="raz-control-btn !w-9 !h-9 text-sm"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a
+          href="https://github.com/razcreativestudio/razberry"
+          target="_blank"
+          aria-label="GitHub"
+          class="raz-control-btn !w-9 !h-9 text-sm"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
   </div>
 </footer>

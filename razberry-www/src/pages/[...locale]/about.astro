@@ -1,13 +1,12 @@
 ---
 import { Image } from 'astro:assets'
+import Button from '~/components/Button.astro'
 import Description from '~/components/Description.astro'
 import Layout from '~/layouts/Layout.astro'
 import { getLocale, getUI } from '~/utils/i18n'
 export { getStaticPaths } from '~/utils/i18n'
-import Button from '~/components/Button.astro'
 
 const locale = getLocale(Astro)
-
 const {
   routes: { about },
   layout,
@@ -15,34 +14,50 @@ const {
 ---
 
 <Layout title={layout.about.title} description={layout.about.description}>
-  <main class="container flex min-h-screen w-full flex-col gap-24 py-24">
-    <div class="flex w-full flex-col gap-6">
-      <Description class="text-6xl leading-none font-bold">{about.title}</Description>
-      <Description class="max-w-4xl">{about.description}</Description>
-      <Button href="/donate" class="w-fit" isPrimary>
-        {about.littleHelp}
-      </Button>
+  <main class="container flex min-h-screen w-full flex-col gap-16 py-16 lg:py-24">
+    <div class="flex w-full flex-col gap-5">
+      <span class="raz-section-label">About & Studio</span>
+      <h1 class="text-4xl font-extrabold leading-tight sm:text-6xl">
+        {about.title} <span class="pink-text">by RAZ Creative Studio</span>
+      </h1>
+      <Description class="max-w-3xl text-base leading-relaxed" style="color: var(--color-light-secondary);">
+        {about.description}
+      </Description>
+      <div class="pt-2">
+        <Button href="/donate" class="w-fit" isPrimary>
+          {about.littleHelp}
+        </Button>
+      </div>
     </div>
-    <div class="flex w-full flex-col gap-4">
-      <div class="text-4xl leading-none font-bold lg:text-5xl">{about.mainTeam.title}</div>
-      <Description>{about.mainTeam.description}</Description>
-      <div class="flex flex-col gap-6">
+
+    <hr class="raz-separator" />
+
+    <div class="flex w-full flex-col gap-6">
+      <div>
+        <span class="raz-section-label">Core Contributors</span>
+        <h2 class="text-3xl font-bold lg:text-4xl">{about.mainTeam.title}</h2>
+        <Description class="mt-2" style="color: var(--color-light-secondary);">
+          {about.mainTeam.description}
+        </Description>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
         {Object.entries(about.mainTeam.members).map(([team, members]) => (
-          <div class="flex flex-col gap-2">
-            <div class="text-3xl font-semibold">
+          <div class="raz-card flex flex-col gap-3 p-6">
+            <h3 class="text-xl font-bold pink-text">
               {about.mainTeam.subTitle[team as keyof typeof about.mainTeam.subTitle]}
-            </div>
-            <ul class="flex flex-col gap-2">
+            </h3>
+            <ul class="flex flex-col gap-2.5">
               {Object.entries(members).map(([_key, member]) => (
-                <li class="text-sm">
+                <li class="text-sm leading-relaxed">
                   {member.link && typeof member.link === 'string' ? (
-                    <a href={member.link}>
-                      <strong class="zen-link font-bold">{member.name}</strong>
+                    <a href={member.link} target="_blank" class="zen-link font-bold">
+                      {member.name}
                     </a>
                   ) : (
                     <strong class="font-bold">{member.name}</strong>
                   )}
-                  <span class="opacity-80">: {member.description}</span>
+                  <span style="color: var(--color-light-secondary);">: {member.description}</span>
                 </li>
               ))}
             </ul>
@@ -50,34 +65,42 @@ const {
         ))}
       </div>
     </div>
-    <div class="flex w-full flex-col gap-4">
-      <div class="text-4xl leading-none font-bold lg:text-5xl">{about.contributors.title}</div>
-      <Description>{about.contributors.description}</Description>
-      <div class="flex w-fit flex-col gap-4">
-        <Description class="text-3xl font-semibold lg:text-4xl">
-          {about.contributors.browser}
+
+    <hr class="raz-separator" />
+
+    <div class="flex w-full flex-col gap-6">
+      <div>
+        <span class="raz-section-label">Open Source</span>
+        <h2 class="text-3xl font-bold lg:text-4xl">{about.contributors.title}</h2>
+        <Description class="mt-2" style="color: var(--color-light-secondary);">
+          {about.contributors.description}
         </Description>
-        <a href="https://github.com/zen-browser/desktop/graphs/contributors">
-          <Image
-            src="https://contributors-img.web.app/image?repo=zen-browser/desktop"
-            alt="Contributors"
-            width={500}
-            height={500}
-          />
-        </a>
       </div>
-      <div class="flex w-fit flex-col gap-4">
-        <Description class="text-3xl font-semibold lg:text-4xl">
-          {about.contributors.website}
-        </Description>
-        <a href="https://github.com/zen-browser/www/graphs/contributors">
-          <Image
-            src="https://contributors-img.web.app/image?repo=zen-browser/www"
-            alt="Contributors (website)"
-            width={500}
-            height={500}
-          />
-        </a>
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div class="raz-card flex flex-col gap-4 p-6">
+          <h3 class="text-xl font-bold">{about.contributors.browser}</h3>
+          <a href="https://github.com/zen-browser/desktop/graphs/contributors" target="_blank">
+            <Image
+              src="https://contributors-img.web.app/image?repo=zen-browser/desktop"
+              alt="Contributors"
+              width={500}
+              height={500}
+              class="rounded-lg"
+            />
+          </a>
+        </div>
+        <div class="raz-card flex flex-col gap-4 p-6">
+          <h3 class="text-xl font-bold">{about.contributors.website}</h3>
+          <a href="https://github.com/zen-browser/www/graphs/contributors" target="_blank">
+            <Image
+              src="https://contributors-img.web.app/image?repo=zen-browser/www"
+              alt="Contributors (website)"
+              width={500}
+              height={500}
+              class="rounded-lg"
+            />
+          </a>
+        </div>
       </div>
     </div>
   </main>

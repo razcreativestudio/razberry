@@ -1,7 +1,7 @@
 # RAZBerry Browser Project Structure
 
-**Versi Dokumen**: 0.9.2  
-**Tanggal Update**: 2026-11-24  
+**Versi Dokumen**: 0.9.4  
+**Tanggal Update**: 2026-11-25  
 **Author**: RAZ Creative Studio  
 
 Dokumen ini menjelaskan struktur direktori, organisasi berkas, dan fungsi setiap komponen dalam proyek **RAZBerry Browser**.

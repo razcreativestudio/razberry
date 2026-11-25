@@ -1,34 +1,37 @@
 @import 'tailwindcss';
+@import './RAZBerryTheme.css';
 
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
 @theme inline {
   --color-paper: var(--zen-paper);
-  --color-coral: #D81B60;
+  --color-coral: var(--color-pink-accent);
   --color-dark: var(--zen-dark);
   --color-subtle: var(--zen-subtle);
   --color-muted: var(--zen-muted);
-  --color-zen-blue: #D81B60;
+  --color-zen-blue: var(--color-pink-accent);
   --color-razberry-pink: #D81B60;
   --color-razberry-vibrant: #FF4081;
   --color-zen-green: #63f78b;
   --font-junicode: Junicode, serif;
-  --animate-fadeIn: fadeIn 2s ease-in-out;
+  --animate-fadeIn: fadeIn 1.2s ease-out;
   --animate-breathe: breathe 5s ease-in-out infinite;
 
   @keyframes fadeIn {
     0% {
       opacity: 0;
+      transform: translateY(10px);
     }
 
     100% {
       opacity: 1;
+      transform: translateY(0);
     }
   }
 
   @keyframes breathe {
     50% {
-      transform: scale(1.2);
+      transform: scale(1.12);
     }
 
     0%,
@@ -74,20 +77,6 @@
   font-display: swap;
 }
 
-:root {
-  --zen-paper: #FDF7F9;
-  --zen-dark: #1F0B17;
-  --zen-muted: rgba(216, 27, 96, 0.06);
-  --zen-subtle: rgba(216, 27, 96, 0.12);
-}
-
-:root[data-theme='dark'] {
-  --zen-paper: #130910;
-  --zen-dark: #FDF0F5;
-  --zen-muted: rgba(255, 64, 129, 0.08);
-  --zen-subtle: rgba(255, 64, 129, 0.18);
-}
-
 @layer base {
   * {
     margin: 0;
@@ -97,15 +86,15 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 84px;
   }
 
   body,
   body > * {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Inter', 'Poppins', 'Bricolage Grotesque', sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 500;
-    font-variation-settings: 'width' 100;
   }
 }
 
@@ -117,13 +106,5 @@ h1 .italic {
 }
 
 .zen-link {
-  @apply text-coral dark:text-[#FF4081] underline underline-offset-4 transition-colors;
-}
-
-.svg-inline--fa {
-  overflow: visible;
-  box-sizing: content-box;
-  display: inline-block;
-  height: 1em;
-  vertical-align: -0.125em;
+  @apply text-coral underline underline-offset-4 transition-colors hover:opacity-80;
 }

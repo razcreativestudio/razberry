@@ -1,0 +1,361 @@
+/* ==============================================================================
+   RAZBerryTheme.css
+   Design System Resmi RAZBerry Browser (Diadaptasi dari RAZ Creative Studio)
+   Tema: Black Pink Raspberry (Dark Mode Default) & Soft Berry Light Mode
+   Author: RAZ Creative Studio
+   Timestamp: 2026-11-25
+   ============================================================================== */
+
+/* --- Token Desain & Palet Warna (Black Pink Raspberry) --- */
+:root,
+:root[data-theme='dark'] {
+  --color-dark-primary: #0a0a0a;
+  --color-dark-secondary: #141013;
+  --color-dark-tertiary: #1e141a;
+  --color-pink-accent: #ff4081;
+  --color-pink-primary: #d81b60;
+  --color-pink-deep: #ba1257;
+  --color-pink-hover: #ff669a;
+  --color-pink-dim: rgba(255, 64, 129, 0.14);
+  --color-pink-glow: rgba(255, 64, 129, 0.08);
+  --pink-gradient: linear-gradient(135deg, #ff4081 0%, #d81b60 55%, #ba1257 100%);
+  --pink-gradient-soft: linear-gradient(135deg, rgba(255, 64, 129, 0.14) 0%, rgba(186, 18, 87, 0.05) 100%);
+  --color-light-text: #fdf0f5;
+  --color-light-secondary: #c9b1bd;
+  --color-border: rgba(255, 64, 129, 0.16);
+  --glass-bg: rgba(16, 12, 15, 0.85);
+  --glass-border: rgba(255, 64, 129, 0.18);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.55);
+  --shadow-pink: 0 0 24px rgba(255, 64, 129, 0.22);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-primary: 'Inter', 'Poppins', 'Bricolage Grotesque', sans-serif;
+
+  /* Pemetaan Token Tailwind / Komponen */
+  --zen-paper: #0a0a0a;
+  --zen-dark: #fdf0f5;
+  --zen-muted: rgba(255, 64, 129, 0.1);
+  --zen-subtle: rgba(255, 64, 129, 0.2);
+}
+
+/* --- Light Mode Override (Soft Berry Cream & Deep Raspberry) --- */
+:root[data-theme='light'] {
+  --color-dark-primary: #fdf7f9;
+  --color-dark-secondary: #ffffff;
+  --color-dark-tertiary: #faecf2;
+  --color-pink-accent: #d81b60;
+  --color-pink-primary: #b71353;
+  --color-pink-deep: #8e0d40;
+  --color-pink-hover: #b71353;
+  --color-pink-dim: rgba(216, 27, 96, 0.1);
+  --color-pink-glow: rgba(216, 27, 96, 0.06);
+  --pink-gradient: linear-gradient(135deg, #d81b60 0%, #ba1257 100%);
+  --pink-gradient-soft: linear-gradient(135deg, rgba(216, 27, 96, 0.08) 0%, rgba(186, 18, 87, 0.04) 100%);
+  --color-light-text: #1f0b17;
+  --color-light-secondary: #634554;
+  --color-border: rgba(216, 27, 96, 0.14);
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(216, 27, 96, 0.15);
+  --shadow-card: 0 6px 24px rgba(31, 11, 23, 0.08);
+  --shadow-pink: 0 4px 20px rgba(216, 27, 96, 0.16);
+
+  --zen-paper: #fdf7f9;
+  --zen-dark: #1f0b17;
+  --zen-muted: rgba(216, 27, 96, 0.07);
+  --zen-subtle: rgba(216, 27, 96, 0.14);
+}
+
+/* --- Transisi Halus Antar Tema --- */
+*,
+*::before,
+*::after {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* --- Typography & Headings --- */
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-dark-primary);
+  color: var(--color-light-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.pink-text,
+.raz-accent {
+  color: var(--color-pink-accent);
+}
+
+.pink-shimmer {
+  background: linear-gradient(90deg, #ff4081 0%, #ff80ab 35%, #d81b60 65%, #ff4081 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: razPinkShimmer 4s linear infinite;
+}
+
+:root[data-theme='light'] .pink-shimmer {
+  background: linear-gradient(90deg, #b71353 0%, #e91e63 40%, #8e0d40 70%, #b71353 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes razPinkShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* --- Section Label & Separator ala RAZ Creative Studio --- */
+.raz-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-pink-accent);
+  margin-bottom: 14px;
+}
+
+.raz-section-label::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: var(--pink-gradient);
+  border-radius: 2px;
+}
+
+.raz-separator {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 64, 129, 0.35), transparent);
+  margin: 0;
+  border: none;
+}
+
+/* --- Header & Navigasi Glassmorphic RAZ --- */
+.raz-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(10, 10, 10, 0.72);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+:root[data-theme='light'] .raz-header {
+  background: rgba(253, 247, 249, 0.85);
+}
+
+.raz-header.scrolled {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  border-bottom-color: rgba(255, 64, 129, 0.28);
+}
+
+.raz-nav-link {
+  position: relative;
+  font-weight: 600;
+  color: var(--color-light-secondary);
+  transition: color 0.25s ease;
+}
+
+.raz-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--pink-gradient);
+  transition: width 0.28s ease;
+}
+
+.raz-nav-link:hover,
+.raz-nav-link.active {
+  color: var(--color-pink-accent);
+}
+
+.raz-nav-link:hover::after,
+.raz-nav-link.active::after {
+  width: 100%;
+}
+
+/* --- Tombol CTA Utama & Sekunder ala RAZ --- */
+.raz-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  background: var(--pink-gradient);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 64, 129, 0.45);
+  box-shadow: 0 4px 20px rgba(216, 27, 96, 0.35);
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+
+.raz-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(255, 64, 129, 0.48);
+  filter: brightness(1.07);
+}
+
+.raz-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  background: var(--color-dark-secondary);
+  color: var(--color-light-text) !important;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.raz-cta-secondary:hover {
+  border-color: var(--color-pink-accent);
+  color: var(--color-pink-accent) !important;
+  background: var(--color-pink-glow);
+  transform: translateY(-2px);
+}
+
+/* --- Cards ala RAZ (.raz-card) --- */
+.raz-card {
+  background: var(--color-dark-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.raz-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 64, 129, 0.45);
+  box-shadow: var(--shadow-pink), var(--shadow-card);
+}
+
+/* --- Hero Badge & Keywords ala webraz --- */
+.raz-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--color-pink-dim);
+  border: 1px solid rgba(255, 64, 129, 0.35);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: var(--color-pink-accent);
+}
+
+.raz-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-pink-accent);
+  box-shadow: 0 0 10px var(--color-pink-accent);
+  animation: razPulseDot 2s ease-in-out infinite;
+}
+
+@keyframes razPulseDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.65;
+  }
+}
+
+.raz-hero-keywords {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.raz-hero-keywords .keyword {
+  position: absolute;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 64, 129, 0.09);
+  user-select: none;
+  animation: razFloatKeyword 16s ease-in-out infinite;
+}
+
+:root[data-theme='light'] .raz-hero-keywords .keyword {
+  color: rgba(216, 27, 96, 0.08);
+}
+
+@keyframes razFloatKeyword {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+/* --- Floating Particles Subtle Background --- */
+.raz-particle {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle, rgba(255, 64, 129, 0.16) 0%, transparent 70%);
+  filter: blur(2px);
+}
+
+/* --- Control Button (Theme Switch) --- */
+.raz-control-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-dark-secondary);
+  border: 1px solid var(--color-border);
+  color: var(--color-pink-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.raz-control-btn:hover {
+  border-color: var(--color-pink-accent);
+  background: var(--color-pink-dim);
+  transform: scale(1.06);
+}
