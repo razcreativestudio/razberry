@@ -65,3 +65,16 @@
 - **GitHub Actions Release Pipeline**: Membuat `.github/workflows/RAZReleaseBrowser.yml` dengan trigger tag `v*` dan `workflow_dispatch`, pengemasan aset rilis resmi, SHA-256 checksums, dan publikasi otomatis via `softprops/action-gh-release@v2` ke `razcreativestudio/razberry/releases`.
 - **Link Download & Checksum**: Memperbarui `release-data.ts` dan `githubChecksums.ts` agar seluruh unduhan Windows, macOS, dan Linux mengarah ke `https://github.com/razcreativestudio/razberry/releases/latest/download/...`.
 - **Migrasi Link GitHub & i18n**: Memperbarui `about.astro`, `feed.xml.ts`, `ReleaseNoteItem.astro`, `en/translation.json`, dan `ja/translation.json` (sekaligus menambal missing translation key `tryRAZBerryMods`) ke repositori `razcreativestudio/razberry`.
+
+---
+
+### 📦 [11:46 WIB] - Pembuatan Installer Standalone `RAZBerrySetup.exe` (Floating Banner Chrome Style)
+
+- **Source Wizard (`RAZSetupWizard.cs`)**:
+  - Tampilan *floating borderless banner* ala Google Chrome Installer dengan tema Black-Pink Raspberry (`#110A0E`, `#D81B60`, `#FF4081`) selaras dengan Welcome Screen RAZBerry (menampilkan Logo RAZBerry & Logo RAZ Creative Studio sejajar tanpa background).
+  - Alur 3 tahap bersih:
+    1. **Ready**: Opsi checkbox shortcut + tombol **Install** & **Cancel**.
+    2. **Installing**: Custom gradient Pink Progress Bar real-time (`0% - 100%`) mengekstrak payload ke `%LocalAppData%\RAZBerry`, membuat shortcut Desktop & Start Menu, serta mendaftarkan entri Uninstall Windows.
+    3. **Completed**: Tombol **Finish & Open** untuk langsung meluncurkan `razberry.exe` + tombol **Close**.
+- **Build Pipeline (`RAZBuildInstaller.ps1`)**:
+  - Mengompres `dist/RAZBerry` dan mengompilasinya bersama logo serta `RAZBerry.ico` via `.NET Framework csc.exe` menjadi single-file executable `dist/RAZBerrySetup.exe` & `dist/razberry.installer.exe`.
