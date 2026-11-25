@@ -87,4 +87,4 @@
   - Membuat uninstaller GUI bertema Black-Pink Raspberry (`dist/Uninstall RAZBerry.exe`) dengan opsi penghapusan profil opsional, pembersihan shortcut Desktop, penghapusan folder Start Menu `RAZBerry`, pembersihan Registry Uninstall, dan self-delete folder instalasi.
 - **Integrasi Start Menu Folder (`RAZSetupWizard.cs`)**:
   - Menempatkan shortcut `RAZBerry` dan `Uninstall RAZBerry` ke dalam subfolder Start Menu `Programs\RAZBerry\` (sekaligus membersihkan shortcut lama di root Programs agar tampil rapi dalam satu folder).
-  - Mendaftarkan `UninstallString` di Registry `HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\RAZBerry`.
+  - Mendaftarkan `UninstallString`, `QuietUninstallString`, `EstimatedSize` (KB), `NoModify`, dan `NoRepair` di Registry `HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\RAZBerry` agar tombol **Uninstall** dan ukuran aplikasi tampil aktif di **Windows Settings > Apps > Installed apps**.

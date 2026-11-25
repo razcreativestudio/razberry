@@ -495,6 +495,18 @@ namespace RAZBerrySetup
         {
             try
             {
+                int estimatedSizeKb = 387000;
+                try
+                {
+                    long totalBytes = 0;
+                    foreach (string file in Directory.GetFiles(_installDir, "*", SearchOption.AllDirectories))
+                    {
+                        totalBytes += new FileInfo(file).Length;
+                    }
+                    estimatedSizeKb = (int)Math.Max(1, totalBytes / 1024);
+                }
+                catch { }
+
                 using (var key = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Uninstall\RAZBerry"))
                 {
                     if (key != null)
@@ -504,7 +516,10 @@ namespace RAZBerrySetup
                         key.SetValue("Publisher", "RAZ Creative Studio");
                         key.SetValue("DisplayIcon", Path.Combine(_installDir, "RAZBerry.ico"));
                         key.SetValue("InstallLocation", _installDir);
+                        key.SetValue("InstallDate", DateTime.Now.ToString("yyyyMMdd"));
                         key.SetValue("UninstallString", "\"" + uninstallerPath + "\"");
+                        key.SetValue("QuietUninstallString", "\"" + uninstallerPath + "\"");
+                        key.SetValue("EstimatedSize", estimatedSizeKb, RegistryValueKind.DWord);
                         key.SetValue("URLInfoAbout", "https://razberry.it-raz.com/");
                         key.SetValue("NoModify", 1, RegistryValueKind.DWord);
                         key.SetValue("NoRepair", 1, RegistryValueKind.DWord);
