@@ -1,0 +1,180 @@
+---
+/**
+ * Updated: 2026-11-26 09:42:00 WIB
+ * Deskripsi: Halaman Shortcut Key RAZBerry Browser (multi-bahasa: id-oke, id, en).
+ *            Menampilkan seluruh daftar pintasan keyboard bawaan dari zen-keysets.inc.xhtml
+ *            lengkap dengan fitur pencarian cepat client-side.
+ */
+import Description from '~/components/Description.astro'
+import Layout from '~/layouts/Layout.astro'
+import { getLocale, getUI } from '~/utils/i18n'
+export { getStaticPaths } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+const {
+  routes: { shortcuts },
+  layout,
+} = getUI(locale)
+
+const categories = [
+  {
+    id: 'compact',
+    icon: 'fas fa-compress-alt',
+    title: shortcuts.categories.compact.title,
+    items: [
+      { label: shortcuts.categories.compact.items.toggleCompact, keys: ['Ctrl', 'S'] },
+      { label: shortcuts.categories.compact.items.showSidebar, keys: ['Ctrl', 'Alt', 'S'] },
+      { label: shortcuts.categories.compact.items.toggleLibrary, keys: ['Alt', 'Shift', 'L'] },
+    ],
+  },
+  {
+    id: 'split',
+    icon: 'fas fa-columns',
+    title: shortcuts.categories.split.title,
+    items: [
+      { label: shortcuts.categories.split.items.vertical, keys: ['Ctrl', 'Alt', 'V'] },
+      { label: shortcuts.categories.split.items.horizontal, keys: ['Ctrl', 'Alt', 'H'] },
+      { label: shortcuts.categories.split.items.grid, keys: ['Ctrl', 'Alt', 'G'] },
+      { label: shortcuts.categories.split.items.unsplit, keys: ['Ctrl', 'Alt', 'U'] },
+      { label: shortcuts.categories.split.items.empty, keys: ['Ctrl', 'Shift', '*'] },
+    ],
+  },
+  {
+    id: 'workspace',
+    icon: 'fas fa-layer-group',
+    title: shortcuts.categories.workspace.title,
+    items: [
+      { label: shortcuts.categories.workspace.items.switchNum, keys: ['Alt', '1–0'] },
+      { label: shortcuts.categories.workspace.items.nextWs, keys: ['Ctrl', 'Alt', '→'] },
+      { label: shortcuts.categories.workspace.items.prevWs, keys: ['Ctrl', 'Alt', '←'] },
+      { label: shortcuts.categories.workspace.items.pinTab, keys: ['Ctrl', 'Shift', 'D'] },
+      { label: shortcuts.categories.workspace.items.closeUnpinned, keys: ['Ctrl', 'Shift', 'K'] },
+    ],
+  },
+  {
+    id: 'utility',
+    icon: 'fas fa-wand-magic-sparkles',
+    title: shortcuts.categories.utility.title,
+    items: [
+      { label: shortcuts.categories.utility.items.glance, keys: ['Ctrl', 'O'] },
+      { label: shortcuts.categories.utility.items.copyUrl, keys: ['Ctrl', 'Shift', 'C'] },
+      { label: shortcuts.categories.utility.items.copyMd, keys: ['Ctrl', 'Alt', 'Shift', 'C'] },
+      { label: shortcuts.categories.utility.items.unsyncedWin, keys: ['Ctrl', 'Shift', 'N'] },
+      { label: shortcuts.categories.utility.items.littleWin, keys: ['Ctrl', 'Alt', 'N'] },
+      { label: shortcuts.categories.utility.items.privateWin, keys: ['Ctrl', 'Shift', 'P'] },
+    ],
+  },
+]
+---
+
+<Layout title={layout.shortcuts.title} description={layout.shortcuts.description}>
+  <main class="container flex min-h-screen w-full flex-col gap-10 py-16 lg:py-24">
+    <!-- Header & Search -->
+    <section class="flex flex-col items-start gap-5">
+      <span class="raz-section-label">{shortcuts.badge}</span>
+      <h1 class="text-4xl font-extrabold leading-tight sm:text-6xl">
+        {shortcuts.title}
+      </h1>
+      <Description class="max-w-3xl text-base leading-relaxed sm:text-lg" style="color: var(--color-light-secondary);">
+        {shortcuts.description}
+      </Description>
+
+      <!-- Search Box -->
+      <div class="relative w-full max-w-xl pt-2">
+        <i class="fas fa-search pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 pt-2 text-sm opacity-60"></i>
+        <input
+          id="shortcut-search"
+          type="search"
+          placeholder={shortcuts.searchPlaceholder}
+          class="w-full rounded-xl border py-3 pl-11 pr-4 text-sm outline-none transition-colors focus:border-[#D81B60]"
+          style="background: var(--color-dark-secondary); border-color: var(--color-border);"
+          aria-label={shortcuts.searchPlaceholder}
+        />
+      </div>
+
+      <p class="text-xs opacity-75" set:html={shortcuts.osNote} />
+    </section>
+
+    <!-- Grid Kategori Shortcut -->
+    <section id="shortcut-grid" class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      {categories.map(cat => (
+        <div class="raz-card shortcut-card flex flex-col gap-4 p-6" data-category={cat.title.toLowerCase()}>
+          <div class="flex items-center gap-3 border-b pb-3" style="border-color: var(--color-border);">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
+              <i class={cat.icon}></i>
+            </div>
+            <h2 class="text-xl font-bold">{cat.title}</h2>
+          </div>
+
+          <ul class="flex flex-col divide-y" style="border-color: var(--color-border);">
+            {cat.items.map(item => (
+              <li
+                class="shortcut-row flex flex-wrap items-center justify-between gap-3 py-3 text-sm"
+                data-search={`${cat.title} ${item.label} ${item.keys.join(' ')}`.toLowerCase()}
+              >
+                <span style="color: var(--color-light-secondary);">{item.label}</span>
+                <div class="flex items-center gap-1.5 shrink-0">
+                  {item.keys.map((k, idx) => (
+                    <>
+                      <kbd
+                        class="inline-flex min-w-[2rem] items-center justify-center rounded-md border px-2 py-1 font-mono text-xs font-bold pink-text"
+                        style="background: var(--color-dark-primary, #120305); border-color: var(--color-border);"
+                      >
+                        {k}
+                      </kbd>
+                      {idx < item.keys.length - 1 && <span class="text-xs opacity-50">+</span>}
+                    </>
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+
+    <!-- Empty State -->
+    <div id="shortcut-empty" class="raz-card hidden p-8 text-center text-sm opacity-80">
+      {shortcuts.emptyResult}
+    </div>
+
+    <!-- Tip Card -->
+    <section class="raz-card flex items-start gap-4 p-6">
+      <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg" style="background: var(--color-pink-dim); color: var(--color-pink-accent);">
+        <i class="fas fa-sliders"></i>
+      </div>
+      <div class="space-y-1 text-sm">
+        <div class="font-bold pink-text">{shortcuts.tipTitle}</div>
+        <p style="color: var(--color-light-secondary);" set:html={shortcuts.tipText} />
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  const searchInput = document.getElementById('shortcut-search') as HTMLInputElement | null
+  const cards = document.querySelectorAll<HTMLElement>('.shortcut-card')
+  const emptyState = document.getElementById('shortcut-empty')
+
+  searchInput?.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase()
+    let visibleCards = 0
+
+    cards.forEach(card => {
+      const rows = card.querySelectorAll<HTMLElement>('.shortcut-row')
+      let visibleRows = 0
+
+      rows.forEach(row => {
+        const text = row.dataset.search || ''
+        const match = !q || text.includes(q)
+        row.classList.toggle('hidden', !match)
+        if (match) visibleRows++
+      })
+
+      card.classList.toggle('hidden', visibleRows === 0)
+      if (visibleRows > 0) visibleCards++
+    })
+
+    emptyState?.classList.toggle('hidden', visibleCards > 0)
+  })
+</script>

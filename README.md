@@ -82,6 +82,7 @@ Website resmi: **[https://razberry.it-raz.com](https://razberry.it-raz.com)**
 - **Membuka Split View**: Klik kanan pada beberapa tab yang ingin dibandingkan → pilih *Split Tabs*.
 - **Mengaktifkan Compact Mode**: Tekan pintasan keyboard bawaan atau klik tombol sidebar untuk menyembunyikan/menampilkan bar tab secara otomatis.
 - **Mode Privat**: Jalankan shortcut **RAZBerry Private Mode** dari Start Menu atau tekan `Ctrl + Shift + P`.
+- **Daftar Shortcut Lengkap**: Buka [https://razberry.it-raz.com/shortcuts](https://razberry.it-raz.com/shortcuts) (misal `Ctrl + S` untuk Compact Mode, `Ctrl + Alt + V/H` untuk Split View).
 
 ---
 

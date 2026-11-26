@@ -462,6 +462,57 @@
       "title": "Halaman Tidak Ditemukan",
       "description": "Maaf, halaman yang Anda cari tidak tersedia atau telah dipindahkan.",
       "button": "Kembali ke Beranda"
+    },
+    "shortcuts": {
+      "badge": "Panduan Cepat • Pintasan Keyboard",
+      "title": "Pintasan Keyboard RAZBerry",
+      "description": "Tingkatkan kecepatan kerja Anda di RAZBerry Browser menggunakan kombinasi pintasan keyboard bawaan berikut untuk Compact Mode, Split View, Workspaces, dan navigasi tab.",
+      "searchPlaceholder": "Cari pintasan (contoh: compact mode, split view, workspace)...",
+      "emptyResult": "Tidak ditemukan pintasan yang sesuai. Silakan coba kata kunci lain.",
+      "tipTitle": "Catatan Pengguna:",
+      "tipText": "Seluruh pintasan ini dapat disesuaikan atau diubah sesuai preferensi Anda melalui menu <strong>Settings → Keyboard Shortcuts</strong> di dalam RAZBerry Browser.",
+      "osNote": "Catatan: Pada macOS, ganti tombol <strong>Ctrl</strong> dengan <strong>Cmd (⌘)</strong>. Untuk berpindah Workspace, macOS menggunakan <strong>Control + 1–0</strong>.",
+      "categories": {
+        "compact": {
+          "title": "Compact Mode & Bilah Sisi",
+          "items": {
+            "toggleCompact": "Aktifkan / nonaktifkan Compact Mode",
+            "showSidebar": "Tampilkan / sembunyikan bilah sisi di Compact Mode",
+            "toggleLibrary": "Buka / tutup Library"
+          }
+        },
+        "split": {
+          "title": "Tampilan Terbagi (Split View)",
+          "items": {
+            "vertical": "Split View Vertikal (berdampingan kiri-kanan)",
+            "horizontal": "Split View Horizontal (atas-bawah)",
+            "grid": "Split View Grid",
+            "unsplit": "Pisahkan kembali tab (Unsplit)",
+            "empty": "Buka Split View kosong baru"
+          }
+        },
+        "workspace": {
+          "title": "Ruang Kerja & Tab",
+          "items": {
+            "switchNum": "Berpindah ke Workspace 1 hingga 10",
+            "nextWs": "Berpindah ke Workspace berikutnya",
+            "prevWs": "Berpindah ke Workspace sebelumnya",
+            "pinTab": "Sematkan / lepaskan sematan tab aktif",
+            "closeUnpinned": "Tutup seluruh tab yang tidak disematkan"
+          }
+        },
+        "utility": {
+          "title": "Glance, Tautan & Jendela",
+          "items": {
+            "glance": "Perbesar pratinjau Glance",
+            "copyUrl": "Salin alamat URL halaman aktif",
+            "copyMd": "Salin URL halaman dalam format Markdown",
+            "unsyncedWin": "Buka jendela baru tanpa sinkronisasi",
+            "littleWin": "Buka jendela mini (Little Window)",
+            "privateWin": "Buka jendela Mode Privat"
+          }
+        }
+      }
     }
   },
   "layout": {
@@ -499,6 +550,10 @@
     },
     "whatsNew": {
       "title": "Yang Baru di {latestVersion.version}!"
+    },
+    "shortcuts": {
+      "title": "Pintasan Keyboard - RAZBerry Browser",
+      "description": "Daftar lengkap pintasan keyboard RAZBerry Browser untuk Compact Mode, Split View, Workspaces, dan lainnya."
     }
   },
   "components": {
@@ -545,7 +600,9 @@
         "github": "GitHub",
         "githubDesc": "Berkontribusi dalam pengembangan RAZBerry di GitHub.",
         "menu": "Menu",
-        "language": "Bahasa"
+        "language": "Bahasa",
+        "shortcuts": "Pintasan Keyboard",
+        "shortcutsDesc": "Daftar tombol pintas untuk Compact Mode, Split View, & lainnya."
       }
     }
   }

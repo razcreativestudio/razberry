@@ -466,6 +466,57 @@
       "title": "Page Not Found",
       "description": "Sorry, the page you are looking for does not exist or has been moved.",
       "button": "Go Home"
+    },
+    "shortcuts": {
+      "badge": "Quick Reference • Keyboard",
+      "title": "RAZBerry Keyboard Shortcuts",
+      "description": "Move faster inside RAZBerry Browser using built-in keyboard shortcuts for Compact Mode, Split View, Workspaces, Glance, and everyday tab management.",
+      "searchPlaceholder": "Search shortcuts (e.g. compact mode, split view, workspace)...",
+      "emptyResult": "No matching shortcuts found. Try a different keyword!",
+      "tipTitle": "Pro Tip:",
+      "tipText": "You can customize or remap any of these shortcuts anytime under <strong>Settings → Keyboard Shortcuts</strong> inside RAZBerry Browser.",
+      "osNote": "Note: On macOS, replace <strong>Ctrl</strong> with <strong>Cmd (⌘)</strong>. Workspace switching on macOS uses <strong>Control + 1–0</strong>.",
+      "categories": {
+        "compact": {
+          "title": "Compact Mode & Sidebar",
+          "items": {
+            "toggleCompact": "Toggle Compact Mode on / off",
+            "showSidebar": "Show / hide Sidebar in Compact Mode",
+            "toggleLibrary": "Open / close Library"
+          }
+        },
+        "split": {
+          "title": "Split View",
+          "items": {
+            "vertical": "Vertical Split View (side-by-side)",
+            "horizontal": "Horizontal Split View (top-bottom)",
+            "grid": "Grid Split View",
+            "unsplit": "Unsplit active Split View",
+            "empty": "Open a new empty Split View"
+          }
+        },
+        "workspace": {
+          "title": "Workspaces & Tabs",
+          "items": {
+            "switchNum": "Switch directly to Workspace 1–10",
+            "nextWs": "Switch to next Workspace",
+            "prevWs": "Switch to previous Workspace",
+            "pinTab": "Pin / Unpin current tab",
+            "closeUnpinned": "Close all unpinned tabs"
+          }
+        },
+        "utility": {
+          "title": "Glance, URL & Windows",
+          "items": {
+            "glance": "Expand Glance preview",
+            "copyUrl": "Copy current page URL",
+            "copyMd": "Copy current URL as Markdown link",
+            "unsyncedWin": "Open a new unsynced window",
+            "littleWin": "Open Little Window",
+            "privateWin": "Open Private Mode window"
+          }
+        }
+      }
     }
   },
   "layout": {
@@ -503,6 +554,10 @@
     },
     "whatsNew": {
       "title": "What's New in {latestVersion.version}!"
+    },
+    "shortcuts": {
+      "title": "Keyboard Shortcuts - RAZBerry Browser",
+      "description": "Complete keyboard shortcuts reference for RAZBerry Browser: Compact Mode, Split View, Workspaces, and more."
     }
   },
   "components": {
@@ -549,7 +604,9 @@
         "github": "GitHub",
         "githubDesc": "Contribute to the development of RAZBerry on GitHub.",
         "menu": "Menu",
-        "language": "Language"
+        "language": "Language",
+        "shortcuts": "Keyboard Shortcuts",
+        "shortcutsDesc": "Quick shortcuts for Compact Mode, Split View, & more."
       }
     }
   }
