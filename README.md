@@ -82,7 +82,49 @@ Website resmi: **[https://razberry.it-raz.com](https://razberry.it-raz.com)**
 - **Membuka Split View**: Klik kanan pada beberapa tab yang ingin dibandingkan → pilih *Split Tabs*.
 - **Mengaktifkan Compact Mode**: Tekan pintasan keyboard bawaan atau klik tombol sidebar untuk menyembunyikan/menampilkan bar tab secara otomatis.
 - **Mode Privat**: Jalankan shortcut **RAZBerry Private Mode** dari Start Menu atau tekan `Ctrl + Shift + P`.
-- **Daftar Shortcut Lengkap**: Buka [https://razberry.it-raz.com/shortcuts](https://razberry.it-raz.com/shortcuts) (misal `Ctrl + S` untuk Compact Mode, `Ctrl + Alt + V/H` untuk Split View).
+
+---
+
+## Shortcut Key Bawaan
+
+Kamu bisa memakai kombinasi tombol berikut di Windows (untuk macOS, ganti `Ctrl` dengan `Cmd`, dan Workspace memakai `Control + 1–0`). Versi web interaktif juga tersedia di [https://razberry.it-raz.com/shortcuts](https://razberry.it-raz.com/shortcuts).
+
+### Compact Mode & Sidebar
+| Fungsi | Shortcut |
+|--------|----------|
+| Aktifkan / matikan Compact Mode | `Ctrl + S` |
+| Tampilkan / sembunyikan Sidebar di Compact Mode | `Ctrl + Alt + S` |
+| Buka / tutup Library | `Alt + Shift + L` |
+
+### Split View
+| Fungsi | Shortcut |
+|--------|----------|
+| Split View Vertical (kiri-kanan) | `Ctrl + Alt + V` |
+| Split View Horizontal (atas-bawah) | `Ctrl + Alt + H` |
+| Split View Grid | `Ctrl + Alt + G` |
+| Lepaskan Split View (Unsplit) | `Ctrl + Alt + U` |
+| Buka Split View kosong baru | `Ctrl + Shift + *` |
+
+### Workspaces & Tab
+| Fungsi | Shortcut |
+|--------|----------|
+| Pindah langsung ke Workspace 1 – 10 | `Alt + 1` s/d `Alt + 0` |
+| Pindah ke Workspace berikutnya | `Ctrl + Alt + →` |
+| Pindah ke Workspace sebelumnya | `Ctrl + Alt + ←` |
+| Pin / Unpin tab aktif | `Ctrl + Shift + D` |
+| Tutup semua tab yang tidak di-pin | `Ctrl + Shift + K` |
+
+### Glance, URL & Window
+| Fungsi | Shortcut |
+|--------|----------|
+| Perbesar pratinjau Glance | `Ctrl + O` |
+| Copy URL halaman saat ini | `Ctrl + Shift + C` |
+| Copy URL sebagai Markdown | `Ctrl + Alt + Shift + C` |
+| Buka window baru tanpa sync | `Ctrl + Shift + N` |
+| Buka Little Window | `Ctrl + Alt + N` |
+| Buka jendela Private Mode | `Ctrl + Shift + P` |
+
+> **Tips:** Semua shortcut dapat diubah atau ditambah sesuai kebutuhan lewat **Settings → Keyboard Shortcuts** di dalam RAZBerry Browser.
 
 ---
 

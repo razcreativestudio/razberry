@@ -12,3 +12,5 @@
 - **Terjemahan & Navigasi**:
   - Menambahkan key `routes.shortcuts`, `layout.shortcuts`, serta `components.nav.menu.shortcuts` & `shortcutsDesc` pada `id-oke/translation.json`, `id/translation.json`, dan `en/translation.json`.
   - Menambahkan tautan menu **Shortcut Key** di `NavBar.astro`, `MobileMenu.astro`, dan `Footer.astro`.
+- **Pembaruan `README.md`**:
+  - Menambahkan tabel lengkap **Shortcut Key Bawaan** (Compact Mode & Sidebar, Split View, Workspaces & Tab, serta Glance, URL & Window) langsung di `README.md`.
